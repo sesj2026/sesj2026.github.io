@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="Shift-JIS" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>“ú–{i‰»Šw‰ï‘æ28‰ñ‘å‰ï</title>
+  <title>æ—¥æœ¬é€²åŒ–å­¦ä¼šç¬¬28å›žå¤§ä¼š</title>
 
   <style>
     html {
@@ -45,12 +45,12 @@ nav {
   z-index: 1000;
 
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* ’†‰›‚Éƒƒjƒ…[ */
+  grid-template-columns: 1fr auto 1fr; /* ä¸­å¤®ã«ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
   align-items: center;
   color: #fff;
 }
 
-    /* ƒnƒ“ƒo[ƒK[ */
+    /* ãƒãƒ³ãƒãƒ¼ã‚¬ãƒ¼ */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -64,7 +64,7 @@ nav {
       transition: 0.3s;
     }
 
-    /* ~ ‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ */
+    /* Ã— ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ */
     .hamburger.active div:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
@@ -75,13 +75,13 @@ nav {
       transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* PC—pƒƒjƒ…[ */
+    /* PCç”¨ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
 #nav-links {
   display: flex;
   align-items: center;
   gap: 20px;
-  justify-content: center; /* ’†‰›Šñ‚¹ */
-  grid-column: 2 / 3;       /* ^‚ñ’†‚É”z’u */
+  justify-content: center; /* ä¸­å¤®å¯„ã› */
+  grid-column: 2 / 3;       /* çœŸã‚“ä¸­ã«é…ç½® */
 }
     #nav-links a {
       color: #fff;
@@ -96,7 +96,7 @@ nav {
 .dropdown-content {
   display: none;
   position: absolute;
-  background: #002c59;       /* © ”Z®‚É•ÏX */
+  background: #002c59;       /* â† æ¿ƒç´ºã«å¤‰æ›´ */
   min-width: 180px;
   box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
   border-radius: 4px;
@@ -107,12 +107,12 @@ nav {
 .dropdown-content a {
   display: block;
   padding: 10px 15px;
-  color: #fff;               /* © ”’•¶Žš‚É•ÏX */
+  color: #fff;               /* â† ç™½æ–‡å­—ã«å¤‰æ›´ */
   text-decoration: none;
 }
 
 .dropdown-content a:hover {
-  background: #00448f;       /* © ƒzƒo[‚Å­‚µ–¾‚é‚¢® */
+  background: #00448f;       /* â† ãƒ›ãƒãƒ¼ã§å°‘ã—æ˜Žã‚‹ã„ç´º */
 }
     .dropdown:hover .dropdown-content {
       display: block;
@@ -123,7 +123,7 @@ nav {
       max-width: 1000px;
       margin: 0 auto;
       padding: 50px 20px;
-      scroll-margin-top: 100px; /* ŒÅ’èƒwƒbƒ_[‘Îô */
+      scroll-margin-top: 100px; /* å›ºå®šãƒ˜ãƒƒãƒ€ãƒ¼å¯¾ç­– */
     }
     section h2 {
       border-left: 6px solid #003366;
@@ -177,37 +177,37 @@ nav {
   <div id="top-of-page"></div>
 
   <header>
-    <h1>“ú–{i‰»Šw‰ï‘æ28‰ñ‘å‰ï</h1>
-    <p>2026”N8ŒŽZ“ú?Z“ú</p>
+    <h1>æ—¥æœ¬é€²åŒ–å­¦ä¼šç¬¬28å›žå¤§ä¼š</h1>
+    <p>2026å¹´8æœˆã€‡æ—¥?ã€‡æ—¥</p>
   </header>
 
   <nav>
-    <!-- ƒnƒ“ƒo[ƒK[ -->
+    <!-- ãƒãƒ³ãƒãƒ¼ã‚¬ãƒ¼ -->
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <div></div><div></div><div></div>
     </div>
 
-    <!-- ƒiƒrƒQ[ƒVƒ‡ƒ“ -->
+    <!-- ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ -->
     <div id="nav-links">
-      <a href="#top-of-page">ƒgƒbƒv</a>
-      <a href="#news">‚¨’m‚ç‚¹</a>
-      <a href="#program">“ú’öEƒvƒƒOƒ‰ƒ€</a>
-      <a href="#registration">ŽQ‰Á“o˜^</a>
-      <a href="#venue">‘å‰ï‰ïê</a>
+      <a href="#top-of-page">ãƒˆãƒƒãƒ—</a>
+      <a href="#news">ãŠçŸ¥ã‚‰ã›</a>
+      <a href="#program">æ—¥ç¨‹ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ </a>
+      <a href="#registration">å‚åŠ ç™»éŒ²</a>
+      <a href="#venue">å¤§ä¼šä¼šå ´</a>
 
       <div class="dropdown">
-        <a href="javascript:void(0)">‚»‚Ì‘¼ ¥</a>
+        <a href="javascript:void(0)">ãã®ä»– â–¼</a>
         <div class="dropdown-content">
-          <a href="#plenary">ƒvƒŒƒiƒŠ[</a>
-          <a href="#symposium">ƒVƒ“ƒ|ƒWƒEƒ€</a>
-          <a href="#workshop">ƒ[ƒNƒVƒ‡ƒbƒv</a>
-          <a href="#hs-poster">‚Z¶ƒ|ƒXƒ^[</a>
-          <a href="#summer-school">‰Ä‚ÌŠwZ</a>
-          <a href="#open-lecture">ŒöŠJuÀ</a>
-          <a href="#kids">‘õŽ™Žº</a>
-          <a href="#notice">’ˆÓŽ–€</a>
-          <a href="#sponsor">ƒXƒ|ƒ“ƒT[</a>
-          <a href="#committee">‘å‰ï‰^‰c</a>
+          <a href="#plenary">ãƒ—ãƒ¬ãƒŠãƒªãƒ¼</a>
+          <a href="#symposium">ã‚·ãƒ³ãƒã‚¸ã‚¦ãƒ </a>
+          <a href="#workshop">ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ§ãƒƒãƒ—</a>
+          <a href="#hs-poster">é«˜æ ¡ç”Ÿãƒã‚¹ã‚¿ãƒ¼</a>
+          <a href="#summer-school">å¤ã®å­¦æ ¡</a>
+          <a href="#open-lecture">å…¬é–‹è¬›åº§</a>
+          <a href="#kids">è¨—å…å®¤</a>
+          <a href="#notice">æ³¨æ„äº‹é …</a>
+          <a href="#sponsor">ã‚¹ãƒãƒ³ã‚µãƒ¼</a>
+          <a href="#committee">å¤§ä¼šé‹å–¶</a>
         </div>
       </div>
 
@@ -215,83 +215,83 @@ nav {
     </div>
   </nav>
 
-  <!-- ¥ ŠeƒZƒNƒVƒ‡ƒ“i•K—v‚É‰ž‚¶‚Ä“à—e‚ð–„‚ß‚Ä‚­‚¾‚³‚¢j -->
+  <!-- â–¼ å„ã‚»ã‚¯ã‚·ãƒ§ãƒ³ï¼ˆå¿…è¦ã«å¿œã˜ã¦å†…å®¹ã‚’åŸ‹ã‚ã¦ãã ã•ã„ï¼‰ -->
   <section id="news" class="section">
-    <h2>‚¨’m‚ç‚¹</h2>
-    <p>‚¨’m‚ç‚¹“à—e‚ð‚±‚±‚É‹LÚ‚µ‚Ü‚·B</p>
+    <h2>ãŠçŸ¥ã‚‰ã›</h2>
+    <p>ãŠçŸ¥ã‚‰ã›å†…å®¹ã‚’ã“ã“ã«è¨˜è¼‰ã—ã¾ã™ã€‚</p>
   </section>
 
   <section id="news" class="section">
-    <h2>‘å‰ï’·‚²ˆ¥ŽA</h2>
-    <p>‘å‰ï’·‚²ˆ¥ŽA‚ð‚±‚±‚É‹LÚ‚µ‚Ü‚·B</p>
+    <h2>å¤§ä¼šé•·ã”æŒ¨æ‹¶</h2>
+    <p>å¤§ä¼šé•·ã”æŒ¨æ‹¶ã‚’ã“ã“ã«è¨˜è¼‰ã—ã¾ã™ã€‚</p>
   </section>
 
   <section id="program" class="section">
-    <h2>“ú’öEƒvƒƒOƒ‰ƒ€</h2>
-    <p>ƒvƒƒOƒ‰ƒ€‚ðŒfÚ‚µ‚Ü‚·B</p>
+    <h2>æ—¥ç¨‹ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ </h2>
+    <p>ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
   </section>
 
   <section id="venue" class="section">
-    <h2>‘å‰ï‰ïê</h2>
-    <p>‰ïêî•ñ‚ð‹LÚ‚µ‚Ü‚·B</p>
+    <h2>å¤§ä¼šä¼šå ´</h2>
+    <p>ä¼šå ´æƒ…å ±ã‚’è¨˜è¼‰ã—ã¾ã™ã€‚</p>
   </section>
 
 <section id="plenary" class="section">
-  <h2>ƒvƒŒƒiƒŠ[</h2>
-  <p>ƒvƒŒƒiƒŠ[u‰‰‚Ìî•ñ‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>ãƒ—ãƒ¬ãƒŠãƒªãƒ¼</h2>
+  <p>ãƒ—ãƒ¬ãƒŠãƒªãƒ¼è¬›æ¼”ã®æƒ…å ±ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
 <section id="symposium" class="section">
-  <h2>ƒVƒ“ƒ|ƒWƒEƒ€</h2>
-  <p>ƒVƒ“ƒ|ƒWƒEƒ€‚Ìî•ñ‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>ã‚·ãƒ³ãƒã‚¸ã‚¦ãƒ </h2>
+  <p>ã‚·ãƒ³ãƒã‚¸ã‚¦ãƒ ã®æƒ…å ±ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
 <section id="workshop" class="section">
-  <h2>ƒ[ƒNƒVƒ‡ƒbƒv</h2>
-  <p>ƒ[ƒNƒVƒ‡ƒbƒv‚Ì“à—e‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ§ãƒƒãƒ—</h2>
+  <p>ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ§ãƒƒãƒ—ã®å†…å®¹ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
 <section id="hs-poster" class="section">
-  <h2>‚Z¶ƒ|ƒXƒ^[</h2>
-  <p>‚Z¶ƒ|ƒXƒ^[”­•\‚Ìî•ñ‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>é«˜æ ¡ç”Ÿãƒã‚¹ã‚¿ãƒ¼</h2>
+  <p>é«˜æ ¡ç”Ÿãƒã‚¹ã‚¿ãƒ¼ç™ºè¡¨ã®æƒ…å ±ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
 <section id="summer-school" class="section">
-  <h2>‰Ä‚ÌŠwZ</h2>
-  <p>‰Ä‚ÌŠwZ‚ÌˆÄ“à‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>å¤ã®å­¦æ ¡</h2>
+  <p>å¤ã®å­¦æ ¡ã®æ¡ˆå†…ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
 <section id="open-lecture" class="section">
-  <h2>ŒöŠJuÀ</h2>
-  <p>ˆê”ÊŒü‚¯ŒöŠJuÀ‚Ìî•ñ‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>å…¬é–‹è¬›åº§</h2>
+  <p>ä¸€èˆ¬å‘ã‘å…¬é–‹è¬›åº§ã®æƒ…å ±ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
 <section id="kids" class="section">
-  <h2>‘õŽ™Žº</h2>
-  <p>‘õŽ™Žº‚Ì—˜—pˆÄ“à‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>è¨—å…å®¤</h2>
+  <p>è¨—å…å®¤ã®åˆ©ç”¨æ¡ˆå†…ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
 <section id="notice" class="section">
-  <h2>’ˆÓŽ–€</h2>
-  <p>‘å‰ïŽQ‰Á‚É‚ ‚½‚Á‚Ä‚Ì’ˆÓŽ–€‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>æ³¨æ„äº‹é …</h2>
+  <p>å¤§ä¼šå‚åŠ ã«ã‚ãŸã£ã¦ã®æ³¨æ„äº‹é …ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
 <section id="sponsor" class="section">
-  <h2>ƒXƒ|ƒ“ƒT[</h2>
-  <p>ƒXƒ|ƒ“ƒT[Šé‹Æˆê——‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>ã‚¹ãƒãƒ³ã‚µãƒ¼</h2>
+  <p>ã‚¹ãƒãƒ³ã‚µãƒ¼ä¼æ¥­ä¸€è¦§ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
 <section id="committee" class="section">
-  <h2>‘å‰ï‰^‰c</h2>
-  <p>‘å‰ïŽÀsˆÏˆõ‰ï‚Ìî•ñ‚ðŒfÚ‚µ‚Ü‚·B</p>
+  <h2>å¤§ä¼šé‹å–¶</h2>
+  <p>å¤§ä¼šå®Ÿè¡Œå§”å“¡ä¼šã®æƒ…å ±ã‚’æŽ²è¼‰ã—ã¾ã™ã€‚</p>
 </section>
 
   <footer>
   <p style="margin: 6px 0; font-size: 0.9rem; opacity: 0.85;">
-    ‚¨–â‚¢‡‚í‚¹FZZZ@agr.nagoya-u.ac.jp
+    ãŠå•ã„åˆã‚ã›ï¼šã€‡ã€‡ã€‡@agr.nagoya-u.ac.jp
   </p>
   <p style="margin: 6px 0; font-size: 0.85rem; opacity: 0.6;">
-    &copy;  “ú–{i‰»Šw‰ï‘æ28‰ñ‘å‰ï
+    &copy;  æ—¥æœ¬é€²åŒ–å­¦ä¼šç¬¬28å›žå¤§ä¼š
   </p>
   </footer>
 
@@ -305,7 +305,7 @@ nav {
       hb.classList.toggle("active");
     }
 
-    // ƒXƒ}ƒz‚ÅƒŠƒ“ƒN‰Ÿ‚µ‚½‚ç•Â‚¶‚é
+    // ã‚¹ãƒžãƒ›ã§ãƒªãƒ³ã‚¯æŠ¼ã—ãŸã‚‰é–‰ã˜ã‚‹
     document.querySelectorAll("#nav-links a").forEach(a => {
       a.addEventListener("click", () => {
         const nav = document.getElementById("nav-links");
