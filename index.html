@@ -32,23 +32,17 @@ HAMBURGER
 ----------------------- */
 
 #hamburger{
-
 display:none;
-
 position:fixed;
 top:15px;
 right:15px;
-
 font-size:26px;
 color:white;
-
 background:#002c59;
 padding:6px 12px;
 border-radius:5px;
-
 z-index:2000;
 cursor:pointer;
-
 }
 
 /* -----------------------
@@ -56,18 +50,13 @@ OVERLAY
 ----------------------- */
 
 #overlay{
-
 position:fixed;
 inset:0;
 background:rgba(0,0,0,0.45);
-
 opacity:0;
 pointer-events:none;
-
 transition:0.3s;
-
 z-index:1400;
-
 }
 
 #overlay.show{
@@ -226,7 +215,6 @@ FOOTER
 ----------------------- */
 
 footer{
-margin-left:240px;
 background:#002c59;
 color:white;
 text-align:center;
@@ -245,12 +233,10 @@ display:block;
 }
 
 nav{
-
 position:fixed;
 left:-240px;
-
 transition:0.35s;
-
+z-index:3000;
 }
 
 nav.open{
@@ -258,16 +244,14 @@ left:0;
 }
 
 header{
-margin-left:0;
 background-attachment:scroll;
 }
 
 main{
-margin-left:0;
+
 }
 
 footer{
-margin-left:0;
 text-align:center;
 }
 
