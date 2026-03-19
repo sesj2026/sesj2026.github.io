@@ -20,6 +20,54 @@ color:#222;
 }
 
 /* -----------------------
+HAMBURGER
+----------------------- */
+
+#hamburger{
+
+display:none;
+
+position:fixed;
+top:15px;
+right:15px;
+
+font-size:26px;
+color:white;
+
+background:#002c59;
+padding:6px 12px;
+border-radius:5px;
+
+z-index:2000;
+cursor:pointer;
+
+}
+
+/* -----------------------
+OVERLAY
+----------------------- */
+
+#overlay{
+
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.45);
+
+opacity:0;
+pointer-events:none;
+
+transition:0.3s;
+
+z-index:1400;
+
+}
+
+#overlay.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* -----------------------
 HEADER
 ----------------------- */
 
@@ -75,6 +123,7 @@ width:200px;
 height:100vh;
 background:#002c59;
 padding:20px;
+z-index:1500;
 }
 
 #nav-links{
@@ -99,17 +148,37 @@ background:#00448f;
 background:#0070d1;
 }
 
-/* group title */
-
 .nav-group{
 margin-left:15px;
 }
 
+.nav-group a{
+display: block;
+}
+
 .nav-title{
 color:white;
-text-decoration:none;
 font-weight:bold;
 padding:5px 10px;
+margin-top:10px;
+}
+
+/* -----------------------
+SPONSOR
+----------------------- */
+
+.sponsor-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:10px;
+}
+
+.sponsor-grid img{
+width:100%;
+background:white;
+padding:4px;
+border-radius:4px;
 }
 
 /* -----------------------
@@ -161,10 +230,21 @@ MOBILE
 
 @media (max-width:768px){
 
+#hamburger{
+display:block;
+}
+
 nav{
-position:relative;
-width:100%;
-height:auto;
+
+position:fixed;
+left:-240px;
+
+transition:0.35s;
+
+}
+
+nav.open{
+left:0;
 }
 
 header{
@@ -180,11 +260,6 @@ footer{
 margin-left:0;
 }
 
-#nav-links{
-flex-direction:row;
-flex-wrap:wrap;
-}
-
 }
 
 </style>
@@ -192,19 +267,23 @@ flex-wrap:wrap;
 
 <body>
 
+<div id="hamburger">☰</div>
+<div id="overlay"></div>
+
 <nav>
 
 <div id="nav-links">
 
-<div class="nav-title"><a href="#top-of-page">Japanese</a> <a href="#top-of-page-e">English</a></div>
+<div class="nav-title">Language
+<a href="#">Japanese</a>
+<a href="#">English</a>
+</div>
 
 <a href="#top-of-page">ホーム</a>
-<a href="#news">お知らせ</a>
 <a href="#greeting">大会長挨拶</a>
 <a href="#overview">開催概要</a>
 <a href="#venue">アクセス</a>
 <a href="#committee">大会実行委員</a>
-<a href="#registration">参加登録</a>
 <a href="#schedule">日程表</a>
 <div class="nav-title">プログラム</div>
 <div class="nav-group">
@@ -215,12 +294,22 @@ flex-wrap:wrap;
 <a href="#summer-school">夏の学校</a>
 <a href="#open-lecture">公開講座</a>
 </div>
+
+<a href="#registration">参加登録</a>
 <a href="#kids">お子様連れの方へ</a>
 
 <div class="nav-title">スポンサー</div>
-<div><a href="">A</a></div>
-<div><a href="">B</a></div>
-<div><a href="">C</a></div>
+
+<div class="sponsor-grid">
+<img src="sponsor1.png">
+<img src="sponsor2.png">
+<img src="sponsor3.png">
+<img src="sponsor4.png">
+<img src="sponsor5.png">
+<img src="sponsor6.png">
+</div>
+
+</div>
 
 </nav>
 
@@ -289,8 +378,8 @@ flex-wrap:wrap;
 <p>準備中</p>
 </section>
 
-<section id="program" class="section">
-<h2>プログラム</h2>
+<section id="schedule" class="section">
+<h2>日程表</h2>
 <p>準備中</p>
 </section>
 
@@ -326,31 +415,65 @@ flex-wrap:wrap;
 
 <section id="kids" class="section">
 <h2>託児室</h2>
-<pre>・託児（事前申込制）、キッズエリア付き講演会場、キッズエリア（保護者の同伴が必要）の設置
-
-・会場で子ども同伴可能
-本大会では、研究活動と家庭生活の両立を支援する取り組みの一環として、子ども同伴でのご参加を可能としています。ただし、すべての参加者が快適に大会に参加できるよう、以下の点についてご理解とご協力をお願いいたします。
-
-【注意事項】
-・会場内では、保護者の責任においてお子さまの安全管理をお願いいたします。
-・発表や討論の妨げとならないよう、必要に応じて一時的なご退席等のご配慮をお願いいたします。
-・授乳室・おむつ替えスペース等の設備については、会場案内をご確認ください。</pre>
+<p>託児情報を掲載します。</p>
 </section>
 
 </main>
 
 <footer>
-<pre>【連絡先】〒464-0814 名古屋市千種区不老町 名古屋大学農学部
-TEL：〇〇〇　FAX：〇〇〇
-E-mail：〇〇〇（取得中）@agr.nagoya-u.ac.jp</pre>
-  
-<p>Copyright © 2026 日本進化学会第28回大会 All Rights Reserved.</p>
+
+<p>
+〒464-0814 名古屋市千種区不老町 名古屋大学農学部<br>
+E-mail：〇〇〇@agr.nagoya-u.ac.jp
+</p>
+
+<p>
+Copyright © 2026 日本進化学会第28回大会
+</p>
+
 </footer>
 
 <script>
 
-const sections=document.querySelectorAll("section");
+/* -----------------------
+MENU OPEN
+----------------------- */
+
+const hamburger=document.getElementById("hamburger");
+const nav=document.querySelector("nav");
+const overlay=document.getElementById("overlay");
 const navLinks=document.querySelectorAll("#nav-links a");
+
+hamburger.onclick=()=>{
+
+nav.classList.toggle("open");
+overlay.classList.toggle("show");
+
+};
+
+overlay.onclick=()=>{
+
+nav.classList.remove("open");
+overlay.classList.remove("show");
+
+};
+
+/* メニュークリックで閉じる */
+
+navLinks.forEach(link=>{
+link.addEventListener("click",()=>{
+
+nav.classList.remove("open");
+overlay.classList.remove("show");
+
+});
+});
+
+/* -----------------------
+SCROLL HIGHLIGHT
+----------------------- */
+
+const sections=document.querySelectorAll("section");
 
 window.addEventListener("scroll",()=>{
 
