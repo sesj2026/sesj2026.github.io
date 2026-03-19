@@ -168,17 +168,23 @@ SPONSOR
 ----------------------- */
 
 .sponsor-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
+display:flex;
+flex-direction:column;
+gap:10px;
 margin-top:10px;
 }
 
 .sponsor-grid img{
 width:100%;
 background:white;
-padding:4px;
+padding:6px;
 border-radius:4px;
+box-shadow:0 2px 4px rgba(0,0,0,0.15);
+transition:0.2s;
+}
+
+.sponsor-grid img:hover{
+transform:scale(1.03);
 }
 
 /* -----------------------
@@ -274,7 +280,7 @@ margin-left:0;
 
 <div id="nav-links">
 
-<div class="nav-title">Language
+<div class="nav-title">
 <a href="#">Japanese</a>
 <a href="#">English</a>
 </div>
@@ -301,12 +307,21 @@ margin-left:0;
 <div class="nav-title">スポンサー</div>
 
 <div class="sponsor-grid">
+<a href="https://example1.com" target="_blank" rel="noopener">
 <img src="sponsor1.png">
+</a>
+<a href="https://example2.com" target="_blank" rel="noopener">
 <img src="sponsor2.png">
+</a>
+<a href="https://example3.com" target="_blank" rel="noopener">
 <img src="sponsor3.png">
+</a>
+<a href="https://example4.com" target="_blank" rel="noopener">
 <img src="sponsor4.png">
+</a>
+<a href="https://example5.com" target="_blank" rel="noopener">
 <img src="sponsor5.png">
-<img src="sponsor6.png">
+</a>
 </div>
 
 </div>
