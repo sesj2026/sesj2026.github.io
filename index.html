@@ -265,7 +265,7 @@ z-index:3000;
 }
 
 nav.open{
-position:sticky;
+position:absolute;
 left:0;
 }
 
@@ -512,6 +512,7 @@ hamburger.onclick=()=>{
 
 nav.classList.toggle("open");
 overlay.classList.toggle("show");
+window.scroll({top: 0, behavior: "smooth",});
 
 };
 
