@@ -133,10 +133,6 @@ border-radius:4px;
 background:#00448f;
 }
 
-#nav-links a.active{
-background:#0070d1;
-}
-
 .nav-group{
 margin-left:15px;
 }
@@ -488,39 +484,6 @@ nav.classList.remove("open");
 overlay.classList.remove("show");
 
 });
-});
-
-/* -----------------------
-SCROLL HIGHLIGHT
------------------------ */
-
-const sections=document.querySelectorAll("section");
-
-window.addEventListener("scroll",()=>{
-
-let current="";
-
-sections.forEach(section=>{
-
-const sectionTop=section.offsetTop-150;
-const sectionHeight=section.offsetHeight;
-
-if(pageYOffset>=sectionTop && pageYOffset<sectionTop+sectionHeight){
-current=section.getAttribute("id");
-}
-
-});
-
-navLinks.forEach(link=>{
-
-link.classList.remove("active");
-
-if(link.getAttribute("href")==="#"+current){
-link.classList.add("active");
-}
-
-});
-
 });
 
 </script>
