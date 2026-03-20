@@ -87,6 +87,15 @@ padding: 4px 8px;
 font-family: sans-serif;
 z-index:100;
 user-select:none;
+
+opacity:0;
+pointer-events:none;
+transition:0.3s;
+}
+
+#topBtn.show{
+opacity:1;
+pointer-events:auto;
 }
 
 /* -----------------------
@@ -706,6 +715,16 @@ overlay.classList.remove("show");
 });
 
 topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"})
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>300){
+topBtn.classList.add("show")
+}else{
+topBtn.classList.remove("show")
+}
+
+})
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
