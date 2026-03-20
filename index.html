@@ -228,7 +228,6 @@ margin:0px 20px;
 
 .section{
 max-width:1000px;
-min-width:400px;
 margin:auto;
 padding:25px 20px;
 scroll-margin-top:0px;
@@ -338,6 +337,17 @@ header{
 background-attachment:scroll;
 }
 
+main{
+}
+
+footer{
+text-align:center;
+}
+
+}
+
+@media (min-width:500px) and (max-width:1000px){
+
 header h1{
 font-size:2.0rem;
 text-shadow:0 2px 4px rgba(0,0,0,1);
@@ -347,15 +357,21 @@ header h2{
 font-size:1.0rem;
 text-shadow:0 2px 4px rgba(0,0,0,1);
 }
-
-main{
-
+    
 }
 
-footer{
-text-align:center;
+@media (max-width:499px){
+
+header h1{
+font-size:1.6rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
+header h2{
+font-size:0.8rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+    
 }
 
 </style>
