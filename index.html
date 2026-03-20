@@ -81,9 +81,13 @@ bottom:20px;
 right:20px;
 background:#002c59;
 color:white;
-padding:10px 15px;
-border-radius:50%;
+border-radius:8px;
 cursor:pointer;
+
+font-weight: bold;
+line-height: 0.833333;
+align-items: center;
+padding: 4px 8px;
 }
 
 /* -----------------------
@@ -429,7 +433,7 @@ font-size:0.8rem;
 
 <div id="hamburger">☰</div>
 <div id="overlay"></div>
-<div id="topBtn">↑</div>
+<div id="topBtn">↑ TO TOP</div>
 
 <div class="layout">
 
@@ -701,6 +705,8 @@ overlay.classList.remove("show");
 
 });
 });
+
+topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"})
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
