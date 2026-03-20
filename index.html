@@ -124,22 +124,33 @@ background:rgba(0,0,0,0.4);
 }
 
 header.sticky{
+height:0px;
+opacity:0;
+}
+
+#top-of-page2{
 position:fixed;
 top:0;
-left:0;
-width:100%;
+left:240px;
+width:calc(100% - 240px);
 height:90px;
 z-index:1500;
 background:#002c59;
-background-image:none;
+
+opacity:0;
+transition:0.35s;
 }
 
-header.sticky h1{
+#top-of-page2.sticky{
+opacity:1;
+}
+
+#top-of-page2 h1{
 font-size:1.4rem;
 margin:0;
 }
 
-header.sticky h2{
+#top-of-page2 h2{
 font-size:0.8rem;
 margin:0;
 }
@@ -537,6 +548,13 @@ font-size:0.8rem;
 
 </header>
 
+<header id="top-of-page2">
+
+<h1>日本進化学会第28回大会</h1>
+<h2 style="margin-top:40px;">2026年8月19日(水)～22日(土)</h2>
+
+</header>
+
 <main>
 
 <section id="news" class="section">
@@ -744,19 +762,22 @@ overlay.classList.remove("show");
 topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
 
 const header=document.querySelector("header");
+const header2=document.getElementById("top-of-page2");
 
 window.addEventListener("scroll",()=>{
 
 if(window.scrollY>360){
-header.classList.add("sticky")
+header.classList.add("sticky");
+header2.classList.add("sticky");
 }else{
-header.classList.remove("sticky")
+header.classList.remove("sticky");
+header2.classList.remove("sticky");
 }
 
 if(window.scrollY>300){
-topBtn.classList.add("show")
+topBtn.classList.add("show");
 }else{
-topBtn.classList.remove("show")
+topBtn.classList.remove("show");
 }
 
 })
