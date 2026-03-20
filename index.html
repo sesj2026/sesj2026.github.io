@@ -124,7 +124,7 @@ background:rgba(0,0,0,0.4);
 }
 
 header.sticky{
-height:90px;
+height:60px;
 opacity:0;
 }
 
@@ -133,7 +133,7 @@ position:fixed;
 top:0;
 left:240px;
 width:calc(100% - 240px);
-height:90px;
+height:60px;
 z-index:1500;
 background:#002c59;
 color:white;
@@ -771,7 +771,8 @@ window.addEventListener("scroll",()=>{
 if(window.scrollY>360){
 header.classList.add("sticky");
 header2.classList.add("sticky");
-}else{
+}
+if(window.scrollY<160){
 header.classList.remove("sticky");
 header2.classList.remove("sticky");
 }
