@@ -51,6 +51,10 @@ z-index:2000;
 cursor:pointer;
 }
 
+#hamburger.hide{
+top:-50px;
+}
+
 /* -----------------------
 OVERLAY
 ----------------------- */
@@ -148,6 +152,10 @@ transition:0.35s;
 
 #top-of-page2.sticky{
 opacity:1;
+}
+
+#top-of-page2.hide{
+top:-30px;
 }
 
 #top-of-page2 h1{
@@ -774,15 +782,24 @@ window.addEventListener("scroll",()=>{
 if(window.scrollY>360){
 header.classList.add("sticky");
 header2.classList.add("sticky");
+
+if(window.scrollYpre<window.scrollY){
+header2.classList.add("hide");
+topBtn.classList.add("hide");
+}else{
+header2.classList.remove("hide");
+topBtn.classList.remove("hide");
+}
+window.scrollYpre=window.scrollY;
 }else{
 header.classList.remove("sticky");
 header2.classList.remove("sticky");
 }
 
 if(window.scrollY>300){
-topBtn.classList.add("show");
+hamburger.classList.add("show");
 }else{
-topBtn.classList.remove("show");
+hamburger.classList.remove("show");
 }
 
 })
