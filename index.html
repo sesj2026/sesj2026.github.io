@@ -790,10 +790,15 @@ hamburger.classList.add("hide");
 header2.classList.remove("hide");
 hamburger.classList.remove("hide");
 }
+
 window.scrollYpre=window.scrollY;
+
 }else{
 header.classList.remove("sticky");
 header2.classList.remove("sticky");
+
+header2.classList.remove("hide");
+hamburger.classList.remove("hide");
 }
 
 if(window.scrollY>300){
