@@ -785,10 +785,10 @@ header2.classList.add("sticky");
 
 if(window.scrollYpre<window.scrollY){
 header2.classList.add("hide");
-topBtn.classList.add("hide");
+hamburger.classList.add("hide");
 }else{
 header2.classList.remove("hide");
-topBtn.classList.remove("hide");
+hamburger.classList.remove("hide");
 }
 window.scrollYpre=window.scrollY;
 }else{
@@ -797,9 +797,9 @@ header2.classList.remove("sticky");
 }
 
 if(window.scrollY>300){
-hamburger.classList.add("show");
+topBtn.classList.add("show");
 }else{
-hamburger.classList.remove("show");
+topBtn.classList.remove("show");
 }
 
 })
