@@ -200,17 +200,17 @@ nav{
 position:fixed;
 left:0;
 top:0;
-width:200px;
+width:100%;
 background:#002c59;
-padding:20px;
-height:100%;
+padding:0px 20px;
+z-index:4000;
 
 transition:0.35s;
 }
 
 #nav-links{
 display:flex;
-flex-direction:column;
+flex-direction:row;
 }
 
 #nav-links a{
@@ -228,11 +228,7 @@ background:#00448f;
 }
 
 #nav-links > a{
-border-bottom:2px solid rgba(255,255,255,0.15);
-}
 
-#nav-links > a:last-child{
-border-bottom:none;
 }
 
 .nav-group{
@@ -241,7 +237,7 @@ margin-left:15px;
 
 .nav-group a{
 display: block;
-border-bottom:2px solid rgba(255,255,255,0.15);
+
 }
 
 .nav-title{
@@ -430,6 +426,8 @@ display:block;
 nav{
 position:absolute;
 left:-240px;
+width:200px;
+padding:20px;
 background: rgba(0,44,89, 0.8);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
@@ -439,6 +437,22 @@ z-index:3000;
 nav.open{
 position:absolute;
 left:0;
+}
+
+#nav-links{
+flex-direction:column;
+}
+
+#nav-links > a{
+border-bottom:2px solid rgba(255,255,255,0.15);
+}
+
+#nav-links > a:last-child{
+border-bottom:none;
+}
+
+.nav-group a{
+border-bottom:2px solid rgba(255,255,255,0.15);
 }
 
 .content{
