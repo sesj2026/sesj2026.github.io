@@ -903,10 +903,10 @@ overlay.classList.remove("show");
 navLinks.forEach(link=>{
 link.addEventListener("click",()=>{
 
+if(link!=showmenu){
 nav.classList.remove("open");
 overlay.classList.remove("show");
 
-if(link!=showmenu){
 hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
