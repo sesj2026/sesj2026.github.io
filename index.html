@@ -887,14 +887,14 @@ let submenu_visible=false;
 showmenu.onclick=()=>{
 if(submenu_visible){
 hidemenus.forEach(menu=>{
-menu.classList.remove("hidemenu");
-});
-submenu_visible=true;
-}else{
-hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
 submenu_visible=false;
+}else{
+hidemenus.forEach(menu=>{
+menu.classList.remove("hidemenu");
+});
+submenu_visible=true;
 }
 }
 
