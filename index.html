@@ -900,7 +900,7 @@ submenu_visible=true;
 
 window.addEventListener("mousemove", (e) => {
 if(submenu_visible){
-if(e.pageY>200){
+if(e.screenY>200){
 hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
