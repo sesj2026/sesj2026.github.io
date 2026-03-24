@@ -885,11 +885,29 @@ const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
 let submenu_visible=false;
 
 showmenu.onclick=()=>{
+if(submenu_visible){
 hidemenus.forEach(menu=>{
 menu.classList.remove("hidemenu");
 });
 submenu_visible=true;
+}else{
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu_visible=false;
 }
+}
+
+window.addEventListener("mousemove", (e) => {
+if(submenu_visible){
+if(e.pageY>200){
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu_visible=false;
+}
+}
+});
 
 hamburger.onclick=()=>{
 
@@ -908,7 +926,7 @@ overlay.classList.remove("show");
 navLinks.forEach(link=>{
 link.addEventListener("click",()=>{
 
-if(link!=showmenu || submenu_visible){
+if(link!=showmenu){
 nav.classList.remove("open");
 overlay.classList.remove("show");
 
