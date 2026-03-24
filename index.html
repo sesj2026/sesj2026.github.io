@@ -883,9 +883,6 @@ link.addEventListener("click",()=>{
 nav.classList.remove("open");
 overlay.classList.remove("show");
 
-header2.classList.remove("hide");
-hamburger.classList.remove("hide");
-
 });
 });
 
@@ -894,7 +891,19 @@ topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
 const header=document.querySelector("header");
 const header2=document.getElementById("top-of-page2");
 
+let isUserScrolling = false;
+window.addEventListener("wheel", () => {
+  isUserScrolling = true;
+});
+window.addEventListener("touchmove", () => {
+  isUserScrolling = true;
+});
+window.addEventListener("keydown", () => {
+  isUserScrolling = true;
+});
+
 window.addEventListener("scroll",()=>{
+if (isUserScrolling) {
 
 if(window.scrollY>360){
 header.classList.add("sticky");
@@ -924,7 +933,9 @@ topBtn.classList.add("show");
 topBtn.classList.remove("show");
 }
 
-})
+}
+isUserScrolling = false;
+});
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
