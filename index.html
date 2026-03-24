@@ -255,14 +255,6 @@ border-left:none;
 display:none !important;
 opacity:0;
 transform:scale(0);
-
-transition: all 0.3s ease;
-}
-
-.hidemenu.open{
-display:table-cell;
-opacity:1;
-transform:scale(1);
 }
 
 .nav-group{
@@ -890,7 +882,7 @@ const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
 
 showmenu.onclick=()=>{
 hidemenus.forEach(menu=>{
-menu.classList.add("open");
+menu.classList.remove("hidemenu");
 });
 }
 
@@ -913,6 +905,10 @@ link.addEventListener("click",()=>{
 
 nav.classList.remove("open");
 overlay.classList.remove("show");
+
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
 
 });
 });
