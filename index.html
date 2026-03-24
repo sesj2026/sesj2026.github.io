@@ -917,8 +917,6 @@ header2.classList.remove("hide");
 hamburger.classList.remove("hide");
 }
 
-window.scrollYpre=window.scrollY;
-
 }else{
 header.classList.remove("sticky");
 header2.classList.remove("sticky");
@@ -927,13 +925,15 @@ header2.classList.remove("hide");
 hamburger.classList.remove("hide");
 }
 
+}
+
 if(window.scrollY>300){
 topBtn.classList.add("show");
 }else{
 topBtn.classList.remove("show");
 }
 
-}
+window.scrollYpre=window.scrollY;
 isUserScrolling = false;
 });
 
