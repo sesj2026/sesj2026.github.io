@@ -252,7 +252,7 @@ border-left:none;
 }
 
 .hidemenus{
-display:none;
+display:none !important;
 opacity:0;
 transform:scale(0);
 
@@ -885,7 +885,7 @@ const hamburger=document.getElementById("hamburger");
 const nav=document.querySelector("nav");
 const overlay=document.getElementById("overlay");
 const navLinks=document.querySelectorAll("#nav-links a");
-const showmenus=document.getElementById("showmenus");
+const showmenus=document.getElementById("show-menus");
 const hidemenus=document.querySelectorAll("#nav-links .hidemenus");
 
 showmenus.onclick=()=>{
