@@ -234,10 +234,16 @@ background:#00448f;
 
 #nav-links a::after{
 content:"";
-height:80%;
-display:table-cell;
+position:relative;
+left:10px;
+height:70%;
+display:inline-block;
 vertical-align:middle;
 border-left:1px solid gray;
+}
+
+#nav-links a:last-child::after{
+border-left:none;
 }
 
 #nav-links > a{
@@ -506,6 +512,10 @@ font-size:inherit;
 
 #nav-links > a{
 border-bottom:2px solid rgba(255,255,255,0.15);
+}
+
+#nav-links a::after{
+border-left:none;
 }
 
 #nav-links > a:last-child{
