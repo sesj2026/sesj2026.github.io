@@ -487,7 +487,7 @@ display:block;
 
 nav{
 display:table;
-position:absolute;
+position:fixed;
 left:-240px;
 width:200px;
 padding:20px;
@@ -500,7 +500,7 @@ transition:0.35s;
 }
 
 nav.open{
-position:absolute;
+position:fixed;
 left:0;
 }
 
@@ -867,9 +867,8 @@ hamburger.onclick=()=>{
 
 nav.classList.toggle("open");
 overlay.classList.toggle("show");
-window.scroll({top: 0, behavior: "smooth",});
-
-};
+//window.scroll({top: 0, behavior: "smooth",});
+//};
 
 overlay.onclick=()=>{
 nav.classList.remove("open");
