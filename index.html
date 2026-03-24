@@ -251,6 +251,20 @@ border-left:none;
 
 }
 
+.hidemenus{
+display:none;
+opacity:0;
+transform:scale(0);
+
+transition: all 0.3s ease;
+}
+
+.hidemenus.open{
+display:table-cell;
+opacity:1;
+transform:scale(1);
+}
+
 .nav-group{
 margin-left:15px;
 }
@@ -642,7 +656,9 @@ font-size:0.8rem;
 <a href="#schedule">日程・プログラム</a>
 <a href="#hs-poster">高校生ポスター</a>
 <a href="#open-lecture">市民公開講座</a>
-<a >その他</a>
+<a href="#downloads" class="hidemenus">各種ダウンロード</a>
+<a href="#kids" class="hidemenus">託児室・キッズスペース</a>
+<a id="show-menus">その他</a>
 </nav>
 
 <div class="content">
@@ -737,6 +753,11 @@ font-size:0.8rem;
     中川　草　　（東海大学・アドバイザー）</pre>
 </section>
 
+<section id="registration" class="section">
+<h2>参加登録</h2>
+<p>準備中</p>
+</section>
+
 <section id="schedule" class="section">
 <h2>日程表</h2>
 <p>準備中</p>
@@ -772,8 +793,8 @@ font-size:0.8rem;
 <p>準備中</p>
 </section>
 
-<section id="registration" class="section">
-<h2>参加登録</h2>
+<section id="downloads" class="section">
+<h2>各種ダウンロード</h2>
 <p>準備中</p>
 </section>
 
@@ -864,6 +885,12 @@ const hamburger=document.getElementById("hamburger");
 const nav=document.querySelector("nav");
 const overlay=document.getElementById("overlay");
 const navLinks=document.querySelectorAll("#nav-links a");
+const showmenus=document.getElementById("showmenus");
+const hidemenus=document.querySelectorAll("#nav-links .hidemenus");
+
+showmenus.onclick=()=>{
+hidemenus.classList.add("open");
+}
 
 hamburger.onclick=()=>{
 
