@@ -906,9 +906,11 @@ link.addEventListener("click",()=>{
 nav.classList.remove("open");
 overlay.classList.remove("show");
 
+if(link!=showmenu){
 hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
+}
 
 });
 });
