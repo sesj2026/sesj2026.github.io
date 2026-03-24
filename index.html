@@ -882,10 +882,13 @@ const navLinks=document.querySelectorAll("#nav-links a");
 const showmenu=document.getElementById("show-menu");
 const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
 
+let submenu_visible=false;
+
 showmenu.onclick=()=>{
 hidemenus.forEach(menu=>{
 menu.classList.remove("hidemenu");
 });
+submenu_visible=true;
 }
 
 hamburger.onclick=()=>{
@@ -905,13 +908,14 @@ overlay.classList.remove("show");
 navLinks.forEach(link=>{
 link.addEventListener("click",()=>{
 
-if(link!=showmenu){
+if(link!=showmenu || submenu_visible){
 nav.classList.remove("open");
 overlay.classList.remove("show");
 
 hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
+submenu_visible=false;
 }
 
 });
