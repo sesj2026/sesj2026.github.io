@@ -251,7 +251,7 @@ border-left:none;
 
 }
 
-.hidemenus{
+.hidemenu{
 display:none !important;
 opacity:0;
 transform:scale(0);
@@ -259,7 +259,7 @@ transform:scale(0);
 transition: all 0.3s ease;
 }
 
-.hidemenus.open{
+.hidemenu.open{
 display:table-cell;
 opacity:1;
 transform:scale(1);
@@ -656,9 +656,9 @@ font-size:0.8rem;
 <a href="#schedule">日程・プログラム</a>
 <a href="#hs-poster">高校生ポスター</a>
 <a href="#open-lecture">市民公開講座</a>
-<a href="#downloads" class="hidemenus">各種ダウンロード</a>
-<a href="#kids" class="hidemenus">託児室・キッズスペース</a>
-<a id="show-menus">その他</a>
+<a href="#downloads" class="hidemenu">各種ダウンロード</a>
+<a href="#kids" class="hidemenu">託児室・キッズスペース</a>
+<a id="show-menu">その他</a>
 </nav>
 
 <div class="content">
@@ -885,11 +885,13 @@ const hamburger=document.getElementById("hamburger");
 const nav=document.querySelector("nav");
 const overlay=document.getElementById("overlay");
 const navLinks=document.querySelectorAll("#nav-links a");
-const showmenus=document.getElementById("show-menus");
-const hidemenus=document.querySelectorAll("#nav-links .hidemenus");
+const showmenu=document.getElementById("show-menu");
+const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
 
-showmenus.onclick=()=>{
-hidemenus.classList.add("open");
+showmenu.onclick=()=>{
+hidemenus.forEach(menu=>{
+menu.classList.add("open");
+});
 }
 
 hamburger.onclick=()=>{
