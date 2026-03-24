@@ -903,7 +903,6 @@ window.addEventListener("keydown", () => {
 });
 
 window.addEventListener("scroll",()=>{
-if (isUserScrolling) {
 
 if(window.scrollY>360){
 header.classList.add("sticky");
@@ -911,10 +910,10 @@ header2.classList.add("sticky");
 
 if(window.scrollYpre<window.scrollY){
 header2.classList.add("hide");
-hamburger.classList.add("hide");
+if (isUserScrolling) hamburger.classList.add("hide");
 }else{
 header2.classList.remove("hide");
-hamburger.classList.remove("hide");
+if (isUserScrolling) hamburger.classList.remove("hide");
 }
 
 }else{
@@ -922,9 +921,7 @@ header.classList.remove("sticky");
 header2.classList.remove("sticky");
 
 header2.classList.remove("hide");
-hamburger.classList.remove("hide");
-}
-
+if (isUserScrolling) hamburger.classList.remove("hide");
 }
 
 if(window.scrollY>300){
