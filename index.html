@@ -320,6 +320,41 @@ box-shadow: inset 2px 2px 3px #777777, inset -3px -3px 7px #D8D8D9;
 }
 
 /* -----------------------
+dropdown
+----------------------- */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+background:#002c59;
+min-width:180px;
+box-shadow:0px 2px 6px rgba(0,0,0,0.2);
+border-radius:4px;
+top:80px;
+z-index:2000;
+}
+
+.dropdown-content a{
+display:block;
+padding:10px 15px;
+color: #fff;
+text-decoration:none;
+}
+
+.dropdown-content a:hover{
+background:#00448f; /* ← ホバーで少し明るい紺 */
+}
+
+.dropdown:hover .dropdown-content
+{
+display:block;
+}
+
+/* -----------------------
 nav-language
 ----------------------- */
 
@@ -639,7 +674,13 @@ font-size:0.8rem;
 <a href="#open-lecture">市民公開講座</a>
 <a href="#downloads" class="hidemenu">各種ダウンロード</a>
 <a href="#kids" class="hidemenu">託児室・キッズスペース</a>
+<div class="dropdown">
 <a id="show-menu">その他</a>
+<div class="dropdown-content">
+<a href="#downloads">各種ダウンロード</a>
+<a href="#kids">託児室・キッズスペース</a>
+</div>
+</div>
 </nav>
 
 <div class="content">
