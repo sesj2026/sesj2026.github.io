@@ -241,7 +241,7 @@ transition: all 0.3s ease;
 background:#00448f;
 }
 
-#nav-links a::after{
+#nav-links > a::after{
 content:"";
 position:relative;
 left:11px;
@@ -250,7 +250,7 @@ display:inline-block;
 vertical-align:middle;
 }
 
-#nav-links a:last-child::after{
+#nav-links > a:last-child::after{
 border-left:none;
 }
 
@@ -325,6 +325,8 @@ dropdown
 
 .dropdown{
 position:relative;
+vertical-align:middle;
+display:table-cell;
 }
 
 .dropdown-content{
@@ -346,12 +348,11 @@ text-decoration:none;
 }
 
 .dropdown-content a:hover{
-background:#00448f; /* ← ホバーで少し明るい紺 */
+background:#00448f;
 }
 
-.dropdown:hover .dropdown-content
-{
-display:block;
+.dropdown:hover .dropdown-content{
+display:grid;
 }
 
 /* -----------------------
