@@ -324,9 +324,9 @@ dropdown
 ----------------------- */
 
 .dropdown{
+display:inline-tabl;
 position:relative;
 vertical-align:middle;
-display:inline-table;
 height:100%;
 }
 
@@ -352,10 +352,6 @@ text-decoration:none;
 
 .dropdown-content a:hover{
 background:#00448f;
-}
-
-.dropdown:hover .dropdown-content{
-display:grid;
 }
 
 /* -----------------------
@@ -566,12 +562,16 @@ font-size:20px;
 border-bottom:none;
 }
 
-#nav-links a::after{
+#nav-links > a::after{
 border-left:1px solid gray;
 }
 
 .nav-group a{
 border-bottom:2px solid rgba(255,255,255,0.15);
+}
+
+.dropdown:hover .dropdown-content{
+display:grid;
 }
 
 #nav-language{
