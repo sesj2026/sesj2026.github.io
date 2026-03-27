@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日程-プログラム | 日本進化学会第28回大会</title>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:"Helvetica","Yu Gothic",sans-serif;
+background:#f4f6f9;
+line-height:1.7;
+color:#222;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+.layout{
+display:flex;
+}
+
+.content{
+flex:1;
+}
+
+/* -----------------------
+HAMBURGER
+----------------------- */
+
+#hamburger{
+display:block;
+position:fixed;
+top:15px;
+right:15px;
+font-size:26px;
+color:white;
+background:#002c59;
+padding:6px 12px;
+border-radius:5px;
+z-index:2000;
+cursor:pointer;
+
+transition:0.35s;
+}
+
+#hamburger.hide{
+top:-57px;
+opacity:0;
+}
+
+/* -----------------------
+OVERLAY
+----------------------- */
+
+#overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.45);
+opacity:0;
+pointer-events:none;
+transition:0.3s;
+z-index:1400;
+height:130%;
+}
+
+#overlay.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* -----------------------
+SCROLL TOP BUTTON
+----------------------- */
+
+#topBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:white;
+border:1px solid #141414;
+border-radius:8px;
+cursor:pointer;
+padding: 4px 8px;
+font-family: sans-serif;
+z-index:100;
+user-select:none;
+
+opacity:0;
+pointer-events:none;
+transition:0.35s;
+}
+
+#topBtn.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* -----------------------
+HEADER
+----------------------- */
+
+header{
+background:url('IMG_2540.JPG') center 30% / cover no-repeat;
+background-attachment:scroll;
+height:500px;
+color:white;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+position:relative;
+scroll-margin-top:0px;
+
+transition:0.35s;
+}
+
+header::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.4);
+}
+
+header.sticky{
+opacity:0;
+}
+
+#top-of-page2{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:30px;
+z-index:1300;
+background:#f4f6f9;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+border-bottom:1px solid #002c59;
+box-shadow:0px 15px 15px -8px rgba(255, 255, 255, 1);
+
+opacity:0;
+transition:0.35s;
+}
+
+#top-of-page2.sticky{
+opacity:1;
+}
+
+#top-of-page2.hide{
+top:-31px;
+opacity:0;
+}
+
+#top-of-page2 h1{
+font-size:1.4rem;
+margin:0;
+}
+
+#top-of-page2 h2{
+font-size:0.8rem;
+margin:0;
+}
+
+header *{
+z-index:1;
+}
+
+header h1{
+font-size:2.6rem;
+margin:0;
+text-shadow:0 3px 6px rgba(0,0,0,1);
+}
+
+header p{
+font-size:1.2rem;
+margin-top:10px;
+}
+
+header h2{
+font-size:1.6rem;
+margin:0;
+text-shadow:0 3px 6px rgba(0,0,0,1);
+}
+
+/* -----------------------
+LEFT MENU
+----------------------- */
+
+nav{
+position:fixed;
+top:0;
+display:table;
+left:-240px;
+width:200px;
+padding:20px;
+background: rgba(0,44,89, 0.8);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+text-align:left;
+z-index:3000;
+}
+
+nav.open{
+left:0;
+
+transition:0.35s;
+}
+
+#nav-links{
+display:flex;
+flex-direction:column;
+font-size:inherit;
+}
+
+#nav-links a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+padding:5px 10px;
+border-radius:4px;
+display:table-cell;
+vertical-align:middle;
+text-wrap-mode:nowrap;
+cursor:pointer;
+
+transition: all 0.3s ease;
+}
+
+#nav-links a:hover{
+background:#00448f;
+}
+
+#nav-links > a::after{
+content:"";
+position:relative;
+left:11px;
+height:60%;
+display:inline-block;
+vertical-align:middle;
+}
+
+#nav-links > a:last-child::after{
+border-left:none;
+}
+
+#nav-links > a{
+border-bottom:2px solid rgba(255,255,255,0.15);
+}
+
+#nav-links > a:last-child{
+border-bottom:none;
+}
+
+.hidemenu{
+border:0px !important;
+margin:0px !important;
+padding:0px !important;
+opacity:0;
+font-size:0px;
+}
+
+.nav-group{
+margin-left:15px;
+}
+
+.nav-group a{
+display: block;
+
+}
+
+.nav-title{
+color:white;
+font-weight:bold;
+padding:5px 10px;
+margin-top:10px;
+}
+
+#nav-language{
+color:white;
+font-weight:bold;
+padding:5px 10px;
+display:flex;
+gap:10px;
+font-size: 14px;
+
+margin-bottom:10px;
+flex-flow:row;
+display:flex;
+}
+
+#nav-language a{
+border:1px solid white;
+padding:0px 10px;
+color:gray;
+text-align:center;
+
+transition: 0.3s;
+}
+
+#nav-language a:hover{
+background:white;
+color:black;
+}
+    
+#nav-language a.active{
+background:white;
+color:black;
+box-shadow: inset 2px 2px 3px #777777, inset -3px -3px 7px #D8D8D9;
+}
+
+/* -----------------------
+dropdown
+----------------------- */
+
+.dropdown{
+display:inline-table;
+position:relative;
+vertical-align:middle;
+height:100%;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+background:#002c59;
+min-width:180px;
+box-shadow:0px 2px 6px rgba(0,0,0,0.2);
+border-radius:4px;
+top:80px;
+right:0px;
+text-align:left;
+z-index:2000;
+}
+
+.dropdown-content a{
+display:block;
+padding:10px 15px;
+color: #fff;
+text-decoration:none;
+}
+
+.dropdown-content a:hover{
+background:#00448f;
+}
+
+/* -----------------------
+nav-language
+----------------------- */
+
+#nav-language2{
+position:absolute;
+top:5px;
+right:30px;
+color:white;
+font-weight:bold;
+padding:5px 10px;
+display:none;
+flex-flow:column;
+gap:10px;
+font-size: 14px;
+z-index:4000;
+}
+
+#nav-language2 a{
+border:1px solid white;
+padding:0px 10px;
+color:gray;
+text-align:center;
+text-decoration:none;
+border-radius: 4px;
+
+transition: 0.3s;
+}
+
+#nav-language2 a:hover{
+background:white;
+color:black;
+}
+    
+#nav-language2 a.active{
+background:white;
+color:black;
+box-shadow: inset 2px 2px 3px #777777, inset -3px -3px 7px #D8D8D9;
+}
+
+/* -----------------------
+SPONSOR
+----------------------- */
+
+.sponsor-grid{
+display:flex;
+flex-wrap: wrap;
+flex-direction:row;
+gap:10px;
+}
+
+.sponsor-grid img{
+width:100%;
+min-width:170px;
+min-height:50px;
+background:white;
+padding:6px;
+border-radius:4px;
+box-shadow:0 2px 4px rgba(0,0,0,0.15);
+transition:0.2s;
+}
+
+.sponsor-grid img:hover{
+transform:scale(1.03);
+}
+
+.sponsor-grid a{
+cursor:pointer;
+}
+
+/* -----------------------
+CONTENT
+----------------------- */
+
+.content{
+margin-top:0px;
+transition:0.35s;
+}
+
+main{
+margin:0px 20px;
+}
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:25px 20px;
+scroll-margin-top:30px;
+
+opacity:0;
+transform:translateY(30px);
+transition:0.6s;
+}
+
+.section.show{
+opacity:1;
+transform:none;
+}
+
+.section h2{
+border-left:6px solid #003366;
+border-top:1px solid #003366;
+padding-left:10px;
+color:#003366;
+}
+
+pre{
+white-space:pre-wrap;
+font-family:inherit;
+}
+
+.section p{
+text-align:justify;
+}
+
+.section a > img{
+cursor:pointer;
+}
+
+.member h3{
+margin:30px 0px 15px 0px;
+border-bottom:1px solid black;
+}
+
+.member h3:first-child{
+margin:10px 0px 15px 0px;
+border-bottom:1px solid black;
+}
+    
+.access h3{
+border-bottom:1px solid black;
+margin:40px 0px 15px 0px;
+}
+
+.access-table{
+border:1px solid gray;
+border-collapse:collapse;
+width:100%;
+}
+
+.access-table th{
+border:1px solid gray;
+background:#1f487c;
+color:white;
+text-align:center;
+padding:3px;
+width:30%;
+}
+
+.access-table td{
+border:1px solid gray;
+padding:10px;
+}
+
+.access .btn{
+cursor:pointer;
+padding:20px;
+border-radius:6px;
+background:#1f487c;
+color:white;
+display:inline-flex;
+margin:15px 15px 0px 0px;
+text-decoration:none;
+}
+
+/* -----------------------
+FOOTER
+----------------------- */
+
+footer{
+background:#002c59;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+/* -----------------------
+MOBILE
+----------------------- */
+
+@media (min-width:1125px){
+
+#hamburger{
+display:none;
+}
+
+nav{
+display:ruby;
+left:0;
+width:100%;
+height:80px;
+padding:0px;
+background:#002c59;
+text-align:center;
+}
+
+#nav-links{
+display:table;
+flex-direction:row;
+height:100%;
+font-size:20px;
+}
+
+#nav-links > a{
+border-bottom:none;
+}
+
+#nav-links > a::after{
+border-left:1px solid gray;
+}
+
+.nav-group a{
+border-bottom:2px solid rgba(255,255,255,0.15);
+}
+
+.hideitem{
+display:none !important;
+}
+
+.dropdown:hover .dropdown-content{
+display:grid;
+transition:0.35s;
+}
+
+#nav-language{
+margin-bottom:0px;
+display:none;
+}
+
+#nav-language2{
+display:flex;
+}
+
+.content{
+margin-top:80px;
+}
+
+header{
+background-attachment:fixed;
+scroll-margin-top:80px;
+}
+
+.section{
+scroll-margin-top:110px;
+}
+
+}
+
+@media (min-width:600px) and (max-width:760px){
+
+header h1{
+font-size:2.3rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+header h2{
+font-size:1.3rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+    
+}
+
+@media (min-width:500px) and (max-width:599px){
+
+header h1{
+font-size:2.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+header h2{
+font-size:1.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+    
+}
+
+@media (max-width:499px){
+
+header h1{
+font-size:1.6rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+header h2{
+font-size:0.8rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+footer{
+font-size:0.8rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="hamburger">☰</div>
+<div id="overlay"></div>
+<div id="topBtn">↑ TO TOP</div>
+
+
+<div id="nav-language2">
+<a href="/" class="active">Japanese</a>
+<a href="/en-index.html">English</a>
+</div>
+
+<div class="layout">
+
+<nav>
+
+<div id="nav-links">
+
+<div id="nav-language">
+<a href="/" class="active">Japanese</a>
+<a href="/en-index.html">English</a>
+</div>
+
+<a href="/">ホーム</a>
+<a href="/#news">お知らせ</a>
+<a href="/#registration">参加登録</a>
+<a href="/program.html">日程・プログラム</a>
+<a href="/#hs-poster">高校生ポスター</a>
+<a href="/#open-lecture">市民公開講座</a>
+<a href="/#downloads" class="hidemenu hideitem">各種ダウンロード</a>
+<a href="/#kids" class="hidemenu hideitem">託児室・キッズスペース</a>
+<div class="dropdown">
+<a id="show-menu">その他</a>
+<div class="dropdown-content">
+<a href="/#downloads">各種ダウンロード</a>
+<a href="/#kids">託児室・キッズスペース</a>
+</div>
+</div>
+</nav>
+
+<div class="content">
+
+<main>
+
+<section id="schedule" class="section">
+<h2>日程表</h2>
+<p>準備中</p>
+</section>
+
+<section id="plenary" class="section">
+<h2>プレナリー</h2>
+<p>準備中</p>
+</section>
+
+<section id="symposium" class="section">
+<h2>シンポジウム</h2>
+<p>準備中</p>
+</section>
+
+<section id="workshop" class="section">
+<h2>ワークショップ</h2>
+<p>準備中</p>
+</section>
+
+<section id="hs-poster" class="section">
+<h2>高校生ポスター</h2>
+<p>準備中</p>
+</section>
+
+<section id="summer-school" class="section">
+<h2>夏の学校</h2>
+<p>準備中</p>
+</section>
+
+<section id="open-lecture" class="section">
+<h2>公開講座</h2>
+<p>準備中</p>
+</section>
+
+</main>
+
+<footer>
+
+<p>
+【問い合わせ先】日本進化学会第28回大会事務局<br>
+E-mail：sesj2026@agr.nagoya-u.ac.jp
+</p>
+
+<p>
+Copyright © 2026 日本進化学会第28回大会 All Rights Reserved.
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script>
+
+/* -----------------------
+MENU OPEN
+----------------------- */
+
+const hamburger=document.getElementById("hamburger");
+const nav=document.querySelector("nav");
+const overlay=document.getElementById("overlay");
+const navLinks=document.querySelectorAll("#nav-links a");
+const showmenu=document.getElementById("show-menu");
+const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
+
+let submenu_visible=false;
+
+showmenu.onclick=()=>{
+if(submenu_visible){
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu_visible=false;
+}else{
+hidemenus.forEach(menu=>{
+menu.classList.remove("hidemenu");
+});
+submenu_visible=true;
+}
+}
+
+window.addEventListener("mousemove", (e) => {
+if(submenu_visible){
+if(e.clientY>200 && ! overlay.classList.contains('show')){
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu_visible=false;
+}
+}
+});
+
+hamburger.onclick=()=>{
+
+nav.classList.toggle("open");
+overlay.classList.toggle("show");
+//window.scroll({top: 0, behavior: "smooth",});
+};
+
+overlay.onclick=()=>{
+nav.classList.remove("open");
+overlay.classList.remove("show");
+};
+
+/* メニュークリックで閉じる */
+
+navLinks.forEach(link=>{
+link.addEventListener("click",()=>{
+
+if(link!=showmenu){
+nav.classList.remove("open");
+overlay.classList.remove("show");
+
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu_visible=false;
+}
+
+});
+});
+
+topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+
+const header=document.querySelector("header");
+const header2=document.getElementById("top-of-page2");
+
+let isUserScrolling = false;
+window.addEventListener("wheel", () => {
+  isUserScrolling = true;
+});
+window.addEventListener("touchmove", () => {
+  isUserScrolling = true;
+});
+window.addEventListener("keydown", () => {
+  isUserScrolling = true;
+});
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>360){
+header.classList.add("sticky");
+header2.classList.add("sticky");
+
+if(window.scrollYpre<window.scrollY){
+header2.classList.add("hide");
+if (isUserScrolling) hamburger.classList.add("hide");
+}else{
+header2.classList.remove("hide");
+hamburger.classList.remove("hide");
+}
+
+}else{
+header.classList.remove("sticky");
+header2.classList.remove("sticky");
+
+header2.classList.remove("hide");
+hamburger.classList.remove("hide");
+}
+
+if(window.scrollY>300){
+topBtn.classList.add("show");
+}else{
+topBtn.classList.remove("show");
+}
+
+window.scrollYpre=window.scrollY;
+isUserScrolling = false;
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".section").forEach(sec=>{
+observer.observe(sec);
+});
+
+</script>
+
+</body>
+</html>
