@@ -325,9 +325,8 @@ dropdown
 ----------------------- */
 
 .dropdown{
-display:inline-table;
+display:table;
 position:relative;
-vertical-align:middle;
 height:100%;
 }
 
@@ -361,7 +360,7 @@ nav-language
 
 #nav-language2{
 position:absolute;
-top:5px;
+top:100px;
 right:30px;
 color:white;
 font-weight:bold;
@@ -370,7 +369,7 @@ display:none;
 flex-flow:column;
 gap:10px;
 font-size: 14px;
-z-index:4000;
+z-index:2500;
 }
 
 #nav-language2 a{
@@ -555,14 +554,15 @@ margin-top:40px;
 MOBILE
 ----------------------- */
 
-@media (min-width:1125px){
+@media (min-width:1000px){
 
 #hamburger{
 display:none;
 }
 
 nav{
-display:ruby;
+display:flex;
+justify-content: center;
 left:0;
 width:100%;
 height:80px;
@@ -597,6 +597,14 @@ display:none !important;
 .dropdown:hover .dropdown-content{
 display:grid;
 transition:0.35s;
+}
+
+.dropdown > a:first-child::before{
+content:"";
+position:relative;
+height:60%;
+display:inline-block;
+vertical-align: middle;
 }
 
 #nav-language{
