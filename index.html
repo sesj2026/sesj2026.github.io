@@ -325,14 +325,9 @@ dropdown
 ----------------------- */
 
 .dropdown{
-display:flex;
-align-items:center;
+display:table;
 position:relative;
 height:100%;
-}
-
-#show-menu{
-height:50%;
 }
 
 .dropdown-content{
@@ -607,10 +602,9 @@ transition:0.35s;
 .dropdown > a:first-child::before{
 content:"";
 position:relative;
-left:11px;
 height:60%;
 display:inline-block;
-vertical-align:middle;
+vertical-align: middle;
 }
 
 #nav-language{
