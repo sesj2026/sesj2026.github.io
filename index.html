@@ -566,7 +566,8 @@ display:none;
 }
 
 nav{
-display:ruby;
+display:flex;
+justify-content: center;
 left:0;
 width:100%;
 height:80px;
@@ -601,6 +602,15 @@ display:none !important;
 .dropdown:hover .dropdown-content{
 display:grid;
 transition:0.35s;
+}
+
+.dropdown > a::first-child{
+content:"";
+position:relative;
+left:11px;
+height:60%;
+display:inline-block;
+vertical-align:middle;
 }
 
 #nav-language{
