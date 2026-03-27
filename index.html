@@ -532,6 +532,25 @@ padding:20px;
 margin-top:40px;
 }
 
+.org-table{
+  display:grid;
+  grid-template-columns:120px auto;
+  align-items:center;
+  gap:15px 20px;
+  justify-content:center;
+}
+
+.org-label{
+  font-size:36px;
+  text-align:right;
+}
+
+.org-logo img{
+  max-height:60px;
+  background:white;
+  padding:5px;
+}
+
 /* -----------------------
 MOBILE
 ----------------------- */
@@ -834,9 +853,30 @@ style="border:0;">
 
 <footer>
 
-<p style="display:flex;gap:20px;font-size:48px;align-items:center;justify-content:center;"><span style="text-wrap-mode:nowrap;">主催</span><a href="http://sesj.kenkyuukai.jp" target="_blank"><img src="sesj_logo.jpg" alt="日本進化学会" style="display:block;max-height:60px;object-fit:contain;""></a></p>
-<p style="display:flex;gap:20px;font-size:48px;align-items:center;justify-content:center;"><span style="text-wrap-mode:nowrap;">共催</span><a href="https://www.agr.nagoya-u.ac.jp" target="_blank"><img src="https://www.agr.nagoya-u.ac.jp/assets/images/common/logo.png" alt="名古屋大学大学院生命農学研究科" style="display:block;max-height:60px;object-fit:contain;background-color:white;padding:5px;"></a><br>
-<a href="https://www.sci.nagoya-u.ac.jp" target="_blank"><img src="www.sci.nagoya-u_logo.png" alt="名古屋大学大学院理学研究科" style="display:block;max-height:60px;object-fit:contain;background-color:white;vertical-align:middle;padding:5px;"></a></p>
+<div class="org-table">
+
+  <div class="org-label">主催</div>
+  <div class="org-logo">
+    <a href="http://sesj.kenkyuukai.jp" target="_blank">
+      <img src="sesj_logo.jpg" alt="日本進化学会">
+    </a>
+  </div>
+
+  <div class="org-label">共催</div>
+  <div class="org-logo">
+    <a href="https://www.agr.nagoya-u.ac.jp" target="_blank">
+      <img src="https://www.agr.nagoya-u.ac.jp/assets/images/common/logo.png" alt="名古屋大学大学院生命農学研究科">
+    </a>
+  </div>
+
+  <div class="org-label"></div>
+  <div class="org-logo">
+    <a href="https://www.sci.nagoya-u.ac.jp" target="_blank">
+      <img src="www.sci.nagoya-u_logo.png" alt="名古屋大学大学院理学研究科">
+    </a>
+  </div>
+
+</div>
 
 <p>
 【問い合わせ先】日本進化学会第28回大会事務局<br>
