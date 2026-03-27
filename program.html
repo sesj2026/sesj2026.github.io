@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本進化学会第28回大会</title>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:"Helvetica","Yu Gothic",sans-serif;
+background:#f4f6f9;
+line-height:1.7;
+color:#222;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+.layout{
+display:flex;
+}
+
+.content{
+flex:1;
+}
+
+/* -----------------------
+HAMBURGER
+----------------------- */
+
+#hamburger{
+display:block;
+position:fixed;
+top:15px;
+right:15px;
+font-size:26px;
+color:white;
+background:#002c59;
+padding:6px 12px;
+border-radius:5px;
+z-index:2000;
+cursor:pointer;
+
+transition:0.35s;
+}
+
+#hamburger.hide{
+top:-57px;
+opacity:0;
+}
+
+/* -----------------------
+OVERLAY
+----------------------- */
+
+#overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.45);
+opacity:0;
+pointer-events:none;
+transition:0.3s;
+z-index:1400;
+height:130%;
+}
+
+#overlay.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* -----------------------
+SCROLL TOP BUTTON
+----------------------- */
+
+#topBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:white;
+border:1px solid #141414;
+border-radius:8px;
+cursor:pointer;
+padding: 4px 8px;
+font-family: sans-serif;
+z-index:100;
+user-select:none;
+
+opacity:0;
+pointer-events:none;
+transition:0.35s;
+}
+
+#topBtn.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* -----------------------
+HEADER
+----------------------- */
+
+header{
+background:url('IMG_2540.JPG') center 30% / cover no-repeat;
+background-attachment:scroll;
+height:500px;
+color:white;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+position:relative;
+scroll-margin-top:0px;
+
+transition:0.35s;
+}
+
+header::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.4);
+}
+
+header.sticky{
+opacity:0;
+}
+
+#top-of-page2{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:30px;
+z-index:1300;
+background:#f4f6f9;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+border-bottom:1px solid #002c59;
+box-shadow:0px 15px 15px -8px rgba(255, 255, 255, 1);
+
+opacity:0;
+transition:0.35s;
+}
+
+#top-of-page2.sticky{
+opacity:1;
+}
+
+#top-of-page2.hide{
+top:-31px;
+opacity:0;
+}
+
+#top-of-page2 h1{
+font-size:1.4rem;
+margin:0;
+}
+
+#top-of-page2 h2{
+font-size:0.8rem;
+margin:0;
+}
+
+header *{
+z-index:1;
+}
+
+header h1{
+font-size:2.6rem;
+margin:0;
+text-shadow:0 3px 6px rgba(0,0,0,1);
+}
+
+header p{
+font-size:1.2rem;
+margin-top:10px;
+}
+
+header h2{
+font-size:1.6rem;
+margin:0;
+text-shadow:0 3px 6px rgba(0,0,0,1);
+}
+
+/* -----------------------
+LEFT MENU
+----------------------- */
+
+nav{
+position:fixed;
+top:0;
+display:table;
+left:-240px;
+width:200px;
+padding:20px;
+background: rgba(0,44,89, 0.8);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+text-align:left;
+z-index:3000;
+}
+
+nav.open{
+left:0;
+
+transition:0.35s;
+}
+
+#nav-links{
+display:flex;
+flex-direction:column;
+font-size:inherit;
+}
+
+#nav-links a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+padding:5px 10px;
+border-radius:4px;
+display:table-cell;
+vertical-align:middle;
+text-wrap-mode:nowrap;
+cursor:pointer;
+
+transition: all 0.3s ease;
+}
+
+#nav-links a:hover{
+background:#00448f;
+}
+
+#nav-links > a::after{
+content:"";
+position:relative;
+left:11px;
+height:60%;
+display:inline-block;
+vertical-align:middle;
+}
+
+#nav-links > a:last-child::after{
+border-left:none;
+}
+
+#nav-links > a{
+border-bottom:2px solid rgba(255,255,255,0.15);
+}
+
+#nav-links > a:last-child{
+border-bottom:none;
+}
+
+.hidemenu{
+border:0px !important;
+margin:0px !important;
+padding:0px !important;
+opacity:0;
+font-size:0px;
+}
+
+.nav-group{
+margin-left:15px;
+}
+
+.nav-group a{
+display: block;
+
+}
+
+.nav-title{
+color:white;
+font-weight:bold;
+padding:5px 10px;
+margin-top:10px;
+}
+
+#nav-language{
+color:white;
+font-weight:bold;
+padding:5px 10px;
+display:flex;
+gap:10px;
+font-size: 14px;
+
+margin-bottom:10px;
+flex-flow:row;
+display:flex;
+}
+
+#nav-language a{
+border:1px solid white;
+padding:0px 10px;
+color:gray;
+text-align:center;
+
+transition: 0.3s;
+}
+
+#nav-language a:hover{
+background:white;
+color:black;
+}
+    
+#nav-language a.active{
+background:white;
+color:black;
+box-shadow: inset 2px 2px 3px #777777, inset -3px -3px 7px #D8D8D9;
+}
+
+/* -----------------------
+dropdown
+----------------------- */
+
+.dropdown{
+display:inline-table;
+position:relative;
+vertical-align:middle;
+height:100%;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+background:#002c59;
+min-width:180px;
+box-shadow:0px 2px 6px rgba(0,0,0,0.2);
+border-radius:4px;
+top:80px;
+right:0px;
+text-align:left;
+z-index:2000;
+}
+
+.dropdown-content a{
+display:block;
+padding:10px 15px;
+color: #fff;
+text-decoration:none;
+}
+
+.dropdown-content a:hover{
+background:#00448f;
+}
+
+/* -----------------------
+nav-language
+----------------------- */
+
+#nav-language2{
+position:absolute;
+top:100px;
+right:30px;
+color:white;
+font-weight:bold;
+padding:5px 10px;
+display:none;
+flex-flow:column;
+gap:10px;
+font-size: 14px;
+z-index:2500;
+}
+
+#nav-language2 a{
+border:1px solid white;
+padding:0px 10px;
+color:gray;
+text-align:center;
+text-decoration:none;
+border-radius: 4px;
+
+transition: 0.3s;
+}
+
+#nav-language2 a:hover{
+background:white;
+color:black;
+}
+    
+#nav-language2 a.active{
+background:white;
+color:black;
+box-shadow: inset 2px 2px 3px #777777, inset -3px -3px 7px #D8D8D9;
+}
+
+/* -----------------------
+SPONSOR
+----------------------- */
+
+.sponsor-grid{
+display:flex;
+flex-wrap: wrap;
+flex-direction:row;
+gap:10px;
+}
+
+.sponsor-grid img{
+width:100%;
+min-width:170px;
+min-height:50px;
+background:white;
+padding:6px;
+border-radius:4px;
+box-shadow:0 2px 4px rgba(0,0,0,0.15);
+transition:0.2s;
+}
+
+.sponsor-grid img:hover{
+transform:scale(1.03);
+}
+
+.sponsor-grid a{
+cursor:pointer;
+}
+
+/* -----------------------
+CONTENT
+----------------------- */
+
+.content{
+margin-top:0px;
+transition:0.35s;
+}
+
+main{
+margin:0px 20px;
+}
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:25px 20px;
+scroll-margin-top:30px;
+
+opacity:0;
+transform:translateY(30px);
+transition:0.6s;
+}
+
+.section.show{
+opacity:1;
+transform:none;
+}
+
+.section h2{
+border-left:6px solid #003366;
+border-top:1px solid #003366;
+padding-left:10px;
+color:#003366;
+}
+
+pre{
+white-space:pre-wrap;
+font-family:inherit;
+}
+
+.section p{
+text-align:justify;
+}
+
+.section a > img{
+cursor:pointer;
+}
+
+.member h3{
+margin:30px 0px 15px 0px;
+border-bottom:1px solid black;
+}
+
+.member h3:first-child{
+margin:10px 0px 15px 0px;
+border-bottom:1px solid black;
+}
+    
+.access h3{
+border-bottom:1px solid black;
+margin:40px 0px 15px 0px;
+}
+
+.access-table{
+border:1px solid gray;
+border-collapse:collapse;
+width:100%;
+}
+
+.access-table th{
+border:1px solid gray;
+background:#1f487c;
+color:white;
+text-align:center;
+padding:3px;
+width:30%;
+}
+
+.access-table td{
+border:1px solid gray;
+padding:10px;
+}
+
+.access .btn{
+cursor:pointer;
+padding:20px;
+border-radius:6px;
+background:#1f487c;
+color:white;
+display:inline-flex;
+margin:15px 15px 0px 0px;
+text-decoration:none;
+}
+
+/* -----------------------
+FOOTER
+----------------------- */
+
+footer{
+background:#002c59;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+/* -----------------------
+MOBILE
+----------------------- */
+
+@media (min-width:1000px){
+
+#hamburger{
+display:none;
+}
+
+nav{
+display:ruby;
+left:0;
+width:100%;
+height:80px;
+padding:0px;
+background:#002c59;
+text-align:center;
+}
+
+#nav-links{
+display:table;
+flex-direction:row;
+height:100%;
+font-size:20px;
+}
+
+#nav-links > a{
+border-bottom:none;
+}
+
+#nav-links > a::after{
+border-left:1px solid gray;
+}
+
+.nav-group a{
+border-bottom:2px solid rgba(255,255,255,0.15);
+}
+
+.hideitem{
+display:none !important;
+}
+
+.dropdown:hover .dropdown-content{
+display:grid;
+transition:0.35s;
+}
+
+#nav-language{
+margin-bottom:0px;
+display:none;
+}
+
+#nav-language2{
+display:flex;
+}
+
+.content{
+margin-top:80px;
+}
+
+header{
+background-attachment:fixed;
+scroll-margin-top:80px;
+}
+
+.section{
+scroll-margin-top:110px;
+}
+
+}
+
+@media (min-width:600px) and (max-width:760px){
+
+header h1{
+font-size:2.3rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+header h2{
+font-size:1.3rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+    
+}
+
+@media (min-width:500px) and (max-width:599px){
+
+header h1{
+font-size:2.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+header h2{
+font-size:1.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+    
+}
+
+@media (max-width:499px){
+
+header h1{
+font-size:1.6rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+header h2{
+font-size:0.8rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+footer{
+font-size:0.8rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="hamburger">☰</div>
+<div id="overlay"></div>
+<div id="topBtn">↑ TO TOP</div>
+
+
+<div id="nav-language2">
+<a href="/" class="active">Japanese</a>
+<a href="/en-index.html">English</a>
+</div>
+
+<div class="layout">
+
+<nav>
+
+<div id="nav-links">
+
+<div id="nav-language">
+<a href="/" class="active">Japanese</a>
+<a href="/en-index.html">English</a>
+</div>
+
+<a href="#top-of-page">ホーム</a>
+<a href="#news">お知らせ</a>
+<a href="#registration">参加登録</a>
+<a href="#schedule">日程・プログラム</a>
+<a href="#hs-poster">高校生ポスター</a>
+<a href="#open-lecture">市民公開講座</a>
+<a href="#downloads" class="hidemenu hideitem">各種ダウンロード</a>
+<a href="#kids" class="hidemenu hideitem">託児室・キッズスペース</a>
+<div class="dropdown">
+<a id="show-menu">その他</a>
+<div class="dropdown-content">
+<a href="#downloads">各種ダウンロード</a>
+<a href="#kids">託児室・キッズスペース</a>
+</div>
+</div>
+</nav>
+
+<div class="content">
+
+<header id="top-of-page">
+
+<h1>日本進化学会第28回大会</h1>
+<h2>進化から学ぶ生命科学 ～ 分子・ゲノムから集団・生態系まで</h2>
+
+<h1 style="margin-top:40px;">2026年8月19日(水)～22日(土)</h1>
+<h2 style="white-space:pre;">会　場　名古屋大学 全学教育棟，キタンホール</h2>
+<h2 style="white-space:pre;">大会長　隅山 健太 （名古屋大学）　　　　　　</h2>
+
+</header>
+
+<div id="top-of-page2">
+
+<h1>日本進化学会第28回大会</h1>
+
+</div>
+
+<main>
+
+<section id="news" class="section">
+<h2>お知らせ</h2>
+<p>2026年〇月〇〇日　〇〇〇〇〇</p>
+</section>
+
+<section id="greeting" class="section">
+<h2>大会長挨拶</h2>
+<pre>　第28回日本進化学会年次大会を、2026年8月19日より4日間、名古屋大学にて開催いたします。本大会は、「進化から学ぶ生命科学 ～ 分子・ゲノムから集団・生態系まで」をテーマに掲げ、進化生物学の多層的な広がりと、その学際的な可能性を改めて見つめ直す場として企画いたしました。
+　進化学は、生物の多様性を理解するための基盤であると同時に、分子レベルのメカニズムから個体・集団・生態系に至るまで、生命科学のあらゆる階層を貫く統合原理でもあります。本大会では、招待講演やシンポジウム、一般講演・ポスター発表に加え、高校生によるポスター発表や市民公開講座、夏の学校など、多様な企画を通じて、専門分野や世代を超えた活発な議論と交流の場を創出します。研究者のみならず、学生、教育関係者、そして一般の皆様にとっても、進化学の魅力と最前線に触れる貴重な機会となることを期待しております。会場内には託児所が設けられ、お子様連れの方も安心して参加いただけます。
+　開催地である名古屋市は、日本のほぼ中央に位置する交通至便な都市であり、学術・産業の集積地としても知られています。この地での進化学会大会開催は初の試みであり、新たな分野横断的連携や共同研究の芽を育む絶好の機会となるでしょう。実行委員一同、多数の皆様のご参加を心よりお待ち申し上げます。</pre>
+<p style="text-align:right; margin:0px;">第28回日本進化学会大会長　隅山 健太（名古屋大学）</p>
+</section>
+
+<section id="overview" class="section">
+<h2>開催概要</h2>
+<p>大会名　　　日本進化学会第28回大会</p>
+<p>大会長　　　隅山 健太（名古屋大学）</p>
+<p>大会テーマ　進化から学ぶ生命科学 ～ 分子・ゲノムから集団・生態系まで</p>
+<p>会期　　　　2026年8月19日～21日（本大会）</p>
+<p>　　　　　　2026年8月22日（夏の学校・市民公開講座）</p>
+<p>会場　　　　名古屋大学　全学教育棟, キタンホール</p>
+<p style="display:flex;">主催　　　　<a href="http://sesj.kenkyuukai.jp" target="_blank"><img src="sesj_logo.jpg" alt="日本進化学会" style="height:40px;object-fit:contain;""></a></p>
+<p style="display:flex;">共催　　　　<a href="https://www.agr.nagoya-u.ac.jp" target="_blank"><img src="https://www.agr.nagoya-u.ac.jp/assets/images/common/logo.png" alt="名古屋大学大学院生命農学研究科" style="height:40px;object-fit:contain;""></a></p>
+<p>　　　　　　<a href="https://www.sci.nagoya-u.ac.jp" target="_blank"><img src="www.sci.nagoya-u_logo.png" alt="名古屋大学大学院理学研究科" style="height:40px;object-fit:contain;""></a></p>
+</section>
+
+<section id="sponsor" class="section">
+<h2>スポンサー・展示企業</h2>
+<div class="sponsor-grid">
+
+<a href="https://example1.com" target="_blank" rel="noopener">
+<img src="sponsor1.png" alt="スポンサー1">
+</a>
+<a href="https://example2.com" target="_blank" rel="noopener">
+<img src="sponsor2.png" alt="スポンサー2">
+</a>
+<a href="https://example3.com" target="_blank" rel="noopener">
+<img src="sponsor3.png" alt="スポンサー3">
+</a>
+<a href="https://example4.com" target="_blank" rel="noopener">
+<img src="sponsor4.png" alt="スポンサー4">
+</a>
+<a href="https://example5.com" target="_blank" rel="noopener">
+<img src="sponsor5.png" alt="スポンサー5">
+</a>
+
+</div>
+</section>
+
+<section id="committee" class="section member">
+<h2>大会実行委員</h2>
+<h3>大会長・実行委員長</h3>
+<pre>    隅山　健太　（名古屋大学）</pre>
+
+<h3>実行委員</h3>
+<pre>    一柳　健司　（名古屋大学）
+    嶋田　誠　　（藤田医科大学）
+    鈴木　善幸　（名古屋市立大学）
+    熊澤　慶伯　（名古屋市立大学）
+    今井　啓雄　（京都大学）
+    桂　有加子　（京都大学）
+    石川　由希　（名古屋大学）
+    岡田　泰和　（名古屋大学）
+    田中　良弥　（名古屋大学）
+    太田　元規　（名古屋大学）
+    田邉　彰　　（名古屋大学）
+    重信　秀司　（基礎生物学研究所）
+    松村　秀一　（岐阜大学）
+    中川　草　　（東海大学・アドバイザー）</pre>
+</section>
+
+<section id="registration" class="section">
+<h2>参加登録</h2>
+<p>準備中</p>
+</section>
+
+<section id="schedule" class="section">
+<h2>日程表</h2>
+<p>準備中</p>
+</section>
+
+<section id="plenary" class="section">
+<h2>プレナリー</h2>
+<p>準備中</p>
+</section>
+
+<section id="symposium" class="section">
+<h2>シンポジウム</h2>
+<p>準備中</p>
+</section>
+
+<section id="workshop" class="section">
+<h2>ワークショップ</h2>
+<p>準備中</p>
+</section>
+
+<section id="hs-poster" class="section">
+<h2>高校生ポスター</h2>
+<p>準備中</p>
+</section>
+
+<section id="summer-school" class="section">
+<h2>夏の学校</h2>
+<p>準備中</p>
+</section>
+
+<section id="open-lecture" class="section">
+<h2>公開講座</h2>
+<p>準備中</p>
+</section>
+
+<section id="downloads" class="section">
+<h2>各種ダウンロード</h2>
+<p>準備中</p>
+</section>
+
+<section id="kids" class="section">
+<h2>託児室</h2>
+<pre>・託児（事前申込制）、キッズエリア付き講演会場、キッズエリア（保護者の同伴が必要）の設置
+
+・会場で子ども同伴可能
+本大会では、研究活動と家庭生活の両立を支援する取り組みの一環として、子ども同伴でのご参加を可能としています。ただし、すべての参加者が快適に大会に参加できるよう、以下の点についてご理解とご協力をお願いいたします。
+
+【注意事項】
+・会場内では、保護者の責任においてお子さまの安全管理をお願いいたします。
+・発表や討論の妨げとならないよう、必要に応じて一時的なご退席等のご配慮をお願いいたします。
+・授乳室・おむつ替えスペース等の設備については、会場案内をご確認ください。</pre>
+</section>
+
+<section id="venue" class="section access">
+<h2>アクセス</h2>
+
+<p>名古屋大学 東山キャンパス　全学教育棟 / キタンホール<br>
+〒464-8601　愛知県名古屋市千種区不老町</p>
+
+<iframe
+src="https://maps.google.com/maps?q=名古屋大学 全学教育棟|キタンホール&output=embed"
+width="100%"
+height="400"
+style="border:0;">
+</iframe>
+
+<h3>参加受付時間</h3>
+<table class="access-table">
+    <tbody><tr><th>日にち</th><th>時間</th><th>場所</th></tr>
+    <tr><td>8月19日（水）</td><td rowspan="3">〇:〇〇-〇〇:〇〇</td><td rowspan="4">〇〇〇</td></tr>
+    <tr><td>8月20日（木）</td></tr>
+    <tr><td>8月21日（金）</td></tr>
+    <tr><td>8月22日（土）</td><td>〇:〇〇-〇〇:〇〇</td></tr>
+</tbody></table>
+
+<h3>名古屋大学までの行き方</h3>
+<img src="nagoya-u_access_diagram.jpg" style="width:100%;max-width:832px;">
+
+<h3>空港をご利用の場合</h3>
+①中部国際空港⇔名古屋大学（タクシー 約50分、鉄道 約60分）<br>
+②県営名古屋空港⇔名古屋大学（タクシー 約45分、公共交通 約60分）<br>
+<!--
+<a class="btn" href="timetable1.pdf">時刻表</a>
+-->
+<h3>名古屋駅をご利用の場合</h3>
+①タクシーをご利用（約25分）<br>
+②地下鉄をご利用（約25分）<br>
+③路線バスをご利用（約55分）<br>
+<!--
+<a class="btn" href="timetable1.pdf">名古屋駅⇔名古屋大学<br>地下鉄　時刻表</a>
+<a class="btn" href="timetable1.pdf">名古屋駅⇔名古屋大学<br>路線バス　時刻表</a>
+<a class="btn" href="timetable1.pdf">名古屋駅　バス乗り場</a>
+-->
+<h3>校内マップ</h3>
+<img src="nagoya-u_access_diagram2.jpg" style="width:100%;max-width:832px;">
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+【問い合わせ先】日本進化学会第28回大会事務局<br>
+E-mail：sesj2026@agr.nagoya-u.ac.jp
+</p>
+
+<p>
+Copyright © 2026 日本進化学会第28回大会 All Rights Reserved.
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script>
+
+/* -----------------------
+MENU OPEN
+----------------------- */
+
+const hamburger=document.getElementById("hamburger");
+const nav=document.querySelector("nav");
+const overlay=document.getElementById("overlay");
+const navLinks=document.querySelectorAll("#nav-links a");
+const showmenu=document.getElementById("show-menu");
+const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
+
+let submenu_visible=false;
+
+showmenu.onclick=()=>{
+if(submenu_visible){
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu_visible=false;
+}else{
+hidemenus.forEach(menu=>{
+menu.classList.remove("hidemenu");
+});
+submenu_visible=true;
+}
+}
+
+window.addEventListener("mousemove", (e) => {
+if(submenu_visible){
+if(e.clientY>200 && ! overlay.classList.contains('show')){
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu_visible=false;
+}
+}
+});
+
+hamburger.onclick=()=>{
+
+nav.classList.toggle("open");
+overlay.classList.toggle("show");
+//window.scroll({top: 0, behavior: "smooth",});
+};
+
+overlay.onclick=()=>{
+nav.classList.remove("open");
+overlay.classList.remove("show");
+};
+
+/* メニュークリックで閉じる */
+
+navLinks.forEach(link=>{
+link.addEventListener("click",()=>{
+
+if(link!=showmenu){
+nav.classList.remove("open");
+overlay.classList.remove("show");
+
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu_visible=false;
+}
+
+});
+});
+
+topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+
+const header=document.querySelector("header");
+const header2=document.getElementById("top-of-page2");
+
+let isUserScrolling = false;
+window.addEventListener("wheel", () => {
+  isUserScrolling = true;
+});
+window.addEventListener("touchmove", () => {
+  isUserScrolling = true;
+});
+window.addEventListener("keydown", () => {
+  isUserScrolling = true;
+});
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>360){
+header.classList.add("sticky");
+header2.classList.add("sticky");
+
+if(window.scrollYpre<window.scrollY){
+header2.classList.add("hide");
+if (isUserScrolling) hamburger.classList.add("hide");
+}else{
+header2.classList.remove("hide");
+hamburger.classList.remove("hide");
+}
+
+}else{
+header.classList.remove("sticky");
+header2.classList.remove("sticky");
+
+header2.classList.remove("hide");
+hamburger.classList.remove("hide");
+}
+
+if(window.scrollY>300){
+topBtn.classList.add("show");
+}else{
+topBtn.classList.remove("show");
+}
+
+window.scrollYpre=window.scrollY;
+isUserScrolling = false;
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".section").forEach(sec=>{
+observer.observe(sec);
+});
+
+</script>
+
+</body>
+</html>
