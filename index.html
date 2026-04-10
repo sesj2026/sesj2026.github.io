@@ -251,10 +251,6 @@ display:inline-block;
 vertical-align:middle;
 }
 
-#nav-links > a:last-child::after{
-border-left:none;
-}
-
 #nav-links > a{
 border-bottom:2px solid rgba(255,255,255,0.15);
 }
@@ -347,7 +343,7 @@ transition:0.15s;
 
 .dropdown-content a{
 padding:15px 10px !important;
-border-bottom: 1px solid #274c80;
+border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .dropdown-content a:hover{
@@ -586,11 +582,6 @@ font-size:20px;
 border-bottom:none;
 }
 
-#nav-links > a::after{
-border-left:1px solid gray;
-z-index:1;
-}
-
 .nav-group a{
 border-bottom:2px solid rgba(255,255,255,0.15);
 }
@@ -717,7 +708,7 @@ font-size:0.8rem;
 <a href="/program.html#summer-school" class="hidemenu hideitem">夏の学校</a>
 <a href="/program.html#open-lecture" class="hidemenu hideitem">公開講座</a>
 <div class="dropdown">
-<a id="show-menu2" href="/program.html">日程・プログラム</a>
+<a id="show-menu2">日程・プログラム</a>
 <div class="dropdown-content">
 <a href="/program.html#schedule">大会日程</a>
 <a href="/program.html#plenary">プレナリー</a>
