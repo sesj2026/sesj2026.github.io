@@ -266,6 +266,13 @@ padding:0px !important;
 opacity:0;
 font-size:0px;
 }
+.hidemenu2{
+border:0px !important;
+margin:0px !important;
+padding:0px !important;
+opacity:0;
+font-size:0px;
+}
 
 .nav-group{
 margin-left:15px;
@@ -702,12 +709,12 @@ font-size:0.8rem;
 <a href="#top-of-page">ホーム</a>
 <a href="#news">お知らせ</a>
 <a href="/registration.html">参加登録</a>
-<a href="/program.html#schedule" class="hidemenu hideitem">大会日程</a>
-<a href="/program.html#plenary" class="hidemenu hideitem">プレナリー</a>
-<a href="/program.html#symposium" class="hidemenu hideitem">シンポジウム</a>
-<a href="/program.html#hs-poster" class="hidemenu hideitem">高校生ポスター</a>
-<a href="/program.html#summer-school" class="hidemenu hideitem">夏の学校</a>
-<a href="/program.html#open-lecture" class="hidemenu hideitem">公開講座</a>
+<a href="/program.html#schedule" class="hidemenu2 hideitem">大会日程</a>
+<a href="/program.html#plenary" class="hidemenu2 hideitem">プレナリー</a>
+<a href="/program.html#symposium" class="hidemenu2 hideitem">シンポジウム</a>
+<a href="/program.html#hs-poster" class="hidemenu2 hideitem">高校生ポスター</a>
+<a href="/program.html#summer-school" class="hidemenu2 hideitem">夏の学校</a>
+<a href="/program.html#open-lecture" class="hidemenu2 hideitem">公開講座</a>
 <div class="dropdown">
 <a id="show-menu2">日程・プログラム</a>
 <div class="dropdown-content">
@@ -721,6 +728,8 @@ font-size:0.8rem;
 </div>
 <a href="/highschool-poster.html">高校生ポスター</a>
 <a href="/public-seminar.html">市民公開講座</a>
+<a href="/downloads.html" class="hidemenu hideitem">各種ダウンロード</a>
+<a href="/childcare.html" class="hidemenu hideitem">託児室・キッズスペース</a>
 <div class="dropdown">
 <a id="show-menu">その他</a>
 <div class="dropdown-content">
@@ -924,6 +933,7 @@ const navLinks=document.querySelectorAll("#nav-links a");
 const showmenu=document.getElementById("show-menu");
 const showmenu2=document.getElementById("show-menu2");
 const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
+const hidemenus2=document.querySelectorAll("#nav-links .hidemenu2");
 
 let submenu_visible=false;
 let submenu2_visible=false;
@@ -944,13 +954,13 @@ submenu_visible=true;
 
 showmenu2.onclick=()=>{
 if(submenu2_visible){
-hidemenus.forEach(menu=>{
-menu.classList.add("hidemenu");
+hidemenu2.forEach(menu=>{
+menu.classList.add("hidemenu2");
 });
 submenu2_visible=false;
 }else{
-hidemenus.forEach(menu=>{
-menu.classList.remove("hidemenu");
+hidemenu2.forEach(menu=>{
+menu.classList.remove("hidemenu2");
 });
 submenu2_visible=true;
 }
@@ -961,6 +971,9 @@ if(submenu_visible || submenu2_visible){
 if(e.clientY>200 && ! overlay.classList.contains('show')){
 hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
+});
+hidemenus2.forEach(menu=>{
+menu.classList.add("hidemenu2");
 });
 submenu_visible=false;
 submenu2_visible=false;
@@ -991,6 +1004,9 @@ overlay.classList.remove("show");
 
 hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
+});
+hidemenus2.forEach(menu=>{
+menu.classList.add("hidemenu2");
 });
 submenu_visible=false;
 submenu2_visible=false;
