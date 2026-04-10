@@ -334,7 +334,7 @@ height:100%;
 }
 
 .dropdown-content{
-display:none;
+display:grid;
 position:absolute;
 background:#006d50;
 min-width:180px;
@@ -345,7 +345,8 @@ right:0px;
 text-align:left;
 z-index:2000;
 opacity:0;
-transition:0.15s;
+visibility:hidden;
+transition:opacity 0.15s;
 }
 
 .dropdown-content a{
@@ -598,7 +599,7 @@ display:none !important;
 }
 
 .dropdown:hover .dropdown-content{
-display:grid;
+visibility:visible;
 opacity:1;
 }
 
@@ -954,12 +955,12 @@ submenu_visible=true;
 
 showmenu2.onclick=()=>{
 if(submenu2_visible){
-hidemenu2.forEach(menu=>{
+hidemenus2.forEach(menu=>{
 menu.classList.add("hidemenu2");
 });
 submenu2_visible=false;
 }else{
-hidemenu2.forEach(menu=>{
+hidemenus2.forEach(menu=>{
 menu.classList.remove("hidemenu2");
 });
 submenu2_visible=true;
