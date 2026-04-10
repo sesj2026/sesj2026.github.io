@@ -255,30 +255,6 @@ vertical-align:middle;
 border-bottom:2px solid rgba(255,255,255,0.15);
 }
 
-.dropdown #show-menu::before{
-content:"▶";
-position:relative;
-display:inline-block;
-}
-.dropdown.active #show-menu::before{
-content:"▼";
-position:relative;
-display:inline-block;
-}
-
-.dropdown #show-menu2::before{
-content:"▶";
-position:relative;
-display:inline-block;
-border-bottom:2px solid rgba(255,255,255,0.15);
-}
-.dropdown.active #show-menu2::before{
-content:"▼";
-position:relative;
-display:inline-block;
-border-bottom:2px solid rgba(255,255,255,0.15);
-}
-
 .hidemenu{
 border:0px !important;
 margin:0px !important;
@@ -376,6 +352,22 @@ border-bottom: 1px solid rgba(255,255,255,0.15);
 
 .dropdown-content a:hover{
 background:#248850;
+}
+
+.dropdown #show-menu::before{
+content:"▶";
+padding-right:5px;
+}
+.dropdown.active #show-menu::before{
+content:"▼";
+}
+
+.dropdown #show-menu2::before{
+content:"▶";
+padding-right:5px;
+}
+.dropdown.active #show-menu2::before{
+content:"▼";
 }
 
 /* -----------------------
@@ -971,6 +963,8 @@ const showmenu=document.getElementById("show-menu");
 const showmenu2=document.getElementById("show-menu2");
 const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
 const hidemenus2=document.querySelectorAll("#nav-links .hidemenu2");
+const dropdown2=document.querySelectorAll(".dropdown")[0];
+const dropdown=document.querySelectorAll(".dropdown")[1];
 
 let submenu_visible=false;
 let submenu2_visible=false;
@@ -981,11 +975,13 @@ hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
 submenu_visible=false;
+dropdown.classList.remove("active");
 }else{
 hidemenus.forEach(menu=>{
 menu.classList.remove("hidemenu");
 });
 submenu_visible=true;
+dropdown.classList.add("active");
 }
 }
 
@@ -995,11 +991,13 @@ hidemenus2.forEach(menu=>{
 menu.classList.add("hidemenu2");
 });
 submenu2_visible=false;
+dropdown2.classList.remove("active");
 }else{
 hidemenus2.forEach(menu=>{
 menu.classList.remove("hidemenu2");
 });
 submenu2_visible=true;
+dropdown2.classList.add("active");
 }
 }
 
@@ -1014,6 +1012,8 @@ menu.classList.add("hidemenu2");
 });
 submenu_visible=false;
 submenu2_visible=false;
+dropdown.classList.remove("active");
+dropdown2.classList.remove("active");
 }
 }
 });
@@ -1047,6 +1047,8 @@ menu.classList.add("hidemenu2");
 });
 submenu_visible=false;
 submenu2_visible=false;
+dropdown.classList.remove("active");
+dropdown2.classList.remove("active");
 }
 
 });
