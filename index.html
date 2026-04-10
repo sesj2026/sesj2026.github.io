@@ -259,12 +259,28 @@ border-bottom:2px solid rgba(255,255,255,0.15);
 border-bottom:none;
 }
 
-#show-menu2::before{
+.dropdown #show-menu::before{
 content:"▶";
 position:relative;
-left:11px;
-height:60%;
 display:inline-block;
+}
+.dropdown.active #show-menu::before{
+content:"▼";
+position:relative;
+display:inline-block;
+}
+
+.dropdown #show-menu2::before{
+content:"▶";
+position:relative;
+display:inline-block;
+border-bottom:2px solid rgba(255,255,255,0.15);
+}
+.dropdown.active #show-menu2::before{
+content:"▼";
+position:relative;
+display:inline-block;
+border-bottom:2px solid rgba(255,255,255,0.15);
 }
 
 .hidemenu{
@@ -718,12 +734,7 @@ font-size:0.8rem;
 <a href="#top-of-page">ホーム</a>
 <a href="#news">お知らせ</a>
 <a href="/registration.html">参加登録</a>
-<a href="/program.html#schedule" class="hidemenu2 hideitem">大会日程</a>
-<a href="/program.html#plenary" class="hidemenu2 hideitem">プレナリー</a>
-<a href="/program.html#symposium" class="hidemenu2 hideitem">シンポジウム</a>
-<a href="/program.html#hs-poster" class="hidemenu2 hideitem">高校生ポスター</a>
-<a href="/program.html#summer-school" class="hidemenu2 hideitem">夏の学校</a>
-<a href="/program.html#open-lecture" class="hidemenu2 hideitem">公開講座</a>
+
 <div class="dropdown">
 <a id="show-menu2">日程・プログラム</a>
 <div class="dropdown-content">
@@ -734,6 +745,12 @@ font-size:0.8rem;
 <a href="/program.html#summer-school">夏の学校</a>
 <a href="/program.html#open-lecture">公開講座</a>
 </div>
+<a href="/program.html#schedule" class="hidemenu2 hideitem">大会日程</a>
+<a href="/program.html#plenary" class="hidemenu2 hideitem">プレナリー</a>
+<a href="/program.html#symposium" class="hidemenu2 hideitem">シンポジウム</a>
+<a href="/program.html#hs-poster" class="hidemenu2 hideitem">高校生ポスター</a>
+<a href="/program.html#summer-school" class="hidemenu2 hideitem">夏の学校</a>
+<a href="/program.html#open-lecture" class="hidemenu2 hideitem">公開講座</a>
 </div>
 <a href="/highschool-poster.html">高校生ポスター</a>
 <a href="/public-seminar.html">市民公開講座</a>
@@ -743,9 +760,9 @@ font-size:0.8rem;
 <a href="/downloads.html">各種ダウンロード</a>
 <a href="/childcare.html">託児室・キッズスペース</a>
 </div>
-</div>
 <a href="/downloads.html" class="hidemenu hideitem">各種ダウンロード</a>
 <a href="/childcare.html" class="hidemenu hideitem">託児室・キッズスペース</a>
+</div>
 </nav>
 
 <div class="content">
