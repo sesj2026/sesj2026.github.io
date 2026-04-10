@@ -341,6 +341,7 @@ top:80px;
 right:0px;
 text-align:left;
 z-index:2000;
+opacity:0;
 }
 
 .dropdown-content a{
@@ -601,6 +602,8 @@ display:none !important;
 
 .dropdown:hover .dropdown-content{
 display:grid;
+
+opacity:1;
 transition:0.35s;
 }
 
@@ -711,11 +714,25 @@ font-size:0.8rem;
 <a href="#top-of-page">ホーム</a>
 <a href="#news">お知らせ</a>
 <a href="/registration.html">参加登録</a>
-<a href="/program.html">日程・プログラム</a>
+<a href="/program.html#schedule" class="hidemenu hideitem">大会日程</a>
+<a href="/program.html#plenary" class="hidemenu hideitem">プレナリー</a>
+<a href="/program.html#symposium" class="hidemenu hideitem">シンポジウム</a>
+<a href="/program.html#hs-poster" class="hidemenu hideitem">高校生ポスター</a>
+<a href="/program.html#summer-school" class="hidemenu hideitem">夏の学校</a>
+<a href="/program.html#open-lecture" class="hidemenu hideitem">公開講座</a>
+<div class="dropdown">
+<a id="show-menu2" href="/program.html">日程・プログラム</a>
+<div class="dropdown-content">
+<a href="/program.html#schedule">大会日程</a>
+<a href="/program.html#plenary">プレナリー</a>
+<a href="/program.html#symposium">シンポジウム</a>
+<a href="/program.html#hs-poster">高校生ポスター</a>
+<a href="/program.html#summer-school">夏の学校</a>
+<a href="/program.html#open-lecture">公開講座</a>
+</div>
+</div>
 <a href="/highschool-poster.html">高校生ポスター</a>
 <a href="/public-seminar.html">市民公開講座</a>
-<a href="/downloads.html" class="hidemenu hideitem">各種ダウンロード</a>
-<a href="/childcare.html" class="hidemenu hideitem">託児室・キッズスペース</a>
 <div class="dropdown">
 <a id="show-menu">その他</a>
 <div class="dropdown-content">
@@ -917,9 +934,11 @@ const nav=document.querySelector("nav");
 const overlay=document.getElementById("overlay");
 const navLinks=document.querySelectorAll("#nav-links a");
 const showmenu=document.getElementById("show-menu");
+const showmenu2=document.getElementById("show-menu2");
 const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
 
 let submenu_visible=false;
+let submenu2_visible=false;
 
 showmenu.onclick=()=>{
 if(submenu_visible){
@@ -935,13 +954,28 @@ submenu_visible=true;
 }
 }
 
+showmenu2.onclick=()=>{
+if(submenu2_visible){
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu2_visible=false;
+}else{
+hidemenus.forEach(menu=>{
+menu.classList.remove("hidemenu");
+});
+submenu2_visible=true;
+}
+}
+
 window.addEventListener("mousemove", (e) => {
-if(submenu_visible){
+if(submenu_visible || submenu2_visible){
 if(e.clientY>200 && ! overlay.classList.contains('show')){
 hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
 submenu_visible=false;
+submenu2_visible=false;
 }
 }
 });
@@ -971,6 +1005,7 @@ hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
 submenu_visible=false;
+submenu2_visible=false;
 }
 
 });
