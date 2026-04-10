@@ -230,7 +230,7 @@ text-decoration:none;
 font-weight:bold;
 padding:5px 10px;
 border-radius:4px;
-display:table-cell;
+display:flex;
 vertical-align:middle;
 text-wrap-mode:nowrap;
 cursor:pointer;
@@ -352,7 +352,7 @@ dropdown
 ----------------------- */
 
 .dropdown{
-display:table;
+display:flex;
 position:relative;
 height:100%;
 }
@@ -610,6 +610,10 @@ height:100%;
 font-size:20px;
 }
 
+#nav-links a{
+display:table-cell;
+}
+
 #nav-links > a{
 border-bottom:none;
 }
@@ -620,6 +624,10 @@ border-bottom:2px solid rgba(255,255,255,0.15);
 
 .hideitem{
 display:none !important;
+}
+
+.dropdown{
+display:table-cell;
 }
 
 .dropdown:hover .dropdown-content{
