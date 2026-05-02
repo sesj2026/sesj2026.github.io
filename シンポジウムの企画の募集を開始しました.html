@@ -224,7 +224,7 @@ font-size:inherit;
 color:white;
 text-decoration:none;
 font-weight:bold;
-padding:5px 10px;
+padding:3px 10px;
 border-radius:4px;
 display:flex;
 vertical-align:middle;
@@ -273,11 +273,27 @@ padding:5px 10px;
 margin-top:10px;
 }
 
+#nav-logo{
+margin-bottom:10px;
+}
+
+#nav-logo a{
+display:none;
+cursor:pointer;
+}
+
+#nav-logo a.active{
+display:block;
+}
+
+#nav-logo img{
+height:50px;
+}
+
 #nav-language{
 color:white;
 font-weight:bold;
 padding:5px 10px;
-display:flex;
 gap:10px;
 font-size: 14px;
 
@@ -356,6 +372,31 @@ padding-right:5px;
 .dropdown.active #show-menu2::before{
 content:"▼";
 padding-right:5px;
+}
+
+/* -----------------------
+nav-logo2
+----------------------- */
+
+#nav-logo2{
+position:absolute;
+display:none;
+top:15px;
+left:20px;
+z-index:3500;
+}
+
+#nav-logo2 a{
+display:none;
+cursor:pointer;
+}
+
+#nav-logo2 a.active{
+display:block;
+}
+
+#nav-logo2 img{
+height:50px;
 }
 
 /* -----------------------
@@ -594,6 +635,10 @@ display:table-cell;
 border-bottom:none;
 }
 
+#nav-links > a:first-of-type{
+padding-left:100px;
+}
+
 #show-menu{
 border-bottom:none;
 }
@@ -631,9 +676,18 @@ content:"";
 padding-right:0px;
 }
 
+#nav-logo{
+margin-bottom:0px;
+display:none;
+}
+
 #nav-language{
 margin-bottom:0px;
 display:none;
+}
+
+#nav-logo2{
+display:flex;
 }
 
 #nav-language2{
@@ -710,6 +764,10 @@ font-size:0.8rem;
 <div id="overlay"></div>
 <div id="topBtn">↑ TO TOP</div>
 
+<div id="nav-logo2">
+<a href="/" class="active"><img src="logo2.png" /></a>
+<a href="/en-index.html"><img src="logo2.png" /></a>
+</div>
 
 <div id="nav-language2">
 <a href="/" class="active">Japanese</a>
@@ -721,6 +779,11 @@ font-size:0.8rem;
 <nav>
 
 <div id="nav-links">
+
+<div id="nav-logo">
+<a href="/" class="active"><img src="logo.png" /></a>
+<a href="/en-index.html"><img src="logo.png" /></a>
+</div>
 
 <div id="nav-language">
 <a href="/" class="active">Japanese</a>
