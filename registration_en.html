@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call for Symposium Proposals Now Open | The 27th Annual Meeting of the Society for Evolutionary Studies, Japan</title>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:'Noto Sans JP', sans-serif, "游ゴシック体", YuGothic, "Yu Gothic", "メイリオ", sans-serif;
+background:#f4f6f9;
+line-height:1.7;
+color:#222;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+.layout{
+display:flex;
+}
+
+/* -----------------------
+HAMBURGER
+----------------------- */
+
+#hamburger{
+display:block;
+position:fixed;
+top:15px;
+right:15px;
+font-size:26px;
+color:white;
+background:#006d50;
+padding:6px 12px;
+border-radius:5px;
+z-index:3000;
+cursor:pointer;
+font-weight:bold;
+
+transition:0.35s;
+}
+
+#hamburger.hide{
+top:-57px;
+opacity:0;
+}
+
+/* -----------------------
+OVERLAY
+----------------------- */
+
+#overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.45);
+opacity:0;
+pointer-events:none;
+transition:0.3s;
+z-index:2500;
+height:130%;
+}
+
+#overlay.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* -----------------------
+SCROLL TOP BUTTON
+----------------------- */
+
+#topBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:white;
+border:1px solid #141414;
+border-radius:8px;
+cursor:pointer;
+padding: 4px 8px;
+font-family: sans-serif;
+z-index:100;
+user-select:none;
+
+opacity:0;
+pointer-events:none;
+transition:0.35s;
+}
+
+#topBtn.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* -----------------------
+HEADER
+----------------------- */
+
+header{
+background:url('IMG_2540.JPG') center 30% / cover no-repeat;
+background-attachment:scroll;
+height:500px;
+color:white;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+position:relative;
+
+transition:0.35s;
+}
+
+header::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.4);
+}
+
+header.sticky{
+opacity:0;
+}
+
+#top-of-page2{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:30px;
+background:#f4f6f9;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+border-bottom:1px solid #006d50;
+box-shadow:0px 15px 15px -8px rgba(255, 255, 255, 1);
+
+z-index:-1;
+opacity:0;
+transition:0.35s;
+}
+
+#top-of-page2.sticky{
+z-index:2000;
+opacity:1;
+}
+
+#top-of-page2.hide{
+top:-31px;
+opacity:0;
+}
+
+#top-of-page2 h1{
+font-size:1.4rem;
+margin:0;
+}
+
+#top-of-page2 h2{
+font-size:0.8rem;
+margin:0;
+}
+
+header *{
+z-index:1;
+}
+
+header h1{
+font-size:2.6rem;
+margin:0;
+text-shadow:0 3px 6px rgba(0,0,0,1);
+}
+
+header p{
+font-size:1.2rem;
+margin-top:10px;
+}
+
+header h2{
+font-size:1.6rem;
+margin:0;
+text-shadow:0 3px 6px rgba(0,0,0,1);
+}
+
+/* -----------------------
+LEFT MENU
+----------------------- */
+
+nav{
+position:fixed;
+top:0;
+display:table;
+left:-290px;
+width:200px;
+padding:20px;
+background: rgba(0,109,80, 0.8);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+text-align:left;
+z-index:3000;
+}
+
+nav.open{
+left:0;
+
+transition:0.35s;
+}
+
+#nav-links{
+display:flex;
+flex-direction:column;
+font-size:inherit;
+}
+
+#nav-links a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+padding:3px 10px;
+border-radius:4px;
+display:flex;
+vertical-align:middle;
+text-wrap-mode:nowrap;
+cursor:pointer;
+
+transition: all 0.3s ease;
+}
+
+#nav-links a:hover{
+background:#248850;
+}
+
+#nav-links > a::after{
+content:"";
+position:relative;
+left:11px;
+height:60%;
+display:inline-block;
+vertical-align:middle;
+}
+
+#nav-links a{
+border-bottom:2px solid rgba(255,255,255,0.15);
+}
+
+.hidemenu{
+border:0px !important;
+margin:0px !important;
+padding:0px !important;
+opacity:0;
+font-size:0px;
+}
+.hidemenu2{
+border:0px !important;
+margin:0px !important;
+padding:0px !important;
+opacity:0;
+font-size:0px;
+}
+
+.nav-title{
+color:white;
+font-weight:bold;
+padding:5px 10px;
+margin-top:10px;
+}
+
+#nav-logo{
+margin-bottom:10px;
+}
+
+#nav-logo a{
+display:none;
+cursor:pointer;
+}
+
+#nav-logo a.active{
+display:block;
+}
+
+#nav-logo img{
+height:50px;
+}
+
+#nav-language{
+color:white;
+font-weight:bold;
+padding:5px 10px;
+gap:10px;
+font-size: 14px;
+
+margin-bottom:10px;
+flex-flow:row;
+display:flex;
+}
+
+#nav-language a{
+border:1px solid white;
+padding:0px 10px;
+color:gray;
+text-align:center;
+
+transition: 0.3s;
+}
+
+#nav-language a:hover{
+background:white;
+color:black;
+}
+    
+#nav-language a.active{
+background:white;
+color:black;
+box-shadow: inset 2px 2px 3px #777777, inset -3px -3px 7px #D8D8D9;
+}
+
+/* -----------------------
+dropdown
+----------------------- */
+
+.dropdown{
+position:relative;
+display:block;
+height:100%;
+}
+
+.dropdown > a{
+padding-left:30px !important;
+}
+.dropdown > a:first-child{
+padding:5px 10px !important;
+}
+
+.dropdown-content{
+display:grid;
+position:absolute;
+background:#006d50;
+min-width:180px;
+box-shadow:0px 2px 6px rgba(0,0,0,0.2);
+border-radius:4px;
+top:80px;
+right:0px;
+text-align:left;
+z-index:2000;
+opacity:0;
+visibility:hidden;
+transition:opacity 0.15s;
+}
+
+.dropdown-content a{
+padding:15px 10px !important;
+border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.dropdown-content a:hover{
+background:#248850;
+}
+
+.dropdown.active #show-menu::before{
+content:"▼";
+padding-right:5px;
+}
+
+.dropdown.active #show-menu2::before{
+content:"▼";
+padding-right:5px;
+}
+
+/* -----------------------
+nav-logo2
+----------------------- */
+
+#nav-logo2{
+position:absolute;
+display:none;
+top:15px;
+left:20px;
+z-index:1500;
+}
+
+#nav-logo2 a{
+display:none;
+cursor:pointer;
+}
+
+#nav-logo2 a.active{
+display:block;
+}
+
+#nav-logo2 img{
+height:50px;
+}
+
+/* -----------------------
+nav-language
+----------------------- */
+
+#nav-language2{
+position:absolute;
+top:5px;
+right:20px;
+color:white;
+font-weight:bold;
+padding:5px 10px;
+display:none;
+flex-flow:column;
+gap:10px;
+font-size: 14px;
+z-index:1500;
+}
+
+#nav-language2 a{
+border:1px solid white;
+padding:0px 10px;
+color:gray;
+text-align:center;
+text-decoration:none;
+border-radius: 4px;
+
+transition: 0.3s;
+}
+
+#nav-language2 a:hover{
+background:white;
+color:black;
+}
+    
+#nav-language2 a.active{
+background:white;
+color:black;
+box-shadow: inset 2px 2px 3px #777777, inset -3px -3px 7px #D8D8D9;
+}
+
+/* -----------------------
+SPONSOR
+----------------------- */
+
+.sponsor-grid{
+display:flex;
+flex-wrap: wrap;
+flex-direction:row;
+gap:10px;
+}
+
+.sponsor-grid img{
+width:100%;
+min-width:170px;
+min-height:50px;
+background:white;
+padding:6px;
+border-radius:4px;
+box-shadow:0 2px 4px rgba(0,0,0,0.15);
+transition:0.2s;
+}
+
+.sponsor-grid img:hover{
+transform:scale(1.03);
+}
+
+.sponsor-grid a{
+cursor:pointer;
+}
+
+/* -----------------------
+CONTENT
+----------------------- */
+
+.content{
+flex:1;
+margin-top:0px;
+}
+
+main{
+margin:0px 20px;
+}
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:25px 20px;
+
+opacity:0;
+transform:translateY(30px);
+transition:0.6s;
+}
+
+.section.show{
+opacity:1;
+transform:none;
+}
+
+.section h2{
+border-left:6px solid #187741;
+border-top:1px solid #187741;
+padding-left:10px;
+color:#187741;
+}
+
+pre{
+white-space:pre-wrap;
+font-family:inherit;
+}
+
+.section p{
+text-align:justify;
+}
+
+.section a > img{
+cursor:pointer;
+}
+
+.member h3{
+margin:30px 0px 15px 0px;
+border-bottom:1px solid black;
+}
+
+.member h3:first-child{
+margin:10px 0px 15px 0px;
+border-bottom:1px solid black;
+}
+    
+.access h3{
+border-bottom:1px solid black;
+margin:40px 0px 15px 0px;
+}
+
+.table-type1{
+border:1px solid gray;
+border-collapse:collapse;
+width:100%;
+}
+
+.table-type1 th{
+border:1px solid gray;
+background:#308b4c;
+color:white;
+text-align:center;
+padding:3px;
+width:30%;
+}
+
+.table-type1 td{
+border:1px solid gray;
+padding:10px;
+}
+
+.access .btn{
+cursor:pointer;
+padding:20px;
+border-radius:6px;
+background:#308b4c;
+color:white;
+display:inline-flex;
+margin:15px 15px 0px 0px;
+text-decoration:none;
+}
+
+/* -----------------------
+FOOTER
+----------------------- */
+
+footer{
+background:#006d50;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+.org-table{
+  display:grid;
+  grid-template-columns:auto auto;
+  align-items:center;
+  gap:15px 20px;
+  justify-content:center;
+}
+
+.org-label{
+  font-size:36px;
+  text-align:right;
+}
+
+.org-logo{
+text-align:left;
+}
+
+.org-logo img{
+  max-height:60px;
+  background:white;
+  padding:5px;
+}
+
+/* -----------------------
+MOBILE
+----------------------- */
+
+@media (min-width:1125px){
+
+#nav-language2{
+display:flex;
+}
+
+#nav-logo2{
+display:flex;
+}
+
+}
+
+@media (min-width:900px){
+
+#hamburger{
+display:none;
+}
+
+nav{
+position:absolute;
+display:flex;
+justify-content: center;
+left:0;
+width:100%;
+height:80px;
+padding:0px;
+background:#006d50;
+text-align:center;
+z-index:2;
+}
+
+#nav-links{
+display:table;
+flex-direction:row;
+height:100%;
+font-size:20px;
+}
+
+#nav-links a{
+display:table-cell;
+}
+
+#nav-links a{
+border-bottom:none;
+}
+
+#nav-links > a:first-of-type{
+margin-left:100px;
+}
+
+#show-menu{
+border-bottom:none;
+}
+#show-menu2{
+border-bottom:none;
+}
+
+.hideitem{
+display:none !important;
+}
+
+.dropdown{
+display:table;
+}
+
+.dropdown:hover .dropdown-content{
+visibility:visible;
+opacity:1;
+}
+
+.dropdown > a:first-child::before{
+content:"";
+position:relative;
+height:60%;
+display:inline-block;
+vertical-align:middle;
+}
+
+.dropdown.active #show-menu::before{
+content:"";
+padding-right:0px;
+}
+.dropdown.active #show-menu2::before{
+content:"";
+padding-right:0px;
+}
+
+#nav-logo{
+margin-bottom:0px;
+display:none;
+}
+
+#nav-language{
+margin-bottom:0px;
+display:none;
+}
+
+.content{
+margin-top:80px;
+}
+
+header{
+background-attachment:fixed;
+}
+
+}
+
+@media (min-width:600px) and (max-width:760px){
+
+header h1{
+font-size:2.3rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+header h2{
+font-size:1.3rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+    
+}
+
+@media (min-width:500px) and (max-width:599px){
+
+header h1{
+font-size:2.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+header h2{
+font-size:1.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+    
+}
+
+@media (max-width:499px){
+
+header h1{
+font-size:1.6rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+header h2{
+font-size:0.8rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+footer{
+font-size:0.8rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="hamburger">☰</div>
+<div id="overlay"></div>
+<div id="topBtn">↑ TO TOP</div>
+
+<div id="nav-logo2">
+<a href="/"><img src="logo2.png" /></a>
+<a href="/index_en.html" class="active"><img src="logo2.png" /></a>
+</div>
+
+<div id="nav-language2">
+<a href="/シンポジウムの企画の募集を開始しました.html">Japanese</a>
+<a href="/Call_for_Symposium_Proposals_Now_Open.html" class="active">English</a>
+</div>
+
+<div class="layout">
+
+<nav>
+
+<div id="nav-links">
+
+<div id="nav-logo">
+<a href="/"><img src="logo.png" /></a>
+<a href="/index_en.html" class="active"><img src="logo.png" /></a>
+</div>
+
+<div id="nav-language">
+<a href="/シンポジウムの企画の募集を開始しました.html">Japanese</a>
+<a href="/Call_for_Symposium_Proposals_Now_Open.html" class="active">English</a>
+</div>
+
+<a href="/index_en.html">Home</a>
+<a href="#news">News</a>
+<a href="/registration_en.html">Registration</a>
+
+<div class="dropdown">
+<a id="show-menu2">Program</a>
+<div class="dropdown-content">
+<a href="/program_en.html#schedule">Schedule</a>
+<a href="/program_en.html#plenary">Plenary</a>
+<a href="/program_en.html#symposium">Symposium</a>
+<a href="/program_en.html#hs-poster">High-school<br>student's poster</a>
+<a href="/program_en.html#summer-school">Summer school</a>
+<a href="/program_en.html#public-lectures">Public Lectures</a>
+</div>
+<a href="/program_en.html#schedule" class="hidemenu2 hideitem">Schedule</a>
+<a href="/program_en.html#plenary" class="hidemenu2 hideitem">Plenary</a>
+<a href="/program_en.html#symposium" class="hidemenu2 hideitem">Symposium</a>
+<a href="/program_en.html#hs-poster" class="hidemenu2 hideitem">High-school<br>student's poster</a>
+<a href="/program_en.html#summer-school" class="hidemenu2 hideitem">Summer School</a>
+<a href="/program_en.html#public-lectures" class="hidemenu2 hideitem">Public Lectures</a>
+</div>
+<a href="/highschool-poster_en.html">High-school<br>student's poster</a>
+<a href="/public-lecture_en.html">Public Lectures</a>
+<div class="dropdown">
+<a id="show-menu">More</a>
+<div class="dropdown-content">
+<a href="/downloads_en.html">Downloads</a>
+<a href="/childcare_en.html">Kid's space</a>
+</div>
+<a href="/downloads_en.html" class="hidemenu hideitem">Downloads</a>
+<a href="/childcare_en.html" class="hidemenu hideitem">Kid's space</a>
+</div>
+</nav>
+
+<div class="content">
+
+<div id="top-of-page2">
+<h1>The 27th Annual Meeting of the Society for Evolutionary Studies, Japan</h1>
+</div>
+
+<main>
+
+<section id="news" class="section">
+<h2>Call for Symposium Proposals Now Open</h2>
+<p style="text-align:right">May 3, 2026</p>
+<pre>Members of the Society for Evolutionary Studies of Japan
+
+We would like to extend our sincere congratulations to you all on your continued good health.
+The executive committee for the 28th Annual Meeting of the Japanese Society for Evolutionary Studies in Nagoya is currently making preparations for the conference.
+
+Dates: Wednesday, August 19th, 2026 - Saturday, August 22nd, 2026
+Venue: Nagoya University
+Conference website: https://sesj2026.agr.nagoya-u.ac.jp/
+Conference Chair: Kenta Sumiyama (Nagoya University)
+Conference theme: Life Sciences Learned from Evolution: From Molecules and Genomes to Populations and Ecosystems
+
+We are now accepting proposals for symposiums as outlined below. We look forward to receiving your applications.
+
+■ The symposiums are scheduled to take place at Nagoya University on the afternoon of August 19th, the mornings and afternoon of August 20th, and the morning of August 21st.
+Each slot is two hours long, and we have rooms that can accommodate approximately 100–120 participants.
+
+■ The project representative (= applicant) does not need to be a member of the Japanese Society for Evolutionary Studies at the time of submitting the proposal, but at least one member must be among the project planners at the time the conference is held. For more information about the Japanese Society for Evolutionary Studies and how to join, please see the website:
+http://sesj.kenkyuukai.jp/information/
+
+■ Non-member invited speakers will be treated as invited guests in principle and will not be charged a participation fee. They may attend the entire conference. However, the Society will not provide travel expenses or remuneration. If they attend the social gathering, a participation fee will be required.
+
+■ The Conference Executive Committee will decide whether or not to accept the proposed plan. We may ask you to reconsider the content, such as combining it with other plans. There will be no restrictions on overlapping speakers. The representative of the proposal will be notified of the outcome around mid-June, but the reason for the decision will not be disclosed.
+
+■ Symposiums will be held face-to-face. The organizers will provide the usual equipment for face-to-face meetings at the venue.
+
+&lt;How to apply&gt;
+Please write the following information in a Word file, attach it to an email and send it to the address below.
+Conference secretariat: sesj2026@agr.nagoya-u.ac.jp
+
+&lt;Information required for proposal application&gt;
+1. Proposal title
+2. Proposal representative and affiliation
+3. Contact details of the representative (email address, phone number)
+4. Proposal outline and objectives (approximately 200 words)
+5. Names and affiliations of speakers
+6. Language used (Japanese, English, or mixed)
+7. Preferred duration (2 hours; please indicate if you prefer 1 hour)
+8. Any other requests, such as scheduling preferences (we may not be able to accommodate your request)
+
+We will contact the representative's email address within one week of application to confirm receipt of your symposium proposal. If you do not receive a notification from the conference executive committee within one week, please contact the conference secretariat.
+
+&lt;Application Deadline&gt;
+Friday, May 29, 2026
+
+We look forward to receiving applications from a wide range of fields. If you have any questions, please contact the conference secretariat at sesj2026@agr.nagoya-u.ac.jp.
+
+The 28th Annual Meeting of the Evolutionary Society of Japan
+Conference Chair
+Kenta Sumiyama (Nagoya University)
+Organizing Committee</pre>
+</section>
+
+</main>
+
+<footer>
+
+<div class="org-table">
+
+  <div class="org-label">Organizer</div>
+  <div class="org-logo">
+    <a href="http://sesj.kenkyuukai.jp" target="_blank">
+      <img src="sesj_logo.jpg" alt="Japanese Society for Evolutionary Studies">
+    </a>
+  </div>
+
+  <div class="org-label">Co-organizer</div>
+  <div class="org-logo">
+    <a href="https://www.agr.nagoya-u.ac.jp" target="_blank">
+      <img src="www.agr.nagoya-u_logo.png" alt="Graduate School of Bioagricultural Sciences, Nagoya University">
+    </a>
+  </div>
+
+  <div class="org-label"></div>
+  <div class="org-logo">
+    <a href="https://www.sci.nagoya-u.ac.jp" target="_blank">
+      <img src="www.sci.nagoya-u_logo.png" alt="Graduate School of Science, Nagoya University">
+    </a>
+  </div>
+
+</div>
+
+<p>
+Contact: Secretariat of the 28th Annual Meeting of the Society for Evolutionary Studies, Japan<br>
+E-mail: sesj2026@agr.nagoya-u.ac.jp
+</p>
+
+<p>
+Copyright © 2026 The 28th Annual Meeting of the Society for Evolutionary Studies, Japan. All Rights Reserved.
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script>
+
+/* -----------------------
+MENU OPEN
+----------------------- */
+
+const hamburger=document.getElementById("hamburger");
+const nav=document.querySelector("nav");
+const overlay=document.getElementById("overlay");
+const navLinks=document.querySelectorAll("#nav-links a");
+const showmenu=document.getElementById("show-menu");
+const showmenu2=document.getElementById("show-menu2");
+const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
+const hidemenus2=document.querySelectorAll("#nav-links .hidemenu2");
+const dropdown2=document.querySelectorAll(".dropdown")[0];
+const dropdown=document.querySelectorAll(".dropdown")[1];
+
+let submenu_visible=false;
+let submenu2_visible=false;
+
+showmenu.onclick=()=>{
+if(submenu_visible){
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+submenu_visible=false;
+dropdown.classList.remove("active");
+}else{
+hidemenus.forEach(menu=>{
+menu.classList.remove("hidemenu");
+});
+submenu_visible=true;
+dropdown.classList.add("active");
+}
+}
+
+showmenu2.onclick=()=>{
+if(submenu2_visible){
+hidemenus2.forEach(menu=>{
+menu.classList.add("hidemenu2");
+});
+submenu2_visible=false;
+dropdown2.classList.remove("active");
+}else{
+hidemenus2.forEach(menu=>{
+menu.classList.remove("hidemenu2");
+});
+submenu2_visible=true;
+dropdown2.classList.add("active");
+}
+}
+
+window.addEventListener("mousemove", (e) => {
+if(submenu_visible || submenu2_visible){
+if(e.clientY>200 && ! overlay.classList.contains('show')){
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+hidemenus2.forEach(menu=>{
+menu.classList.add("hidemenu2");
+});
+submenu_visible=false;
+submenu2_visible=false;
+dropdown.classList.remove("active");
+dropdown2.classList.remove("active");
+}
+}
+});
+
+hamburger.onclick=()=>{
+
+nav.classList.toggle("open");
+overlay.classList.toggle("show");
+//window.scroll({top: 0, behavior: "smooth",});
+};
+
+overlay.onclick=()=>{
+nav.classList.remove("open");
+overlay.classList.remove("show");
+};
+
+/* メニュークリックで閉じる */
+
+navLinks.forEach(link=>{
+link.addEventListener("click",()=>{
+
+if(link!=showmenu && link!=showmenu2){
+nav.classList.remove("open");
+overlay.classList.remove("show");
+
+hidemenus.forEach(menu=>{
+menu.classList.add("hidemenu");
+});
+hidemenus2.forEach(menu=>{
+menu.classList.add("hidemenu2");
+});
+submenu_visible=false;
+submenu2_visible=false;
+dropdown.classList.remove("active");
+dropdown2.classList.remove("active");
+}
+
+});
+});
+
+topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+
+//const header=document.querySelector("header");
+const header2=document.getElementById("top-of-page2");
+
+let isUserScrolling = false;
+window.addEventListener("wheel", () => {
+  isUserScrolling = true;
+});
+window.addEventListener("touchmove", () => {
+  isUserScrolling = true;
+});
+window.addEventListener("keydown", () => {
+  isUserScrolling = true;
+});
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>70){
+//header.classList.add("sticky");
+header2.classList.add("sticky");
+
+if(window.scrollYpre<window.scrollY){
+header2.classList.add("hide");
+if (isUserScrolling) hamburger.classList.add("hide");
+}else{
+header2.classList.remove("hide");
+hamburger.classList.remove("hide");
+}
+
+}else{
+//header.classList.remove("sticky");
+header2.classList.remove("sticky");
+
+header2.classList.remove("hide");
+hamburger.classList.remove("hide");
+}
+
+if(window.scrollY>100){
+topBtn.classList.add("show");
+}else{
+topBtn.classList.remove("show");
+}
+
+window.scrollYpre=window.scrollY;
+isUserScrolling = false;
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".section").forEach(sec=>{
+observer.observe(sec);
+});
+
+</script>
+
+</body>
+</html>
