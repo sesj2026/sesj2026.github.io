@@ -28,10 +28,6 @@ height:auto;
 display:flex;
 }
 
-.content{
-flex:1;
-}
-
 /* -----------------------
 HAMBURGER
 ----------------------- */
@@ -43,10 +39,10 @@ top:15px;
 right:15px;
 font-size:26px;
 color:white;
-background:#002c59;
+background:#006d50;
 padding:6px 12px;
 border-radius:5px;
-z-index:2000;
+z-index:3000;
 cursor:pointer;
 font-weight:bold;
 
@@ -69,7 +65,7 @@ background:rgba(0,0,0,0.45);
 opacity:0;
 pointer-events:none;
 transition:0.3s;
-z-index:1400;
+z-index:2500;
 height:130%;
 }
 
@@ -119,7 +115,6 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 position:relative;
-scroll-margin-top:0px;
 
 transition:0.35s;
 }
@@ -147,8 +142,9 @@ text-align:center;
 display:flex;
 flex-direction:column;
 justify-content:center;
-border-bottom:1px solid #002c59;
+border-bottom:1px solid #006d50;
 box-shadow:0px 15px 15px -8px rgba(255, 255, 255, 1);
+z-index:2000;
 
 opacity:0;
 transition:0.35s;
@@ -205,7 +201,7 @@ display:table;
 left:-240px;
 width:200px;
 padding:20px;
-background: rgba(0,44,89, 0.8);
+background: rgba(0,109,80, 0.8);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 text-align:left;
@@ -228,9 +224,9 @@ font-size:inherit;
 color:white;
 text-decoration:none;
 font-weight:bold;
-padding:5px 10px;
+padding:3px 10px;
 border-radius:4px;
-display:table-cell;
+display:flex;
 vertical-align:middle;
 text-wrap-mode:nowrap;
 cursor:pointer;
@@ -239,7 +235,7 @@ transition: all 0.3s ease;
 }
 
 #nav-links a:hover{
-background:#00448f;
+background:#248850;
 }
 
 #nav-links > a::after{
@@ -251,16 +247,8 @@ display:inline-block;
 vertical-align:middle;
 }
 
-#nav-links > a:last-child::after{
-border-left:none;
-}
-
-#nav-links > a{
+#nav-links a{
 border-bottom:2px solid rgba(255,255,255,0.15);
-}
-
-#nav-links > a:last-child{
-border-bottom:none;
 }
 
 .hidemenu{
@@ -270,14 +258,12 @@ padding:0px !important;
 opacity:0;
 font-size:0px;
 }
-
-.nav-group{
-margin-left:15px;
-}
-
-.nav-group a{
-display: block;
-
+.hidemenu2{
+border:0px !important;
+margin:0px !important;
+padding:0px !important;
+opacity:0;
+font-size:0px;
 }
 
 .nav-title{
@@ -287,11 +273,27 @@ padding:5px 10px;
 margin-top:10px;
 }
 
+#nav-logo{
+margin-bottom:10px;
+}
+
+#nav-logo a{
+display:none;
+cursor:pointer;
+}
+
+#nav-logo a.active{
+display:block;
+}
+
+#nav-logo img{
+height:50px;
+}
+
 #nav-language{
 color:white;
 font-weight:bold;
 padding:5px 10px;
-display:flex;
 gap:10px;
 font-size: 14px;
 
@@ -325,15 +327,22 @@ dropdown
 ----------------------- */
 
 .dropdown{
-display:table;
 position:relative;
+display:block;
 height:100%;
 }
 
+.dropdown > a{
+padding-left:30px !important;
+}
+.dropdown > a:first-child{
+padding:5px 10px !important;
+}
+
 .dropdown-content{
-display:none;
+display:grid;
 position:absolute;
-background:#002c59;
+background:#006d50;
 min-width:180px;
 box-shadow:0px 2px 6px rgba(0,0,0,0.2);
 border-radius:4px;
@@ -341,17 +350,53 @@ top:80px;
 right:0px;
 text-align:left;
 z-index:2000;
+opacity:0;
+visibility:hidden;
+transition:opacity 0.15s;
 }
 
 .dropdown-content a{
-display:block;
-padding:10px 15px;
-color: #fff;
-text-decoration:none;
+padding:15px 10px !important;
+border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .dropdown-content a:hover{
-background:#00448f;
+background:#248850;
+}
+
+.dropdown.active #show-menu::before{
+content:"▼";
+padding-right:5px;
+}
+
+.dropdown.active #show-menu2::before{
+content:"▼";
+padding-right:5px;
+}
+
+/* -----------------------
+nav-logo2
+----------------------- */
+
+#nav-logo2{
+position:absolute;
+display:none;
+top:15px;
+left:20px;
+z-index:1500;
+}
+
+#nav-logo2 a{
+display:none;
+cursor:pointer;
+}
+
+#nav-logo2 a.active{
+display:block;
+}
+
+#nav-logo2 img{
+height:50px;
 }
 
 /* -----------------------
@@ -369,7 +414,7 @@ display:none;
 flex-flow:column;
 gap:10px;
 font-size: 14px;
-z-index:3500;
+z-index:1500;
 }
 
 #nav-language2 a{
@@ -429,8 +474,8 @@ CONTENT
 ----------------------- */
 
 .content{
+flex:1;
 margin-top:0px;
-transition:0.35s;
 }
 
 main{
@@ -441,7 +486,6 @@ margin:0px 20px;
 max-width:1000px;
 margin:auto;
 padding:25px 20px;
-scroll-margin-top:30px;
 
 opacity:0;
 transform:translateY(30px);
@@ -454,10 +498,10 @@ transform:none;
 }
 
 .section h2{
-border-left:6px solid #003366;
-border-top:1px solid #003366;
+border-left:6px solid #187741;
+border-top:1px solid #187741;
 padding-left:10px;
-color:#003366;
+color:#187741;
 }
 
 pre{
@@ -488,22 +532,22 @@ border-bottom:1px solid black;
 margin:40px 0px 15px 0px;
 }
 
-.access-table{
+.table-type1{
 border:1px solid gray;
 border-collapse:collapse;
 width:100%;
 }
 
-.access-table th{
+.table-type1 th{
 border:1px solid gray;
-background:#1f487c;
+background:#308b4c;
 color:white;
 text-align:center;
 padding:3px;
 width:30%;
 }
 
-.access-table td{
+.table-type1 td{
 border:1px solid gray;
 padding:10px;
 }
@@ -512,7 +556,7 @@ padding:10px;
 cursor:pointer;
 padding:20px;
 border-radius:6px;
-background:#1f487c;
+background:#308b4c;
 color:white;
 display:inline-flex;
 margin:15px 15px 0px 0px;
@@ -524,7 +568,7 @@ FOOTER
 ----------------------- */
 
 footer{
-background:#002c59;
+background:#006d50;
 color:white;
 text-align:center;
 padding:20px;
@@ -560,19 +604,33 @@ MOBILE
 
 @media (min-width:1125px){
 
+#nav-language2{
+display:flex;
+}
+
+#nav-logo2{
+display:flex;
+}
+
+}
+
+@media (min-width:900px){
+
 #hamburger{
 display:none;
 }
 
 nav{
+position:absolute;
 display:flex;
 justify-content: center;
 left:0;
 width:100%;
 height:80px;
 padding:0px;
-background:#002c59;
+background:#006d50;
 text-align:center;
+z-index:2;
 }
 
 #nav-links{
@@ -582,26 +640,36 @@ height:100%;
 font-size:20px;
 }
 
-#nav-links > a{
+#nav-links a{
+display:table-cell;
+}
+
+#nav-links a{
 border-bottom:none;
 }
 
-#nav-links > a::after{
-border-left:1px solid gray;
-z-index:1;
+#nav-links > a:first-of-type{
+margin-left:100px;
 }
 
-.nav-group a{
-border-bottom:2px solid rgba(255,255,255,0.15);
+#show-menu{
+border-bottom:none;
+}
+#show-menu2{
+border-bottom:none;
 }
 
 .hideitem{
 display:none !important;
 }
 
+.dropdown{
+display:table;
+}
+
 .dropdown:hover .dropdown-content{
-display:grid;
-transition:0.35s;
+visibility:visible;
+opacity:1;
 }
 
 .dropdown > a:first-child::before{
@@ -612,13 +680,23 @@ display:inline-block;
 vertical-align:middle;
 }
 
-#nav-language{
+.dropdown.active #show-menu::before{
+content:"";
+padding-right:0px;
+}
+.dropdown.active #show-menu2::before{
+content:"";
+padding-right:0px;
+}
+
+#nav-logo{
 margin-bottom:0px;
 display:none;
 }
 
-#nav-language2{
-display:flex;
+#nav-language{
+margin-bottom:0px;
+display:none;
 }
 
 .content{
@@ -627,11 +705,6 @@ margin-top:80px;
 
 header{
 background-attachment:fixed;
-scroll-margin-top:80px;
-}
-
-.section{
-scroll-margin-top:110px;
 }
 
 }
@@ -687,10 +760,14 @@ font-size:0.8rem;
 
 <body>
 
-<div id="hamburger">☰</div>
+<div id="hamburger">?</div>
 <div id="overlay"></div>
 <div id="topBtn">↑ TO TOP</div>
 
+<div id="nav-logo2">
+<a href="/" class="active"><img src="logo2.png" /></a>
+<a href="/en-index.html"><img src="logo2.png" /></a>
+</div>
 
 <div id="nav-language2">
 <a href="/" class="active">Japanese</a>
@@ -703,6 +780,11 @@ font-size:0.8rem;
 
 <div id="nav-links">
 
+<div id="nav-logo">
+<a href="/" class="active"><img src="logo.png" /></a>
+<a href="/en-index.html"><img src="logo.png" /></a>
+</div>
+
 <div id="nav-language">
 <a href="/" class="active">Japanese</a>
 <a href="/en-index.html">English</a>
@@ -711,27 +793,48 @@ font-size:0.8rem;
 <a href="/">ホーム</a>
 <a href="/#news">お知らせ</a>
 <a href="/registration.html">参加登録</a>
-<a href="/program.html">日程・プログラム</a>
+
+<div class="dropdown">
+<a id="show-menu2">日程・プログラム</a>
+<div class="dropdown-content">
+<a href="/program.html#schedule">大会日程</a>
+<a href="/program.html#plenary">プレナリー</a>
+<a href="/program.html#symposium">シンポジウム</a>
+<a href="/program.html#hs-poster">高校生ポスター</a>
+<a href="/program.html#summer-school">夏の学校</a>
+<a href="/program.html#open-lecture">公開講座</a>
+</div>
+<a href="/program.html#schedule" class="hidemenu2 hideitem">大会日程</a>
+<a href="/program.html#plenary" class="hidemenu2 hideitem">プレナリー</a>
+<a href="/program.html#symposium" class="hidemenu2 hideitem">シンポジウム</a>
+<a href="/program.html#hs-poster" class="hidemenu2 hideitem">高校生ポスター</a>
+<a href="/program.html#summer-school" class="hidemenu2 hideitem">夏の学校</a>
+<a href="/program.html#open-lecture" class="hidemenu2 hideitem">公開講座</a>
+</div>
 <a href="/highschool-poster.html">高校生ポスター</a>
 <a href="/public-seminar.html">市民公開講座</a>
-<a href="/downloads.html" class="hidemenu hideitem">各種ダウンロード</a>
-<a href="/childcare.html" class="hidemenu hideitem">託児室・キッズスペース</a>
 <div class="dropdown">
 <a id="show-menu">その他</a>
 <div class="dropdown-content">
 <a href="/downloads.html">各種ダウンロード</a>
 <a href="/childcare.html">託児室・キッズスペース</a>
 </div>
+<a href="/downloads.html" class="hidemenu hideitem">各種ダウンロード</a>
+<a href="/childcare.html" class="hidemenu hideitem">託児室・キッズスペース</a>
 </div>
 </nav>
 
 <div class="content">
 
+<div id="top-of-page2">
+<h1>日本進化学会第28回大会</h1>
+</div>
+
 <main>
 
-<section id="open-lecture" class="section">
+<section id="news" class="section">
 <h2>市民公開講座</h2>
-<p>準備中</p>
+<pre>準備中</pre>
 </section>
 
 </main>
@@ -769,7 +872,7 @@ E-mail：sesj2026@agr.nagoya-u.ac.jp
 </p>
 
 <p>
-Copyright © 2026 日本進化学会第28回大会 All Rights Reserved.
+Copyright c 2026 日本進化学会第28回大会 All Rights Reserved.
 </p>
 
 </footer>
@@ -789,9 +892,14 @@ const nav=document.querySelector("nav");
 const overlay=document.getElementById("overlay");
 const navLinks=document.querySelectorAll("#nav-links a");
 const showmenu=document.getElementById("show-menu");
+const showmenu2=document.getElementById("show-menu2");
 const hidemenus=document.querySelectorAll("#nav-links .hidemenu");
+const hidemenus2=document.querySelectorAll("#nav-links .hidemenu2");
+const dropdown2=document.querySelectorAll(".dropdown")[0];
+const dropdown=document.querySelectorAll(".dropdown")[1];
 
 let submenu_visible=false;
+let submenu2_visible=false;
 
 showmenu.onclick=()=>{
 if(submenu_visible){
@@ -799,21 +907,45 @@ hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
 submenu_visible=false;
+dropdown.classList.remove("active");
 }else{
 hidemenus.forEach(menu=>{
 menu.classList.remove("hidemenu");
 });
 submenu_visible=true;
+dropdown.classList.add("active");
+}
+}
+
+showmenu2.onclick=()=>{
+if(submenu2_visible){
+hidemenus2.forEach(menu=>{
+menu.classList.add("hidemenu2");
+});
+submenu2_visible=false;
+dropdown2.classList.remove("active");
+}else{
+hidemenus2.forEach(menu=>{
+menu.classList.remove("hidemenu2");
+});
+submenu2_visible=true;
+dropdown2.classList.add("active");
 }
 }
 
 window.addEventListener("mousemove", (e) => {
-if(submenu_visible){
+if(submenu_visible || submenu2_visible){
 if(e.clientY>200 && ! overlay.classList.contains('show')){
 hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
+hidemenus2.forEach(menu=>{
+menu.classList.add("hidemenu2");
+});
 submenu_visible=false;
+submenu2_visible=false;
+dropdown.classList.remove("active");
+dropdown2.classList.remove("active");
 }
 }
 });
@@ -835,14 +967,20 @@ overlay.classList.remove("show");
 navLinks.forEach(link=>{
 link.addEventListener("click",()=>{
 
-if(link!=showmenu){
+if(link!=showmenu && link!=showmenu2){
 nav.classList.remove("open");
 overlay.classList.remove("show");
 
 hidemenus.forEach(menu=>{
 menu.classList.add("hidemenu");
 });
+hidemenus2.forEach(menu=>{
+menu.classList.add("hidemenu2");
+});
 submenu_visible=false;
+submenu2_visible=false;
+dropdown.classList.remove("active");
+dropdown2.classList.remove("active");
 }
 
 });
@@ -850,7 +988,7 @@ submenu_visible=false;
 
 topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
 
-const header=document.querySelector("header");
+//const header=document.querySelector("header");
 const header2=document.getElementById("top-of-page2");
 
 let isUserScrolling = false;
@@ -866,8 +1004,8 @@ window.addEventListener("keydown", () => {
 
 window.addEventListener("scroll",()=>{
 
-if(window.scrollY>360){
-header.classList.add("sticky");
+if(window.scrollY>70){
+//header.classList.add("sticky");
 header2.classList.add("sticky");
 
 if(window.scrollYpre<window.scrollY){
@@ -879,14 +1017,14 @@ hamburger.classList.remove("hide");
 }
 
 }else{
-header.classList.remove("sticky");
+//header.classList.remove("sticky");
 header2.classList.remove("sticky");
 
 header2.classList.remove("hide");
 hamburger.classList.remove("hide");
 }
 
-if(window.scrollY>300){
+if(window.scrollY>100){
 topBtn.classList.add("show");
 }else{
 topBtn.classList.remove("show");
