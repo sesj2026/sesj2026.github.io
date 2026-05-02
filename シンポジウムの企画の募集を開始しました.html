@@ -827,6 +827,10 @@ font-size:0.8rem;
 
 <div class="content">
 
+<div id="top-of-page2">
+<h1>日本進化学会第28回大会</h1>
+</div>
+
 <main>
 
 <section id="news" class="section">
@@ -1033,7 +1037,7 @@ dropdown2.classList.remove("active");
 
 topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
 
-const header=document.querySelector("header");
+//const header=document.querySelector("header");
 const header2=document.getElementById("top-of-page2");
 
 let isUserScrolling = false;
@@ -1050,7 +1054,7 @@ window.addEventListener("keydown", () => {
 window.addEventListener("scroll",()=>{
 
 if(window.scrollY>360){
-header.classList.add("sticky");
+//header.classList.add("sticky");
 header2.classList.add("sticky");
 
 if(window.scrollYpre<window.scrollY){
@@ -1062,7 +1066,7 @@ hamburger.classList.remove("hide");
 }
 
 }else{
-header.classList.remove("sticky");
+//header.classList.remove("sticky");
 header2.classList.remove("sticky");
 
 header2.classList.remove("hide");
