@@ -273,11 +273,28 @@ padding:5px 10px;
 margin-top:10px;
 }
 
+#nav-logo{
+padding:5px 10px;
+margin-bottom:10px;
+}
+
+#nav-logo a{
+display:none;
+cursor:pointer;
+}
+
+#nav-logo a.active{
+display:block;
+}
+
+#nav-logo img{
+height:50px;
+}
+
 #nav-language{
 color:white;
 font-weight:bold;
 padding:5px 10px;
-display:flex;
 gap:10px;
 font-size: 14px;
 
@@ -359,10 +376,10 @@ padding-right:5px;
 }
 
 /* -----------------------
-nav-logo
+nav-logo2
 ----------------------- */
 
-#nav-logo{
+#nav-logo2{
 position:absolute;
 display:none;
 top:15px;
@@ -370,16 +387,16 @@ left:20px;
 z-index:3500;
 }
 
-#nav-logo a{
+#nav-logo2 a{
 display:none;
 cursor:pointer;
 }
 
-#nav-logo a.active{
+#nav-logo2 a.active{
 display:block;
 }
 
-#nav-logo img{
+#nav-logo2 img{
 height:50px;
 }
 
@@ -660,12 +677,17 @@ content:"";
 padding-right:0px;
 }
 
+#nav-logo{
+margin-bottom:0px;
+display:none;
+}
+
 #nav-language{
 margin-bottom:0px;
 display:none;
 }
 
-#nav-logo{
+#nav-logo2{
 display:flex;
 }
 
@@ -743,9 +765,9 @@ font-size:0.8rem;
 <div id="overlay"></div>
 <div id="topBtn">↑ TO TOP</div>
 
-<div id="nav-logo">
-<a href="/" class="active"><img src="logo.svg" /></a>
-<a href="/en-index.html"><img src="logo.svg" /></a>
+<div id="nav-logo2">
+<a href="/" class="active"><img src="logo.png" /></a>
+<a href="/en-index.html"><img src="logo.png" /></a>
 </div>
 
 <div id="nav-language2">
@@ -758,6 +780,11 @@ font-size:0.8rem;
 <nav>
 
 <div id="nav-links">
+
+<div id="nav-logo">
+<a href="/" class="active"><img src="logo.png" /></a>
+<a href="/en-index.html"><img src="logo.png" /></a>
+</div>
 
 <div id="nav-language">
 <a href="/" class="active">Japanese</a>
