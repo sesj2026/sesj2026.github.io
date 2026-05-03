@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <title>日本進化学会第28回大会</title>
 
 <style>
@@ -13,7 +14,7 @@ scroll-behavior:smooth;
 
 body{
 margin:0;
-font-family:'Noto Sans JP', sans-serif, "游ゴシック体", YuGothic, "Yu Gothic", "メイリオ", sans-serif;
+font-family:'Inter', 'Noto Sans JP', sans-serif, "游ゴシック体", YuGothic, "Yu Gothic", "メイリオ";
 background:#f4f6f9;
 line-height:1.7;
 color:#222;
@@ -484,15 +485,12 @@ margin:0px 20px;
 
 .section{
 max-width:1000px;
-margin:60px auto;
-padding:40px;
+margin:40px auto;
+padding:30px;
 
 background:white;
-border:1px solid rgba(0,0,0,0.05);
 border-radius:12px;
-box-shadow:0 20px 40px rgba(0,0,0,0.06);
-
-position:relative;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 
 opacity:0;
 transform:translateY(30px);
@@ -502,16 +500,6 @@ transition:0.6s;
 .section.show{
 opacity:1;
 transform:none;
-}
-
-.section::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:4px;
-background:linear-gradient(to right, var(--accent), transparent);
 }
 
 .section h2{
@@ -858,7 +846,7 @@ font-size:0.8rem;
 <h1>日本進化学会第28回大会</h1>
 </div>
 
-<main>
+<main role="main">
 
 <section id="news" class="section">
 <h2>お知らせ</h2>
