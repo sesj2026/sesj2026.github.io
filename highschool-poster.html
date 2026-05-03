@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <title>高校生ポスター | 日本進化学会第28回大会</title>
 
 <style>
@@ -13,7 +14,7 @@ scroll-behavior:smooth;
 
 body{
 margin:0;
-font-family:'Noto Sans JP', sans-serif, "游ゴシック体", YuGothic, "Yu Gothic", "メイリオ", sans-serif;
+font-family:'Inter', 'Noto Sans JP', sans-serif, "游ゴシック体", YuGothic, "Yu Gothic", "メイリオ";
 background:#f4f6f9;
 line-height:1.7;
 color:#222;
@@ -22,6 +23,10 @@ color:#222;
 img{
 max-width:100%;
 height:auto;
+}
+
+a:hover{
+  opacity:0.8;
 }
 
 .layout{
@@ -485,12 +490,16 @@ margin:0px 20px;
 
 .section{
 max-width:1000px;
-margin:auto;
-padding:25px 20px;
+margin:40px auto;
+padding:30px;
+
+background:white;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 
 opacity:0;
-transform:translateY(30px);
-transition:0.6s;
+transform:translateY(20px);
+transition:0.5s;
 }
 
 .section.show{
@@ -831,7 +840,7 @@ font-size:0.8rem;
 <h1>日本進化学会第28回大会</h1>
 </div>
 
-<main>
+<main role="main">
 
 <section id="news" class="section">
 <h2>高校生ポスター</h2>
