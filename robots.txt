@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sesj2026.github.io/sitemap.xml
+Sitemap: https://sesj2026.agr.nagoya-u.ac.jp/sitemap.xml
