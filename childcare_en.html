@@ -1100,7 +1100,7 @@ window.addEventListener("keydown", () => {
 window.addEventListener("scroll",()=>{
 
 if(window.scrollY>500){
-header.classList.add("sticky");
+header?.classList.add("sticky");
 header2.classList.add("sticky");
 
 if(window.scrollYpre<window.scrollY){
@@ -1112,7 +1112,7 @@ hamburger.classList.remove("hide");
 }
 
 }else{
-header.classList.remove("sticky");
+header?.classList.remove("sticky");
 header2.classList.remove("sticky");
 
 header2.classList.remove("hide");
