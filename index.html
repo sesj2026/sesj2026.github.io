@@ -725,7 +725,7 @@ display:none;
 }
 
 nav{
-position:absolute;
+position:fixed;
 display:flex;
 justify-content: center;
 left:0;
@@ -1257,6 +1257,12 @@ if(window.scrollY>300){
 topBtn.classList.add("show");
 }else{
 topBtn.classList.remove("show");
+}
+
+if(window.scrollY>60){
+nav.classList.add("shrink");
+}else{
+nav.classList.remove("shrink");
 }
 
 window.scrollYpre=window.scrollY;
