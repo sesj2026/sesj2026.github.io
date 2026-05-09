@@ -293,7 +293,7 @@ LEFT MENU
 nav{
 position:fixed;
 top:0;
-display:table;
+display:flex;
 left:-240px;
 width:200px;
 padding:20px;
@@ -323,7 +323,7 @@ font-weight:bold;
 padding:3px 10px;
 border-radius:4px;
 display:flex;
-vertical-align:middle;
+align-items:center;
 text-wrap-mode:nowrap;
 cursor:pointer;
 
@@ -716,6 +716,10 @@ display:flex;
 
 @media (min-width:900px){
 
+#top-of-page2{
+display:none;
+}
+
 #hamburger{
 display:none;
 }
@@ -733,23 +737,24 @@ text-align:center;
 z-index:2;
 }
 
+nav.shrink{
+height:30px;
+
+transition:0.35s;
+}
+
+nav.shrink #nav-links a {
+padding:0px 10px;
+}
+
 #nav-links{
-display:table;
 flex-direction:row;
 height:100%;
 font-size:20px;
 }
 
 #nav-links a{
-display:table-cell;
-}
-
-#nav-links a{
 border-bottom:none;
-}
-
-#nav-links > a:first-of-type{
-margin-left:100px;
 }
 
 #show-menu{
