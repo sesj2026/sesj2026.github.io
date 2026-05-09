@@ -1017,7 +1017,7 @@ dropdown2.classList.remove("active");
 
 topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
 
-//const header=document.querySelector("header");
+const header=document.querySelector("header");
 const header2=document.getElementById("top-of-page2");
 
 let isUserScrolling = false;
@@ -1033,8 +1033,8 @@ window.addEventListener("keydown", () => {
 
 window.addEventListener("scroll",()=>{
 
-if(window.scrollY>70){
-//header.classList.add("sticky");
+if(window.scrollY>500){
+header.classList.add("sticky");
 header2.classList.add("sticky");
 
 if(window.scrollYpre<window.scrollY){
@@ -1046,17 +1046,23 @@ hamburger.classList.remove("hide");
 }
 
 }else{
-//header.classList.remove("sticky");
+header.classList.remove("sticky");
 header2.classList.remove("sticky");
 
 header2.classList.remove("hide");
 hamburger.classList.remove("hide");
 }
 
-if(window.scrollY>100){
+if(window.scrollY>300){
 topBtn.classList.add("show");
 }else{
 topBtn.classList.remove("show");
+}
+
+if(window.scrollY>40){
+nav.classList.add("shrink");
+}else{
+nav.classList.remove("shrink");
 }
 
 window.scrollYpre=window.scrollY;
