@@ -307,7 +307,7 @@ z-index:3000;
 nav.open{
 left:0;
 
-transition:0.35s ease;
+transition:left 0.35s ease;
 }
 
 #nav-links{
@@ -327,7 +327,7 @@ align-items:center;
 text-wrap-mode:nowrap;
 cursor:pointer;
 
-transition: all 0.3s ease;
+transition:font-size 0.3s ease;
 }
 
 #nav-links a:hover{
@@ -745,6 +745,10 @@ transition:height 0.35s ease;
 
 nav.shrink #nav-links a {
 padding:0px 10px;
+}
+
+nav.shrink #nav-links > a {
+line-height:15px;
 }
 
 nav.shrink .dropdown-content{
