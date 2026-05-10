@@ -747,11 +747,11 @@ inset:0;
 z-index:-1;
 background:linear-gradient(0deg, rgba(255, 255, 255, .22) 0%, rgba(255, 255, 255, .06) 45%, rgba(255, 255, 255, .02) 100%);
 opacity:0;
-transition:opacity 0.25s;
 }
 
 #nav-links a:hover::before {
 opacity:1;
+transition:opacity 0.25s;
 }
 
 #show-menu{
@@ -772,14 +772,6 @@ display:flex;
 .dropdown:hover .dropdown-content{
 visibility:visible;
 opacity:1;
-}
-
-.dropdown > a:first-child::before{
-content:"";
-position:relative;
-height:60%;
-display:inline-block;
-vertical-align:middle;
 }
 
 .dropdown.active #show-menu::before{
