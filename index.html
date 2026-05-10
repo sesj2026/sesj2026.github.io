@@ -320,6 +320,7 @@ font-size:inherit;
 }
 
 #nav-links a{
+position:relative;
 color:white;
 text-decoration:none;
 font-weight:bold;
@@ -331,15 +332,6 @@ text-wrap-mode:nowrap;
 cursor:pointer;
 
 transition:font-size 0.3s ease;
-}
-
-#nav-links > a::after{
-content:"";
-position:relative;
-left:11px;
-height:60%;
-display:inline-block;
-vertical-align:middle;
 }
 
 #nav-links a::before {
