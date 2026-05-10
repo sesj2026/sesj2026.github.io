@@ -738,17 +738,17 @@ line-height:34px;
 background:inherit;
 }
 
-.menu-item::before {
+#nav-links a::before {
 content: "";
 position: absolute;
 inset: 0;
 z-index: -1;
-background:linear-gradient(0deg, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, .06) 45%, rgba(255, 255, 255, .02) 100%);
+background:linear-gradient(0deg, rgba(255, 255, 255, .22) 0%, rgba(255, 255, 255, .06) 45%, rgba(255, 255, 255, .02) 100%);
 opacity: 0;
 transition: opacity 0.25s;
 }
 
-.menu-item:hover::before {
+#nav-links a:hover::before {
 opacity: 1;
 }
 
