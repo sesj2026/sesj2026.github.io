@@ -257,6 +257,18 @@ top:-31px;
 opacity:0;
 }
 
+.menu-item {
+display:flex;
+align-items:center;
+justify-content:center;
+gap:3px;
+}
+
+.menu-item img {
+object-fit:contain;
+display:block;
+}
+
 header *{
 z-index:1;
 transition:font-size 0.35s ease;
@@ -793,6 +805,14 @@ height:25px;
 object-fit:contain;
 display:block;
 margin-bottom:5px;
+}
+
+nav.shrink .menu-item img{
+display:none;
+}
+
+nav.shrink:hover .menu-item img{
+display:block;
 }
 
 header{
