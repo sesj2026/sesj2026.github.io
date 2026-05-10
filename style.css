@@ -1,6 +1,6 @@
-/* =======================
+/* -----------------------
 BASE
-======================= */
+----------------------- */
 
 a:hover{
 opacity:0.8;
@@ -11,9 +11,9 @@ white-space:pre-wrap;
 font-family:inherit;
 }
 
-/* =======================
+/* -----------------------
 OVERLAY
-======================= */
+----------------------- */
 
 #overlay{
 position:fixed;
@@ -31,9 +31,9 @@ opacity:1;
 pointer-events:auto;
 }
 
-/* =======================
+/* -----------------------
 SCROLL TOP BUTTON
-======================= */
+----------------------- */
 
 #topBtn{
 position:fixed;
@@ -43,8 +43,8 @@ background:white;
 border:1px solid #141414;
 border-radius:8px;
 cursor:pointer;
-padding:4px 8px;
-font-family:sans-serif;
+padding: 4px 8px;
+font-family: sans-serif;
 z-index:100;
 user-select:none;
 
@@ -58,9 +58,9 @@ opacity:1;
 pointer-events:auto;
 }
 
-/* =======================
-HEADER EFFECTS
-======================= */
+/* -----------------------
+HEADER
+----------------------- */
 
 header{
 transition:0.35s ease;
@@ -79,9 +79,9 @@ font-size:1.2rem;
 margin-top:10px;
 }
 
-/* =======================
+/* -----------------------
 TOP BAR
-======================= */
+----------------------- */
 
 #top-of-page2{
 position:fixed;
@@ -95,8 +95,8 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 border-bottom:1px solid #006d50;
-box-shadow:0px 15px 15px -8px rgba(255,255,255,1);
-font-size:clamp(8px,2.7cqw,20px);
+box-shadow:0px 15px 15px -8px rgba(255, 255, 255, 1);
+font-size:clamp(8px, 2.7cqw, 20px);
 font-weight:bold;
 
 z-index:-1;
@@ -114,16 +114,12 @@ top:-31px;
 opacity:0;
 }
 
-/* =======================
-NAV EFFECTS
-======================= */
+/* -----------------------
+NAV
+----------------------- */
 
 nav.open{
 left:0;
-}
-
-#nav-links a{
-transition:font-size 0.3s ease;
 }
 
 #nav-links a:hover{
@@ -135,19 +131,19 @@ border-bottom:2px solid rgba(255,255,255,0.15);
 }
 
 .hidemenu{
-border:0 !important;
-margin:0 !important;
-padding:0 !important;
+border:0px !important;
+margin:0px !important;
+padding:0px !important;
 opacity:0;
-font-size:0;
+font-size:0px;
 }
 
 .hidemenu2{
-border:0 !important;
-margin:0 !important;
-padding:0 !important;
+border:0px !important;
+margin:0px !important;
+padding:0px !important;
 opacity:0;
-font-size:0;
+font-size:0px;
 }
 
 .nav-title{
@@ -179,7 +175,7 @@ color:white;
 font-weight:bold;
 padding:5px 10px;
 gap:10px;
-font-size:14px;
+font-size: 14px;
 
 margin-bottom:10px;
 flex-flow:row;
@@ -188,27 +184,27 @@ display:flex;
 
 #nav-language a{
 border:1px solid white;
-padding:0 10px;
+padding:0px 10px;
 color:gray;
 text-align:center;
-transition:0.3s ease;
+
+transition: 0.3s ease;
 }
 
 #nav-language a:hover{
 background:white;
 color:black;
 }
-
+    
 #nav-language a.active{
 background:white;
 color:black;
-box-shadow:inset 2px 2px 3px #777777,
-           inset -3px -3px 7px #D8D8D9;
+box-shadow: inset 2px 2px 3px #777777, inset -3px -3px 7px #D8D8D9;
 }
 
-/* =======================
-DROPDOWN
-======================= */
+/* -----------------------
+dropdown
+----------------------- */
 
 .dropdown{
 position:relative;
@@ -224,7 +220,7 @@ min-width:180px;
 box-shadow:0px 2px 6px rgba(0,0,0,0.2);
 border-radius:4px;
 top:80px;
-right:0;
+right:0px;
 text-align:left;
 z-index:2000;
 opacity:0;
@@ -234,26 +230,30 @@ transition:opacity 0.15s ease;
 
 .dropdown-content a{
 padding:15px 10px !important;
-border-bottom:1px solid rgba(255,255,255,0.15);
+border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .dropdown-content a:hover{
 background:#248850;
 }
 
-.dropdown.active #show-menu::before,
+.dropdown.active #show-menu::before{
+content:"▼";
+padding-right:5px;
+}
+
 .dropdown.active #show-menu2::before{
 content:"▼";
 padding-right:5px;
 }
 
-/* =======================
+/* -----------------------
 SPONSOR
-======================= */
+----------------------- */
 
 .sponsor-grid{
 display:flex;
-flex-wrap:wrap;
+flex-wrap: wrap;
 flex-direction:row;
 gap:10px;
 }
@@ -277,12 +277,12 @@ transform:scale(1.03);
 cursor:pointer;
 }
 
-/* =======================
-MAIN CONTENT
-======================= */
+/* -----------------------
+CONTENT
+----------------------- */
 
 main{
-margin:0 20px;
+margin:0px 20px;
 }
 
 .section{
@@ -311,26 +311,19 @@ text-align:justify;
 cursor:pointer;
 }
 
-/* =======================
-MEMBER
-======================= */
-
 .member h3{
-margin:30px 0 15px;
+margin:30px 0px 15px 0px;
 border-bottom:1px solid black;
 }
 
 .member h3:first-child{
-margin:10px 0 15px;
+margin:10px 0px 15px 0px;
+border-bottom:1px solid black;
 }
-
-/* =======================
-ACCESS
-======================= */
-
+    
 .access h3{
 border-bottom:1px solid black;
-margin:40px 0 15px;
+margin:40px 0px 15px 0px;
 }
 
 .access .btn{
@@ -340,58 +333,39 @@ border-radius:6px;
 background:#308b4c;
 color:white;
 display:inline-flex;
-margin:15px 15px 0 0;
+margin:15px 15px 0px 0px;
 text-decoration:none;
 }
 
-/* =======================
-TABLES
-======================= */
-
-.table-type1,
 .time-table{
 border:1px solid gray;
 border-collapse:collapse;
 width:100%;
-}
-
-.time-table{
 table-layout:fixed;
 }
 
-.table-type1 th,
 .time-table th{
 border:1px solid gray;
+background:#006d50;
 color:white;
 text-align:center;
 padding:3px;
 width:30%;
-}
-
-.table-type1 th{
-background:#308b4c;
-}
-
-.time-table th{
-background:#006d50;
-}
-
-.table-type1 td,
-.time-table td{
-border:1px solid gray;
-padding:10px;
-}
-
-.time-table td{
 text-align:center;
 }
 
-/* =======================
+.time-table td{
+border:1px solid gray;
+padding:10px;
+text-align:center;
+}
+
+/* -----------------------
 FOOTER
-======================= */
+----------------------- */
 
 footer{
-background:linear-gradient(90deg,#00684d 0%,#007255 30%,#006847 100%);
+background:linear-gradient(90deg, #00684d 0%, #007255 30%, #006847 100%);
 color:white;
 text-align:center;
 padding:20px;
@@ -421,9 +395,9 @@ background:white;
 padding:5px;
 }
 
-/* =======================
+/* -----------------------
 MOBILE
-======================= */
+----------------------- */
 
 @media (max-width:899px){
 
@@ -434,16 +408,15 @@ transition:left 0.35s ease;
 .dropdown > a{
 padding-left:30px !important;
 }
-
 .dropdown > a:first-child{
 padding:5px 10px !important;
 }
 
 }
 
-/* =======================
+/* -----------------------
 DESKTOP
-======================= */
+----------------------- */
 
 @media (min-width:900px){
 
@@ -456,11 +429,11 @@ height:30px;
 transition:height 0.35s ease;
 }
 
-nav.shrink #nav-links a{
-padding:0 10px;
+nav.shrink #nav-links a {
+padding:0px 10px;
 }
 
-nav.shrink #nav-links > a{
+nav.shrink #nav-links > a {
 line-height:15px;
 transition:line-height 0.35s ease;
 }
@@ -471,14 +444,16 @@ top:30px;
 
 nav.shrink:hover{
 height:80px;
+transition:height 0.35s ease;
 }
 
-nav.shrink:hover #nav-links a{
+nav.shrink:hover #nav-links a {
 padding:3px 10px;
 }
 
-nav.shrink:hover #nav-links > a{
+nav.shrink:hover #nav-links > a {
 line-height:34px;
+transition:line-height 0.35s ease;
 }
 
 nav.shrink:hover .dropdown-content{
@@ -499,26 +474,23 @@ opacity:1;
 background:inherit;
 }
 
-#nav-links a::before{
+#nav-links a::before {
 content:"";
 position:absolute;
 height:100%;
 inset:0;
-background:linear-gradient(
-0deg,
-rgba(255,255,255,.25) 0%,
-rgba(255,255,255,.1) 45%,
-rgba(255,255,255,.02) 100%
-);
+background:linear-gradient(0deg, rgba(255, 255, 255, .25) 0%, rgba(255, 255, 255, .1) 45%, rgba(255, 255, 255, .02) 100%);
 opacity:0;
 }
 
-#nav-links a:hover::before{
+#nav-links a:hover::before {
 opacity:1;
 transition:opacity 0.25s;
 }
 
-#show-menu,
+#show-menu{
+border-bottom:none;
+}
 #show-menu2{
 border-bottom:none;
 }
@@ -536,23 +508,21 @@ visibility:visible;
 opacity:1;
 }
 
-.dropdown.active #show-menu::before,
+.dropdown.active #show-menu::before{
+content:"";
+padding-right:0px;
+}
 .dropdown.active #show-menu2::before{
 content:"";
-padding-right:0;
+padding-right:0px;
 }
 
-#nav-logo,
-#nav-language{
+#nav-logo{
 display:none;
 }
 
-nav.shrink:hover #nav-logo{
-display:flex;
-}
-
-nav.shrink:hover #nav-language{
-display:flex;
+#nav-language{
+display:none;
 }
 
 .section{
@@ -561,9 +531,9 @@ scroll-margin-top:60px;
 
 }
 
-/* =======================
+/* -----------------------
 LARGE DESKTOP
-======================= */
+----------------------- */
 
 @media (min-width:1100px){
 
@@ -575,32 +545,74 @@ left:20px;
 z-index:1500;
 }
 
+#nav-logo a{
+display:none;
+cursor:pointer;
+}
+
+#nav-logo a.active{
+display:block;
+}
+
+#nav-logo img{
+height:50px;
+}
+
 #nav-language{
 position:absolute;
 top:5px;
 right:20px;
+color:white;
+font-weight:bold;
+padding:5px 10px;
 display:flex;
 flex-flow:column;
+gap:10px;
+font-size: 14px;
 z-index:1500;
 }
 
 #nav-language a{
+border:1px solid white;
+padding:0px 10px !important;
+color:gray;
+text-align:center;
 text-decoration:none;
-border-radius:4px;
-width:66px;
-display:inline;
+border-radius: 4px;
+width: 66px;
+display: inline;
+
+transition:0.3s ease;
 }
 
-nav.shrink #nav-logo,
+#nav-language a:hover{
+background:white;
+color:black;
+}
+    
+#nav-language a.active{
+background:white;
+color:black;
+box-shadow: inset 2px 2px 3px #777777, inset -3px -3px 7px #D8D8D9;
+}
+
+nav.shrink #nav-logo{
+display:none;
+}
+
 nav.shrink #nav-language{
 display:none;
 }
 
+nav.shrink:hover #nav-logo{
+display:flex;
 }
 
-/* =======================
-LANG MOBILE FONT
-======================= */
+nav.shrink:hover #nav-language{
+display:flex;
+}
+
+}
 
 @media (min-width:760px) and (max-width:999px){
 
@@ -622,7 +634,7 @@ text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 html:lang(en) header h1{
-font-size:2rem;
+font-size:2.0rem;
 text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
@@ -632,7 +644,7 @@ text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 html:lang(en) header h2{
-font-size:1rem;
+font-size:1.0rem;
 text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
@@ -641,19 +653,23 @@ text-shadow:0 2px 4px rgba(0,0,0,1);
 @media (min-width:500px) and (max-width:599px){
 
 html:lang(ja) header h1{
-font-size:2rem;
+font-size:2.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 html:lang(en) header h1{
 font-size:1.7rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 html:lang(ja) header h2{
-font-size:1rem;
+font-size:1.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 html:lang(en) header h2{
 font-size:0.8rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 }
@@ -662,18 +678,22 @@ font-size:0.8rem;
 
 html:lang(ja) header h1{
 font-size:1.6rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 html:lang(en) header h1{
 font-size:1.4rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 html:lang(ja) header h2{
 font-size:0.8rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 html:lang(en) header h2{
 font-size:0.7rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
 html:lang(ja) footer{
