@@ -585,7 +585,6 @@ z-index:2;
 
 nav.shrink{
 height:30px;
-transition:height 0.35s ease;
 }
 
 nav.shrink #nav-links a {
@@ -594,7 +593,6 @@ padding:0px 10px;
 
 nav.shrink #nav-links > a {
 line-height:15px;
-transition:line-height 0.35s ease;
 }
 
 nav.shrink .dropdown-content{
@@ -608,6 +606,7 @@ transition:height 0.35s ease;
 
 nav.shrink:hover #nav-links a {
 padding:3px 10px;
+transition:padding 0.35s ease;
 }
 
 nav.shrink:hover #nav-links > a {
