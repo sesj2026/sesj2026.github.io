@@ -301,12 +301,55 @@ display:flex;
 left:-240px;
 width:200px;
 padding:20px;
-background: rgba(0,109,80, 0.8);
+background:linear-gradient(90deg, #00684d 0%, #007255 30%, #006847 100%);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 box-shadow:0px 0px 20px 10px rgba(0, 0, 0, 0.3);
 text-align:left;
 z-index:3000;
+}
+
+nav::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.10),
+      rgba(255,255,255,.02)
+    );
+
+  backdrop-filter: blur(10px);
+}
+
+/* 左の斜め */
+nav::after{
+  content:"";
+
+  position:absolute;
+
+  left:180px;
+  top:0;
+
+  width:220px;
+  height:100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,0)
+    );
+
+  clip-path: polygon(
+    25% 0,
+    100% 0,
+    75% 100%,
+    0 100%
+  );
 }
 
 nav.open{
@@ -622,7 +665,7 @@ FOOTER
 ----------------------- */
 
 footer{
-background:#006d50;
+background:linear-gradient(90deg, #00684d 0%, #007255 30%, #006847 100%);
 color:white;
 text-align:center;
 padding:20px;
