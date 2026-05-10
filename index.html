@@ -259,12 +259,11 @@ opacity:0;
 
 .menu-item {
 display:flex;
-align-items:center;
-justify-content:center;
-gap:3px;
+gap:5px;
 }
 
 .menu-item img {
+height:20px;
 object-fit:contain;
 display:block;
 }
@@ -805,6 +804,11 @@ height:25px;
 object-fit:contain;
 display:block;
 margin-bottom:5px;
+}
+
+nav.shrink .menu-item{
+flex-direction:row;
+padding:0px 10px !important;
 }
 
 nav.shrink .menu-item img{
