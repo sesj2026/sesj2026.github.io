@@ -342,9 +342,18 @@ display:inline-block;
 vertical-align:middle;
 }
 
-#nav-links a:hover{
+#nav-links a::before {
+content: "";
+position: absolute;
+inset: 0;
+z-index: -1;
 background:linear-gradient(0deg, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, .06) 45%, rgba(255, 255, 255, .02) 100%);
-transition:.25s;
+opacity: 0;
+transition: opacity 0.25s;
+}
+
+#nav-links:hover::before {
+opacity: 1;
 }
 
 #nav-links a{
