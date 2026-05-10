@@ -175,6 +175,18 @@ opacity:1;
 top:-31px;
 opacity:0;
 }
+
+.menu-item {
+display:flex;
+gap:5px;
+}
+
+.menu-item img {
+width:20px;
+object-fit:contain;
+display:block;
+}
+
 header *{
 z-index:1;
 transition:font-size 0.35s ease;
@@ -336,13 +348,6 @@ dropdown
 position:relative;
 display:block;
 height:100%;
-}
-
-.dropdown > a{
-padding-left:30px !important;
-}
-.dropdown > a:first-child{
-padding:5px 10px !important;
 }
 
 .dropdown-content{
@@ -576,6 +581,13 @@ nav {
 transition: left 0.35s ease;
 }
 
+.dropdown > a{
+padding-left:30px !important;
+}
+.dropdown > a:first-child{
+padding:5px 10px !important;
+}
+
 }
 
 @media (min-width:900px){
@@ -697,6 +709,59 @@ display:none;
 display:none;
 }
 
+.menu-item {
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:20px 10px !important;
+gap:0px;
+}
+
+.menu-item img {
+height:25px;
+width:auto;
+object-fit:contain;
+display:block;
+margin:5px 0;
+}
+
+.menu-item span {
+line-height:20px;
+}
+
+nav.shrink .menu-item span {
+line-height:15px;
+}
+
+nav.shrink:hover .menu-item span {
+line-height:20px;
+transition:line-height 0.35s ease;
+}
+
+nav.shrink .menu-item{
+flex-direction:row;
+padding:0px 10px !important;
+}
+
+nav.shrink .menu-item img{
+margin:0;
+height:0px;
+width:0px;
+}
+
+nav.shrink:hover .menu-item{
+flex-direction:column;
+padding:20px 10px !important;
+}
+
+nav.shrink:hover .menu-item img{
+margin:5px 0;
+height:25px;
+width:auto;
+transition:0.35s ease;
+}
+
 header{
 background-attachment:fixed;
 }
@@ -790,48 +855,94 @@ display:flex;
 
 }
 
-@media (min-width:600px) and (max-width:760px){
+@media (min-width:760px) and (max-width:999px){
 
-header h1{
+html:lang(en) header h1{
+font-size:2.2rem;
+}
+
+html:lang(en) header h2{
+font-size:1.2rem;
+}
+
+}
+
+@media (min-width:600px) and (max-width:759px){
+
+html:lang(ja) header h1{
 font-size:2.3rem;
 text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
-header h2{
-font-size:1.3rem;
-text-shadow:0 2px 4px rgba(0,0,0,1);
-}
-    
-}
-
-@media (min-width:500px) and (max-width:599px){
-
-header h1{
+html:lang(en) header h1{
 font-size:2.0rem;
 text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
-header h2{
+html:lang(ja) header h2{
+font-size:1.3rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+html:lang(en) header h2{
 font-size:1.0rem;
 text-shadow:0 2px 4px rgba(0,0,0,1);
 }
-    
+
+}
+
+@media (min-width:500px) and (max-width:599px){
+
+html:lang(ja) header h1{
+font-size:2.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+html:lang(en) header h1{
+font-size:1.7rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+html:lang(ja) header h2{
+font-size:1.0rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+html:lang(en) header h2{
+font-size:0.8rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
 }
 
 @media (max-width:499px){
 
-header h1{
+html:lang(ja) header h1{
 font-size:1.6rem;
 text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
-header h2{
+html:lang(en) header h1{
+font-size:1.4rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+html:lang(ja) header h2{
 font-size:0.8rem;
 text-shadow:0 2px 4px rgba(0,0,0,1);
 }
 
-footer{
+html:lang(en) header h2{
+font-size:0.7rem;
+text-shadow:0 2px 4px rgba(0,0,0,1);
+}
+
+html:lang(ja) footer{
 font-size:0.8rem;
+}
+
+html:lang(en) footer{
+font-size:0.7rem;
 }
 
 }
