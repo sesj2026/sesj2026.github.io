@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="526" viewBox="0 0 512 526" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="white" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Document outline -->
+    <path d="
+      M48 16
+      H334
+      L454 136
+      V318
+      " />
+
+    <path d="
+      M318 510
+      H48
+      Q16 510 16 478
+      V48
+      Q16 16 48 16
+      " />
+
+    <!-- Folded corner -->
+    <path d="
+      M334 16
+      V104
+      Q334 136 366 136
+      H454
+      " />
+
+    <!-- Text lines -->
+    <line x1="112" y1="170" x2="254" y2="170" />
+    <line x1="112" y1="262" x2="284" y2="262" />
+    <line x1="112" y1="350" x2="220" y2="350" />
+
+    <!-- Pen -->
+    <path d="
+      M322 470
+      C350 396, 418 360, 486 352
+      C470 370, 434 408, 390 450
+      C354 484, 334 502, 322 510
+      Z
+      " />
+
+    <path d="
+      M390 450
+      L486 352
+      " />
+  </g>
+</svg>
