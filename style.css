@@ -828,8 +828,8 @@ display:none;
 nav.shrink #nav-language{
 top:3px;
 right:30px;
-width: 27px;
-height: 15px;
+width:27px;
+height:15px;
 background-image: url("./translate.png");
 background-size:cover;
 }
@@ -842,11 +842,13 @@ nav.shrink:hover #nav-language{
 display:flex;
 top:5px;
 right:20px;
+width:auto;
+height:auto;
 background-image:none;
 }
 
 nav.shrink:hover #nav-language *{
-display:block;
+display:inline;
 }
 
 }
