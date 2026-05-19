@@ -821,8 +821,14 @@ nav.shrink #nav-logo{
 display:none;
 }
 
-nav.shrink #nav-language{
+nav.shrink #nav-language *{
 display:none;
+}
+
+nav.shrink #nav-language{
+width: 60px;
+height: 25px;
+background-image: url("./translate.png");
 }
 
 nav.shrink:hover #nav-logo{
