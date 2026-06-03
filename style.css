@@ -427,12 +427,13 @@ padding-left:10px;
 color:#187741;
 }
 
-pre{
-white-space:pre-wrap;
-font-family:inherit;
+.section p{
+text-align:justify;
 }
 
-.section p{
+.section pre{
+white-space:pre-wrap;
+font-family:inherit;
 text-align:justify;
 }
 
