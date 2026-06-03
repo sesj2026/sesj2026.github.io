@@ -529,6 +529,10 @@ padding: 0 0 0.3em 0;
 line-height: 1.8;
 }
 
+.info-table td pre{
+padding:0;
+}
+
 /* -----------------------
 FOOTER
 ----------------------- */
