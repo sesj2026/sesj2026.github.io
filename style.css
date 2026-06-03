@@ -520,12 +520,12 @@ width: 5em;
 text-align: left;
 vertical-align: top;
 font-weight: bold;
-padding: 0.3em 1em 0.3em 0;
+padding: 1px 1em 0.3em 0;
 white-space: nowrap;
 }
 
 .info-table td {
-padding: 0.3em 0;
+padding: 0 0 0.3em 0;
 line-height: 1.8;
 }
 
