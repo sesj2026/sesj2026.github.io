@@ -143,17 +143,16 @@
 <td colspan="2">
 　<input type="radio" id="join" name="party" value="1"><label for="join">参加する</label>
 　<input type="radio" id="notjoin" name="party" value="0" checked=""><label for="notjoin">参加しない</label>
-</td>
-</tr>
+</td></tr>
 
 <tr><td height="10"></td></tr>
 
 <tr><td valign="top" nowrap="">発　表</td>
 <td colspan="2">
-　<input type="radio" name="presentation" value="0" checked="" onclick="CheckPresentation(0)">なし<br><br>
-</td>
-</tr><tr>
-<td></td>
+　<input type="radio" id="no_presentation" name="presentation" value="0" checked="" onclick="CheckPresentation(0)"><label for="no_presentation">なし</label>
+</td></tr>
+<br>
+<tr><td></td>
 <td colspan="2" valign="top">
 　<input type="radio" id="presentation_general" name="presentation" value="1" onclick="CheckPresentation(1)"><label for="presentation_general">一般講演</label><br>
 　　　<input type="radio" id="poster_oral_award" name="poster" value="1" onclick="CheckPoster()"><label for="poster_oral_award">口頭発表希望（口頭発表賞の審査を希望する）</label><br>
@@ -171,11 +170,9 @@
 　受賞者には副賞として賞状および賞金（200ユーロ予定）が授与されます。<br />
 　参考：<a href="https://febs.onlinelibrary.wiley.com/journal/22115463/prize-winners" target="_blank">FEBS Open Bio Poster Prize</a></font>
 </div>
-</td>
-</tr>
+</td></tr>
 
-<tr>
-<td></td>
+<tr><td></td>
 <td valign="top" nowrap="">
 　<input type="radio" id="symposium" name="presentation" value="3" onclick="CheckPresentation(3)">シンポジウム</td>
 <td>
@@ -189,28 +186,23 @@
 <option value="S6">S6 理論・植物・動物—かたちの進化可能性</option>
 <option value="S7">S7 骨太なオミクス解析で解き明かす生物進化—その研究、進化学会で発表してもらえませんか？</option>
 </select>
-</td>
-</tr>
+</td></tr>
 
 <tr><td></td></tr>
 
-<tr>
-<td></td>
+<tr><td></td>
 <td valign="top">
 　<input type="radio" id="symposium" name="presentation" value="4" onclick="CheckPresentation(4)">夏の学校
 </td>
-<td></td>
-</tr>
+<td></td></tr>
 
 <tr><td></td></tr>
 
-<tr>
-<td></td>
+<tr><td></td>
 <td valign="top">
 　<input type="radio" id="symposium" name="presentation" value="5" onclick="CheckPresentation(5)">市民公開講座<br>
 </td>
-<td></td>
-</tr>
+<td></td></tr>
 </tbody></table>
 
 <input type="hidden" name="swname" value="">
