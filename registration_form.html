@@ -132,7 +132,7 @@
 <table style="width: 700px;">
 <tbody><tr><td valign="top" nowrap="">性　別</td>
 <td colspan="2">
-　<input type="radio" name="gender" value="1">男性</input>　<input type="radio" name="gender" value="2">女性</input>　<input type="radio" name="gender" value="0" checked="">回答しない</input><br>
+　<input type="radio" id="male" name="gender" value="1"><label for="male">男性</label>　<input type="radio" id="female" name="gender" value="2"><label for="female">女性</label>　<input type="radio" id="NA" name="gender" value="0" checked=""><label for="NA">回答しない</label><br>
 　　<font color="#FF0000" size="-1">※男女共同参画推進のための調査です。ご協力お願いします。</font>
 </td>
 </tr>
@@ -141,7 +141,8 @@
 
 <tr><td nowrap="">懇親会</td>
 <td colspan="2">
-　<input type="radio" name="party" value="1">参加する　<input type="radio" name="party" value="0" checked="">参加しない
+　<input type="radio" id="join" name="party" value="1"><label for="join">参加する</label>
+　<input type="radio" id="notjoin" name="party" value="0" checked=""><label for="notjoin">参加しない</label>
 </td>
 </tr>
 
@@ -154,10 +155,10 @@
 </tr><tr>
 <td></td>
 <td colspan="2" valign="top">
-　<input type="radio" name="presentation" value="1" onclick="CheckPresentation(1)">一般講演<br>
-　　　<input type="radio" name="poster" value="1" onclick="CheckPoster()">口頭発表希望（口頭発表賞の審査を希望する）<br>
-　　　<input type="radio" name="poster" value="2" onclick="CheckPoster()">口頭発表希望（口頭発表賞の審査を希望しない）<br>
-　　　<input type="radio" name="poster" value="3" onclick="CheckPoster()">ポスター発表希望
+　<input type="radio" id="presentation_general" name="presentation" value="1" onclick="CheckPresentation(1)"><label for="presentation_general">一般講演</label><br>
+　　　<input type="radio" id="poster_oral_award" name="poster" value="1" onclick="CheckPoster()"><label for="poster_oral_award">口頭発表希望（口頭発表賞の審査を希望する）</label><br>
+　　　<input type="radio" id="poster_oral_noaward" name="poster" value="2" onclick="CheckPoster()"><label for="poster_oral_noaward">口頭発表希望（口頭発表賞の審査を希望しない）</label><br>
+　　　<input type="radio" id="poster_poster" name="poster" value="3" onclick="CheckPoster()"><label for="poster_poster">ポスター発表希望</label>
 <br>
 <div style="margin-left: 40px">
 <font color="#FF0000" size="-1">※口頭発表賞の対象者は、学生およびポスドク（特任助教を含む）のうち希望者とします。年齢制限はありません。<br />
@@ -214,12 +215,12 @@
 
 <input type="hidden" name="swname" value="">
 <font color="#FF0000" size="-1">
-<p>※招待講演者以外、発表は会員のみです。<br>　非会員で発表希望の方は<a href="http://sesj.kenkyuukai.jp/">日本進化学会のホームページ</a>より入会手続を行って下さい。</p>
+<p>※招待講演者以外、発表は会員のみです。<br>
+　非会員で発表希望の方は<a href="http://sesj.kenkyuukai.jp/">日本進化学会のホームページ</a>より入会手続を行って下さい。</p>
 <p>※複数の発表要旨を入力する場合、参加申込み後、追加発表の要旨入力を行って下さい。なお、一般講演は口頭、ポスターを問わず、ひとり一件までです。</p>
-<p>※プレゼンテーションについては大会のwebサイトを参照してください。<br>　PCによるプレゼンテーションをなさる方は、必要に応じて、ご自身でPCの準備をお願いいたします。</p>
-
+<p>※プレゼンテーションについては大会のwebサイトを参照してください。<br>
+　PCによるプレゼンテーションをなさる方は、必要に応じて、ご自身でPCの準備をお願いいたします。</p>
 <p>※演題・要旨登録〆切：7月10日（金）　それ以降の登録・変更はできません。</p>
-
 <p>※早期参加申込〆切： 7月24日（金）　振込期日： 7月24日（金）<br>
 　事前参加申込〆切： 8月19日（水）　振込期日： 8月19日（水）<br>
 　当日参加申込〆切： 8月22日（土）　振込期日： 8月22日（土）<br><br>
@@ -280,8 +281,9 @@
 <textarea name="comment" wrap="hard" style="width: 700px; height: 50px;"></textarea>
 <br>
 <font color="#FF0000" size="-1">
-※大会参加費・懇親会費を別の名義でお支払いされる場合は、payventで登録する予定の振込名義人様のお名前を上の連絡事項欄にご記入ください。<br>
-※託児希望の方はこの連絡事項に記載するのではなく、childcare-sesj2026@agr.nagoya-u.ac.jp まで電子メールでご連絡ください。のちほど託児申し込みのためのご案内をメールでご連絡いたします。6/30までにご案内が届かない場合は再度お問い合わせください。<br>
+※大会参加費・懇親会費を別の名義でお支払いされる場合は、Payventで登録する予定の振込名義人様のお名前を上の連絡事項欄にご記入ください。<br>
+※託児希望の方はこの連絡事項に記載するのではなく、childcare-sesj2026@agr.nagoya-u.ac.jp まで電子メールでご連絡ください。<br />
+　のちほど託児申し込みのためのご案内をメールでご連絡いたします。6/30までにご案内が届かない場合は再度お問い合わせください。<br>
 ※懇親会にご家族を同伴されたい方は連絡事項欄に、同伴者の年齢をお書きください。<br>
 　例）懇親会同伴希望：２歳、４歳、３３歳<br>
 　同伴者の懇親会費もオンライン決済で支払って下さい。追加で懇親会費が必要な場合には別途連絡いたします。<br>
