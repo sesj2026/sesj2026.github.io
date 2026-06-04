@@ -87,7 +87,7 @@
 
 <section id="news" class="section">
 <h2>参加登録、演題・要旨登録</h2>
-<form name="Form" action="check.asp" method="post" onsubmit="return CheckForm()">
+<form name="Form" action="https://evolgen.biol.se.tmu.ac.jp/sesj2026reg/check.asp" method="post" onsubmit="return CheckForm()">
 <div style="font-size:20px; font-weight:bold">■大会参加申込み</div><!--<FONT size="-1">（<a href="http://www.sendou.soken.ac.jp/esb/esj2008/amesj05.html">⇒高校生の方はこちらへ</a>）</font>-->
 <table style="width: 550px;">
 <tbody><tr>
@@ -364,6 +364,197 @@ Copyright © 2026 日本進化学会第28回大会 All Rights Reserved.
 </div>
 
 <script src="script.js"></script>
+<script type="text/javascript" language="JavaScript">
+<!--
+var imgTo = new Array();
+imgTo[1] = new Image(),imgTo[1].src='rnv_bg01.gif';
+imgTo[2] = new Image(),imgTo[2].src='rnv_bg03.gif';
+imgTo[3] = new Image(),imgTo[3].src='rnv_bg02.gif';
 
+function chnStl01 (name,num) {
+  if ( document.all ) {
+    document.all(name).style.backgroundImage='url(' + imgTo[num].src + ')';
+  } else if ( document.getElementById ) {
+    document.getElementById(name).style.backgroundImage='url(' + imgTo[num].src + ')';
+  }
+}
+
+function CheckForm(){
+  if (document.Form.name1.value.length == 0){
+    alert("氏（漢字）が空欄です。入力して下さい！");
+    return false
+  }
+  else if (document.Form.name2.value.length == 0){
+    alert("名（漢字）が空欄です。入力して下さい！");
+    return false
+  }
+  else if (document.Form.namey1.value.length == 0){
+    alert("氏（よみがな）が空欄です。入力して下さい！");
+    return false
+  }
+  else if (document.Form.namey2.value.length == 0){
+    alert("名（よみがな）が空欄です。入力して下さい！");
+    return false
+  }
+  else if (document.Form.affiliation.value.length == 0){
+    alert("所属が空欄です。入力して下さい！");
+    return false
+  }
+  else if (document.Form.zipcode.value.length == 0){
+    alert("郵便番号が空欄です。入力して下さい！");
+    return false
+  }
+  else if (document.Form.address.value.length == 0){
+    alert("住所が空欄です。入力して下さい！");
+    return false
+  }
+  else if (document.Form.tel.value.length == 0){
+    alert("電話番号が空欄です。入力して下さい！");
+    return false
+  }
+  else if (document.Form.mailaddr.value.length == 0){
+    alert("メールアドレスが空欄です。入力して下さい！");
+    return false
+  }
+  else if ((document.Form.membership.selectedIndex >= 4) && (document.Form.presentation[1].checked)) {
+    alert("非会員は一般講演はできません。");
+    return false
+  }
+  else if ((document.Form.invitation.checked) && (document.Form.presentation[0].checked)) {
+    alert("招待講演者は発表する必要があります。");
+    return false
+  }
+  else if ((document.Form.membership.selectedIndex >= 4) && (!document.Form.invitation.checked)  && (!document.Form.presentation[0].checked)) {
+    alert("招待講演者以外の非会員は講演はできません。");
+    return false
+  }
+  else if ((document.Form.presentation.value == 3) && (document.Form.S.selectedIndex == 0)){
+    alert("シンポジウムを選択して下さい。");
+    return false
+  }
+  else if ((document.Form.presentation.value == 2) && (document.Form.W.selectedIndex == 0)){
+    alert("ワークショップを選択して下さい。");
+    return false
+  }
+  return true; 
+}
+
+function ToggleInvitation(){
+  if (Form.membership.options[4].selected != "1"){
+    Form.invitation.checked = false;
+  }
+  if ((Form.membership.options[1].selected == "1") && (Form.poster[0].checked)){
+    Form.poster[1].checked = true;
+  }
+}
+
+function ToggleMembership(){
+  if (Form.invitation.checked == "1"){
+    Form.membership.options[4].selected = "1";
+  }
+}
+
+function CheckPoster(){
+  Form.presentation[1].checked = true; 
+  CheckPresentation(1)
+  if ((Form.membership.options[1].selected == "1") && (Form.poster[0].checked)){
+    Form.poster[1].checked = true;
+  }
+  Form.S.selectedIndex = 0;
+}
+
+function CheckSymposium(n){
+  document.getElementById("presen_form").style.display = "inline";
+  Form.presentation.value = n;
+  if (n != 3){
+    Form.S.selectedIndex  = 0;
+  }
+  if (n != 2){
+    Form.W.selectedIndex  = 0;
+  }
+  if (n != 1) {
+    Form.poster[0].checked = false;
+    Form.poster[1].checked = false;
+    Form.poster[2].checked = false;
+  }
+  if (n == 3){
+    if (Form.S.selectedIndex == 0){
+      Form.swname.value = "未選択"
+    }
+    else {
+      Form.swname.value = Form.S[Form.S.selectedIndex].textContent;
+    }
+  }
+  else if (n == 2){
+    if (Form.W.selectedIndex == 0){
+      Form.swname.value = "未選択"
+    }
+    else {
+      Form.swname.value = Form.W[Form.W.selectedIndex].textContent;
+    }
+  }
+  else {
+    Form.swname.value = "";
+  }
+}
+
+function CheckPresentation(index){
+  if (index != 3){
+    Form.S.selectedIndex  = 0;
+  }
+  if (index != 2){
+    Form.W.selectedIndex  = 0;
+  }
+  if (index == 0){
+    document.getElementById("presen_form").style.display = "none";
+    Form.poster[0].checked = false;
+    Form.poster[1].checked = false;
+    Form.poster[2].checked = false;
+  }
+  else {
+    document.getElementById("presen_form").style.display = "inline";
+  }
+  if (index == 1){
+    if ((!Form.poster[0].checked) && (!Form.poster[1].checked) && (!Form.poster[2].checked)){
+      if (Form.membership.options[0].selected) {
+        Form.poster[0].checked = true;
+      }
+      else if (Form.membership.options[1].selected){
+        Form.poster[1].checked = true;
+      }
+      else {
+        Form.poster[2].checked = true;
+      }
+    }
+  }
+  else {
+    Form.poster[0].checked = false;
+    Form.poster[1].checked = false;
+    Form.poster[2].checked = false;
+  }
+  if (index == 3){
+    if (Form.S.selectedIndex == 0){
+      Form.swname.value = "未選択"
+    }
+    else {
+      Form.swname.value = Form.S[Form.S.selectedIndex].textContent;
+    }
+  }
+  else if (index == 2){
+    if (Form.W.selectedIndex == 0){
+      Form.swname.value = "未選択"
+    }
+    else {
+      Form.swname.value = Form.W[Form.W.selectedIndex].textContent;
+    }
+  }
+  else {
+    Form.swname.value = "";
+  }
+}
+
+
+//-->
+</script>
 </body>
 </html>
