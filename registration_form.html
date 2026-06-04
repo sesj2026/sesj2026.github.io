@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="preload" href="style.css" as="style">
 <link rel="stylesheet" href="style.css">
-<title>参加登録 | 日本進化学会第28回大会（2026年 名古屋大会）</title>
+<title>参加登録、演題・要旨登録 | 日本進化学会第28回大会（2026年 名古屋大会）</title>
 </head>
 
 <body>
@@ -86,8 +86,237 @@
 <main role="main">
 
 <section id="news" class="section">
-<h2>参加登録</h2>
-<p>準備中</p>
+<h2>参加登録、演題・要旨登録</h2>
+<form name="Form" action="check.asp" method="post" onsubmit="return CheckForm()">
+<div style="font-size:20px; font-weight:bold">■大会参加申込み</div><!--<FONT size="-1">（<a href="http://www.sendou.soken.ac.jp/esb/esj2008/amesj05.html">⇒高校生の方はこちらへ</a>）</font>-->
+<table style="width: 550px;">
+<tbody><tr>
+<td nowrap="">氏　名（漢字）</td><td>氏</td><td><input type="text" name="name1" value="" style="width: 120px;"></td><td>名</td><td><input type="text" name="name2" value="" style="width: 170px;"></td></tr>
+<tr><td>しめい（ひらがな）</td><td>　</td><td><input type="text" name="namey1" value="" style="width: 120px;"></td><td></td><td><input type="text" name="namey2" value="" style="width: 170px;"></td></tr>
+</tbody></table>
+<br>
+<table>
+<tbody><tr><td nowrap="">E-mail</td><td colspan="2"><input type="text" name="mailaddr" value="" style="width: 350px; ime-mode: disabled; ">（半角）</td></tr>
+<tr><td><br></td></tr>
+<tr><td nowrap="">所　属</td><td colspan="2"><input type="text" name="affiliation" value="" style="width: 450px;"></td></tr>
+<tr><td nowrap="">郵便番号</td><td colspan="2"><input type="text" name="zipcode" value="" style="width: 100px; ime-mode: disabled; ">（半角）</td></tr>
+<tr><td nowrap="">住　所</td><td colspan="2"><input type="text" name="address" value="" style="width: 600px;"></td></tr>
+<tr><td nowrap="">電話番号</td><td colspan="2"><input type="text" name="tel" value="" style="width: 250px; ime-mode: disabled; ">（半角）</td></tr>
+<!--
+<TR><TD nowrap>FAX番号</TD><TD colspan="2"><INPUT TYPE="text" NAME="fax" value="" style="width: 250px; ime-mode: disabled; ">（半角）</TD></TR>
+-->
+<tr><td><br></td></tr>
+<tr><td valign="top" nowrap="">会員種別</td>
+<td valign="top">
+<select name="membership" onchange="ToggleInvitation()">
+<option value="10">一般会員（非PI）</option>
+<option value="11">一般会員（PI）</option>
+<option value="20">学生会員（大学院生）</option>
+<option value="21">学部生</option>
+<option value="0">非会員</option>
+</select>
+<br>
+<font color="#FF0000" size="-1">※各自の判断で種別の選択をお願いいたします。<br>　PIの方には発表賞の審査員を依頼することがあります。<br>※学部学生の参加費は無料です。<br>　当日、学生証を受付で提示してください。</font>
+</td>
+<td>
+　<input type="checkbox" name="invitation" value="1" onclick="ToggleMembership()">非会員の招待講演者<br>　　<font color="#FF0000" size="-1">※該当する方はチェックしてください。</font><br>　　<font color="#FF0000" size="-1">※招待講演者は参加費無料です。</font>
+
+</td>
+</tr>
+</tbody></table>
+<br>
+<table style="width: 700px;">
+<tbody><tr><td valign="top" nowrap="">性　別</td>
+<td colspan="2">
+　<input type="radio" name="gender" value="1">男性　<input type="radio" name="gender" value="2">女性　<input type="radio" name="gender" value="0" checked="">回答しない
+<br>
+　　<font color="#FF0000" size="-1">※男女共同参画推進のための調査です。ご協力お願いします。</font>
+</td>
+</tr>
+<tr><td height="10">　</td></tr>
+<tr><td nowrap="">懇親会</td>
+<td colspan="2">
+　<input type="radio" name="party" value="1">参加する　<input type="radio" name="party" value="0" checked="">参加しない
+</td>
+</tr>
+<tr><td height="10">　</td></tr>
+<tr><td valign="top" nowrap="">発　表</td>
+<td colspan="2">
+　<input type="radio" name="presentation" value="0" checked="" onclick="CheckPresentation(0)">なし<br><br>
+</td>
+</tr><tr>
+<td></td>
+<td colspan="2" valign="top">
+
+　<input type="radio" name="presentation" value="1" onclick="CheckPresentation(1)">一般講演<br>
+　　　<input type="radio" name="poster" value="1" onclick="CheckPoster()">口頭発表希望（口頭発表賞の審査を希望する）<br>
+　　　<input type="radio" name="poster" value="2" onclick="CheckPoster()">口頭発表希望（口頭発表賞の審査を希望しない）<br>
+　　　<input type="radio" name="poster" value="3" onclick="CheckPoster()">ポスター発表希望
+<br>
+<div style="margin-left: 40px">
+<font color="#FF0000" size="-1">※口頭発表賞の対象は学生とポスドク（特任助教を含む）の希望者となります。<br>　年齢制限はありません。本大会では、日本語と英語のどちらの発表でも受賞対象となります。<br>　過去の関連テーマでの受賞者はご遠慮ください。<br>※ポスター発表に申し込んだ学生会員は全員ポスター発表賞審査の対象となります。</font>
+</div>
+
+</td>
+</tr>
+<!--
+<tr><td>　</td></tr>
+-->
+
+<tr>
+<td></td>
+<td valign="top" nowrap="">
+　<input type="radio" id="symposium" name="presentation" value="3" onclick="CheckPresentation(3)">シンポジウム</td>
+<td><select name="S" size="1" onchange="CheckSymposium(3)">
+<option value="">選択してください</option>
+
+
+<option value="S1">S1 トランスポゾンが駆動するゲノム・エピゲノム改変と進化</option>
+
+<option value="S2">S2 動物における個体性の逸脱・喪失</option>
+
+<option value="S3">S3 古代オミクス研究からの進化学の新展開</option>
+
+<option value="S4">S4 機能的側面から読み解く感覚受容の進化と環境適応 </option>
+
+<option value="S5">S5 RNAウイルスハンティング2.1</option>
+
+<option value="S6">S6 理論・植物・動物—かたちの進化可能性</option>
+
+<option value="S7">S7 骨太なオミクス解析で解き明かす生物進化—その研究、進化学会で発表してもらえませんか？</option>
+
+</select><br>
+</td>
+</tr>
+<tr><td>　</td></tr>
+
+<tr>
+<td></td>
+<td valign="top" nowrap="">
+　<input type="radio" id="workshop" name="presentation" value="2" onclick="CheckPresentation(2)">ワークショップ</td>
+<td><select name="W" size="1" onchange="CheckSymposium(2)">
+<option value="">選択してください</option>
+
+
+<option value="W1">W1 環境水ゲノムサーベイランスから考える微生物多様性研究の可能性</option>
+
+<option value="W2">W2 「マルチパートナー共生系を識る」</option>
+
+<option value="W3">W3  新たに開拓する有用昆虫 ―遺伝子から表現型まで―</option>
+
+</select><br>
+</td>
+</tr>
+<tr><td>　</td></tr>
+
+<tr>
+<td></td>
+<td valign="top">
+　<input type="radio" id="symposium" name="presentation" value="4" onclick="CheckPresentation(4)">夏の学校
+</td>
+<td></td>
+</tr>
+<tr><td>　</td></tr>
+<tr>
+<td></td>
+<td valign="top">
+　<input type="radio" id="symposium" name="presentation" value="5" onclick="CheckPresentation(5)">市民公開講座<br>
+</td>
+<td></td>
+</tr>
+</tbody></table>
+<input type="hidden" name="swname" value="">
+<font color="#FF0000" size="-1">
+<p>※招待講演者以外、発表は会員のみです。<br>　非会員で発表希望の方は<a href="http://sesj.kenkyuukai.jp/">日本進化学会のホームページ</a>より入会手続を行って下さい。</p>
+<p>※複数の発表要旨を入力する場合、参加申込み後、追加発表の要旨入力を行って下さい。なお、一般講演は口頭、ポスターを問わず、ひとり一件までです。</p>
+<p>※プレゼンテーションについては大会のwebサイトを参照してください。<br>　PCによるプレゼンテーションをなさる方は、必要に応じて、ご自身でPCの準備をお願いいたします。</p>
+
+<p>※演題・要旨登録〆切：7月11日（土）　それ以降の登録・変更はできません。</p>
+
+<p>※早期参加申込〆切： 7月24日（金）　振込期日： 7月31日（金）<br>
+　事前参加申込〆切： 8月19日（水）　振込期日： 8月19日（水）<br>
+　当日参加申込〆切： 8月23日（日）　振込期日： 8月23日（日）<br><br>
+※支払い方法はPayventを使ったオンライン決済のみです。当日現金払いはありませんのでご注意ください。
+</p>
+
+</font>
+
+<input type="hidden" name="fee1" value="">
+<input type="hidden" name="fee2" value="">
+
+<div id="presen_form" style="display:none">
+<div style="font-size:20px; font-weight:bold">■演題・要旨登録</div>
+英語タイトル（必須）<br>
+<input type="text" name="title" value="" style="width: 700px; ime-mode:disabled;"><br>
+日本語タイトル（オプション）<br>
+<input type="text" name="jtitle" value="" style="width: 700px;"><br>
+<br>
+発表者氏名<br>
+<input type="text" name="author_name" value="" style="width: 700px;"><br>
+<font size="-1">(例)  進化太郎1，滋賀花子2，○長浜次郎3</font><br>
+<font color="#FF0000" size="-1">※発表者（当日発表する人）の氏名の前には○印を付けてください。<br>
+※招待講演者を除く発表者は会員で、年会費と大会参加費を納入していることが必要です。</font><br>
+<br>
+
+発表者所属<br>
+<input type="text" name="author_affil" value="" style="width: 700px;"><br>
+<font size="-1">(例)  1名大・院生命農，2関西医大・生医研，3広島大・両生類研セ</font><br>
+<br>
+発表要旨（日本語は400字以内、英語は200 words以内）<!--<FONT COLOR="#FF0000" size="-1">※口頭発表賞の審査を希望する場合は英語で。</FONT>--><br>
+<textarea name="abstract" wrap="soft" style="width: 700px; height: 300px;"></textarea><br>
+<a href="tokushu.html" target="_blank">※上付、下付、下線、イタリック等の特殊文字についての注意点</a>
+<br>
+<br>
+研究分野<br>
+<select name="workfield">　
+<option value="">選択してください</option>
+<option value="ゲノム・分子進化">ゲノム・分子進化</option>
+<option value="発生・形態進化">発生・形態進化</option>
+<option value="系統・分類">系統・分類</option>
+<option value="生態・環境">生態・環境</option>
+<option value="生命起源・古生物">生命起源・古生物</option>
+<option value="実験進化">実験進化</option>
+<option value="その他">その他</option>
+</select>
+<br><br>
+
+キーワード（３つ以内）<br>
+<input type="text" name="keyword1" value="" style="width: 150px;">
+　<input type="text" name="keyword2" value="" style="width: 150px;">
+　<input type="text" name="keyword3" value="" style="width: 150px;"><br>
+<br>
+発表に使用する言語　　<input type="radio" name="language" value="jp">日本語　　<input type="radio" name="language" value="en">英語　<!--<FONT COLOR="#FF0000" size="-1">※口頭発表賞審査の希望者は英語とする。</FONT>-->
+<br>
+</div>
+<br>
+■<b>連絡事項</b><br>
+<textarea name="comment" wrap="hard" style="width: 700px; height: 50px;"></textarea>
+<br>
+<font color="#FF0000" size="-1">
+※大会参加費・懇親会費を別の名義でお支払いされる場合は、payventで登録する予定の振込名義人様のお名前を上の<br>
+　連絡事項欄にご記入ください。<br>
+※託児希望の方はこの連絡事項に記載するのではなく、 shinka25.takuji@gmail.com まで電子メールでご連絡ください。<br>
+<!--　詳細は追って連絡します。<BR>
+　例）託児希望：１歳8/31-9/3、３歳9/2-9/3<BR>-->
+※懇親会にご家族を同伴されたい方は連絡事項欄に、同伴者の年齢をお書きください。<br>
+　例）懇親会同伴希望：２歳、４歳、３３歳<br>
+　同伴者の懇親会費もオンライン決済で支払って下さい。追加で懇親会費が必要な場合には別途連絡いたします。<br>
+<br>
+※送信の前に、入力事項に誤りがないか、入力漏れがないかをもう一度ご確認下さい。<br>
+</font>
+<br>
+
+<center>
+<input type="reset" value="入力し直す">
+&nbsp;&nbsp;
+<input type="submit" value="入力内容を確認する">
+<!--
+<INPUT TYPE="button" value="入力内容を確認する">
+<div id="temp">temp</div>
+-->
+</center>
+
+</form>
 </section>
 
 </main>
