@@ -273,6 +273,7 @@ text-align:center;
 #nav-logo a{
 display:none;
 cursor:pointer;
+height:70px;
 }
 
 #nav-logo a.active{
