@@ -265,7 +265,8 @@ margin-top:10px;
 }
 
 #nav-logo{
-margin-bottom:10px;
+position:relative;
+top:-15px;
 text-align:center;
 }
 
@@ -279,7 +280,7 @@ display:block;
 }
 
 #nav-logo img{
-height:50px;
+height:70px;
 }
 
 #nav-language{
