@@ -584,7 +584,7 @@ padding:5px;
 MOBILE
 ----------------------- */
 
-@media (max-width:899px){
+@media (max-width:919px){
 
 nav{
 transition:left 0.35s ease;
@@ -599,7 +599,7 @@ padding:5px 10px !important;
 
 }
 
-@media (min-width:900px){
+@media (min-width:920px){
 
 #top-of-page2{
 display:none;
