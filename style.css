@@ -803,6 +803,7 @@ scroll-margin-top:60px;
 #nav-logo{
 position:absolute;
 display:flex;
+top:0px;
 left:20px;
 height:80px;
 z-index:1500;
@@ -811,6 +812,7 @@ z-index:1500;
 #nav-logo a{
 display:none;
 cursor:pointer;
+height:80px;
 padding:0;
 }
 
