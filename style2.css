@@ -114,13 +114,6 @@ position:relative;
 transition:0.35s ease;
 }
 
-header::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.4);
-}
-
 header.sticky{
 opacity:0;
 }
