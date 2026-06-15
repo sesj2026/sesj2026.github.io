@@ -101,9 +101,10 @@ HEADER
 ----------------------- */
 
 header{
-background:url('IMG_2540.JPG') center 30% / cover no-repeat;
+background:url('demo_sp.jpg') center / 100% no-repeat;
 background-attachment:scroll;
-height:500px;
+aspect-ratio:16 / 19.5;
+background-color:#fdf7c8;
 color:white;
 text-align:center;
 display:flex;
@@ -112,13 +113,6 @@ justify-content:center;
 position:relative;
 
 transition:0.35s ease;
-}
-
-header::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.4);
 }
 
 header.sticky{
@@ -781,7 +775,8 @@ transition:0.35s ease;
 }
 
 header{
-background-attachment:fixed;
+background:url('demo.jpg') center / auto 100% no-repeat;
+aspect-ratio:16 / 16;
 }
 
 .content{
@@ -898,6 +893,20 @@ background-image:none;
 
 nav.shrink:hover #nav-language *{
 display:inline;
+}
+
+header{
+background:url('demo.jpg') center / auto 100% no-repeat;
+aspect-ratio:16 / 12;
+}
+
+}
+
+@media (min-width:1400px){
+
+header{
+background:url('demo.jpg') center / auto 100% no-repeat;
+aspect-ratio:16 / 9;
 }
 
 }
