@@ -101,10 +101,9 @@ HEADER
 ----------------------- */
 
 header{
-background:url('demo_sp.jpg') center / 100% no-repeat;
+background:url('demo_sp.jpg') center / 100% no-repeat #fdf7c8;
 background-attachment:scroll;
 aspect-ratio:16 / 19.5;
-background-color:#fdf7c8;
 color:white;
 text-align:center;
 display:flex;
@@ -775,7 +774,7 @@ transition:0.35s ease;
 }
 
 header{
-background:url('demo.jpg') center / auto 100% no-repeat;
+background:url('demo.jpg') center / auto 100% no-repeat #fdf7c8;
 aspect-ratio:16 / 9;
 }
 
