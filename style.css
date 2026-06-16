@@ -399,13 +399,12 @@ IMAGE-GRID
 display:flex;
 flex-wrap: wrap;
 flex-direction:row;
-gap:10px;
+gap:30px;
 }
 
 .image-grid img{
 height:250px;
 background:white;
-padding:6px;
 border-radius:4px;
 box-shadow:0 2px 4px rgba(0,0,0,0.15);
 }
