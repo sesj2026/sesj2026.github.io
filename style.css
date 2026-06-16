@@ -403,18 +403,16 @@ gap:10px;
 }
 
 .image-grid img{
-min-width:100px;
-max-width:min(100%,250px);
-height:300px;
+height:250px;
 background:white;
 padding:6px;
 border-radius:4px;
 box-shadow:0 2px 4px rgba(0,0,0,0.15);
-transition:0.2s ease;
 }
 
 .image-grid a:hover{
 transform:scale(1.1);
+transition:0.2s ease;
 }
 
 .image-grid a{
