@@ -403,7 +403,8 @@ gap:30px;
 }
 
 .image-grid img{
-height:250px;
+min-width:min(100%, 250px);
+max-width:250px;
 background:white;
 border-radius:4px;
 box-shadow:0 2px 4px rgba(0,0,0,0.15);
@@ -411,14 +412,16 @@ box-shadow:0 2px 4px rgba(0,0,0,0.15);
 
 .image-grid a:hover{
 transform:scale(1.1);
-transition:0.2s ease;
 }
 
 .image-grid a{
 display:flex;
 flex-flow:column;
 text-align:center;
+align-items:center;
 cursor:pointer;
+
+transition:0.2s ease;
 }
 
 /* -----------------------
