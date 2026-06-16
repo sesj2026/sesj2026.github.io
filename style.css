@@ -392,6 +392,36 @@ cursor:pointer;
 }
 
 /* -----------------------
+IMAGE-GRID
+----------------------- */
+
+.image-grid{
+display:flex;
+flex-wrap: wrap;
+flex-direction:row;
+gap:10px;
+}
+
+.image-grid img{
+min-width:100px;
+max-width:min(100%,300px);
+height:150px;
+background:white;
+padding:6px;
+border-radius:4px;
+box-shadow:0 2px 4px rgba(0,0,0,0.15);
+transition:0.2s ease;
+}
+
+.image-grid img:hover{
+transform:scale(1.1);
+}
+
+.image-grid a{
+cursor:pointer;
+}
+
+/* -----------------------
 CONTENT
 ----------------------- */
 
