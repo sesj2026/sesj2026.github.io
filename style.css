@@ -23,6 +23,25 @@ opacity:0.8;
 display:flex;
 }
 
+.layout > *,
+header > * ,
+#top-of-page2 > *,
+.menu-item > *,
+nav > *,
+nav-links > *,
+nav-links a > *,
+#nav-language > *,
+.sponsor-grid > *,
+.image-grid > *,
+.image-grid a > *,
+.dropdown > *,
+.menu-item > *,
+#nav-logo > *,
+
+{
+  min-width: 0;
+}
+
 /* -----------------------
 HAMBURGER
 ----------------------- */
@@ -370,7 +389,6 @@ display:flex;
 flex-wrap: wrap;
 flex-direction:row;
 gap:10px;
-min-width:0;
 }
 
 .sponsor-grid img{
@@ -401,7 +419,6 @@ display:flex;
 flex-wrap:wrap;
 flex-direction:row;
 gap:30px;
-min-width:0;
 }
 
 .image-grid img{
