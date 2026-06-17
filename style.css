@@ -36,9 +36,7 @@ nav-links a > *,
 .image-grid a > *,
 .dropdown > *,
 .menu-item > *,
-#nav-logo > *,
-
-{
+#nav-logo > *{
   min-width: 0;
 }
 
