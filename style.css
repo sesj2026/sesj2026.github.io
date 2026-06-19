@@ -483,12 +483,14 @@ color:#187741;
 
 .section p{
 text-align:justify;
+word-break:break-all;
 }
 
 .section pre{
 white-space:pre-wrap;
 font-family:inherit;
 text-align:justify;
+word-break:break-all;
 }
 
 .section a > img{
