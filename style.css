@@ -118,7 +118,7 @@ HEADER
 ----------------------- */
 
 header{
-background:url('IMG_2540.JPG') center 30% / cover no-repeat;
+background:url('IMG_2540.JPG') center 30% / auto no-repeat;
 background-attachment:scroll;
 height:500px;
 color:white;
@@ -835,7 +835,7 @@ transition:0.35s ease;
 }
 
 header{
-background-attachment:fixed;
+/*background-attachment:fixed;*/
 }
 
 .content{
