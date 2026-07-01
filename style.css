@@ -127,15 +127,15 @@ flex-direction:column;
 justify-content:center;
 position:relative;
 
-transition:0.35s ease;
+transition:height 0.35s ease;
 }
 
-header::before{
+/*header::before{
 content:"";
 position:absolute;
 inset:0;
 background:rgba(0,0,0,0.4);
-}
+}*/
 
 header.sticky{
 opacity:0;
