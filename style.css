@@ -644,6 +644,7 @@ MOBILE
 header{
 background:url('header_pc2.jpg') center / 100% no-repeat #fef6c5;
 aspect-ratio:2 / 1;
+transition:height 0.35s ease;
 }
 }
 
