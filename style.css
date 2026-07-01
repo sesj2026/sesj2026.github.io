@@ -640,7 +640,7 @@ MOBILE
 ----------------------- */
 
 
-@media (min-width:610px){
+@media (min-width:500px){
 header{
 background:url('header_pc2.jpg') center / 100% no-repeat #fef6c5;
 aspect-ratio:2 / 1;
