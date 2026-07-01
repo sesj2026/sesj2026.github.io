@@ -118,9 +118,8 @@ HEADER
 ----------------------- */
 
 header{
-background:url('IMG_2540.JPG') center 30% / auto no-repeat;
-background-attachment:scroll;
-height:500px;
+background:url('header_mobile.jpg') center / 100% no-repeat;
+aspect-ratio:16 / 19.5;
 color:white;
 text-align:center;
 display:flex;
@@ -640,6 +639,14 @@ padding:5px;
 MOBILE
 ----------------------- */
 
+
+@media (min-width:410px){
+header{
+background:url('header_pc2.jpg') center / 100% no-repeat #fef6c5;
+aspect-ratio:2 / 1;
+}
+}
+
 @media (max-width:919px){
 
 nav{
@@ -850,6 +857,14 @@ scroll-margin-top:60px;
 scroll-margin-top:60px;
 }
 
+}
+
+@media (min-width:1000px){
+header{
+background:url('header_pc.jpg') center / auto 100% no-repeat #fef6c5;
+height:500px;
+aspect-ratio:auto;
+}
 }
 
 @media (min-width:1155px){
