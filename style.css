@@ -663,7 +663,7 @@ padding:5px 10px !important;
 
 }
 
-@media (min-width:920px){
+@media (min-width:840px){
 
 #top-of-page2{
 display:none;
@@ -728,6 +728,7 @@ font-size:20px;
 
 #nav-links a{
 border-bottom:none;
+letter-spacing:-0.1em;
 }
 
 #nav-links > a{
@@ -866,7 +867,7 @@ transition:none;
 }
 }
 
-@media (min-width:1155px){
+@media (min-width:1075px){
 
 #nav-logo{
 position:absolute;
