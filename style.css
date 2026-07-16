@@ -694,7 +694,6 @@ height:30px;
 }
 
 nav.shrink #nav-links a {
-padding:0px 10px;
 }
 
 nav.shrink #nav-links > a {
@@ -711,7 +710,6 @@ transition:height 0.35s ease;
 }
 
 nav.shrink:hover #nav-links a {
-padding:0px 10px;
 transition:padding 0.35s ease;
 }
 
