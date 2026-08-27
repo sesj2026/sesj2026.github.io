@@ -213,8 +213,8 @@ nav{
 position:fixed;
 top:0;
 display:flex;
-left:-240px;
-width:200px;
+left:-260px;
+width:220px;
 padding:20px;
 background:linear-gradient(90deg, #00684d 0%, #007255 30%, #006847 100%);
 backdrop-filter: blur(5px);
